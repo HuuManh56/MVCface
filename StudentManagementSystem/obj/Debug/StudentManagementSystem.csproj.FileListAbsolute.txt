@@ -1,0 +1,12 @@
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\Git\StudentManagementSystem\StudentManagementSystem\bin\Debug\StudentManagementSystem.exe.config
+C:\Users\Asus\Desktop\sms\StudentManagementSystem\bin\Debug\StudentManagementSystem.exe.config
+C:\Users\Asus\Desktop\sms\StudentManagementSystem\bin\Debug\StudentManagementSystem.exe
+C:\Users\Asus\Desktop\sms\StudentManagementSystem\bin\Debug\StudentManagementSystem.pdb
+C:\Users\Asus\Desktop\sms\StudentManagementSystem\obj\Debug\StudentManagementSystem.csprojAssemblyReference.cache
+C:\Users\Asus\Desktop\sms\StudentManagementSystem\obj\Debug\StudentManagementSystem.Properties.Resources.resources
+C:\Users\Asus\Desktop\sms\StudentManagementSystem\obj\Debug\StudentManagementSystem.View.frmDangNhap.resources
+C:\Users\Asus\Desktop\sms\StudentManagementSystem\obj\Debug\StudentManagementSystem.View.frmHome.resources
+C:\Users\Asus\Desktop\sms\StudentManagementSystem\obj\Debug\StudentManagementSystem.csproj.GenerateResource.cache
+C:\Users\Asus\Desktop\sms\StudentManagementSystem\obj\Debug\StudentManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\sms\StudentManagementSystem\obj\Debug\StudentManagementSystem.exe
+C:\Users\Asus\Desktop\sms\StudentManagementSystem\obj\Debug\StudentManagementSystem.pdb
