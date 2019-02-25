@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using StudentManagementSystem.Database;
 
 namespace StudentManagementSystem.View
 {
@@ -36,5 +37,34 @@ namespace StudentManagementSystem.View
         {
 
         }
+
+        private void frmHome_Load(object sender, EventArgs e)
+        {
+            showTvLopChuyenNganh();
+            showTVLopHocPhan();
+        }
+
+        private void showTVLopHocPhan()
+        {
+            ConnectDB connect = new ConnectDB();
+            string sql = " select * from LopHocPhan ";
+            DataTable tb = connect.getTable(sql);
+            for (int i = 0; i < tb.Rows.Count; i++)
+            {
+                tvLopHocPhan.Nodes.Add(tb.Rows[i]["TenLopHocPhan"].ToString());
+            }
+        }
+
+        private void showTvLopChuyenNganh()
+        {
+            ConnectDB connect = new ConnectDB();
+            string sql = " select * from Lop ";
+            DataTable tb = connect.getTable(sql);
+            for (int i = 0; i < tb.Rows.Count; i++)
+            {
+                tvLopChuyenNganh.Nodes.Add(tb.Rows[i]["TenLop"].ToString());
+            }
+        }
+
     }
 }
