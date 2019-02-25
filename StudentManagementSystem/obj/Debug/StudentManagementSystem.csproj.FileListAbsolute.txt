@@ -10,3 +10,14 @@ C:\Users\Asus\Desktop\sms\StudentManagementSystem\obj\Debug\StudentManagementSys
 C:\Users\Asus\Desktop\sms\StudentManagementSystem\obj\Debug\StudentManagementSystem.csproj.CoreCompileInputs.cache
 C:\Users\Asus\Desktop\sms\StudentManagementSystem\obj\Debug\StudentManagementSystem.exe
 C:\Users\Asus\Desktop\sms\StudentManagementSystem\obj\Debug\StudentManagementSystem.pdb
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\StudentManagementSystem.exe.config
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\StudentManagementSystem.exe
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\StudentManagementSystem.pdb
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.csprojAssemblyReference.cache
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.Properties.Resources.resources
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.View.frmDangNhap.resources
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.View.frmHome.resources
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.csproj.GenerateResource.cache
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.exe
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.pdb
