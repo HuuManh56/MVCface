@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Emgu.CV.UI">
+      <HintPath>..\packages\EMGU.CV.3.4.3.3016\lib\net35\Emgu.CV.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.World">
+      <HintPath>..\packages\EMGU.CV.3.4.3.3016\lib\net35\Emgu.CV.World.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,11 +50,22 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="ZedGraph">
+      <HintPath>..\packages\ZedGraph.5.1.7\lib\net35-Client\ZedGraph.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\HocKyController.cs" />
+    <Compile Include="Controller\LopController.cs" />
+    <Compile Include="Controller\LopHocPhanController.cs" />
     <Compile Include="Database\ConnectDB.cs" />
     <Compile Include="Constant\DBConstant.cs" />
     <Compile Include="Controller\UserController.cs" />
+    <Compile Include="Model\HocKy.cs" />
+    <Compile Include="Model\HocPhan.cs" />
+    <Compile Include="Model\Lop.cs" />
+    <Compile Include="Model\LopHocPhan.cs" />
+    <Compile Include="Model\SinhVien.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -58,11 +75,35 @@
     <Compile Include="View\frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\frmHocKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmHocKy.Designer.cs">
+      <DependentUpon>frmHocKy.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmHome.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\frmHome.Designer.cs">
       <DependentUpon>frmHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmLop.Designer.cs">
+      <DependentUpon>frmLop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmLopHocPhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmLopHocPhan.Designer.cs">
+      <DependentUpon>frmLopHocPhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmSinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmSinhVien.Designer.cs">
+      <DependentUpon>frmSinhVien.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -76,8 +117,20 @@
     <EmbeddedResource Include="View\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\frmHocKy.resx">
+      <DependentUpon>frmHocKy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmLop.resx">
+      <DependentUpon>frmLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmLopHocPhan.resx">
+      <DependentUpon>frmLopHocPhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmSinhVien.resx">
+      <DependentUpon>frmSinhVien.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

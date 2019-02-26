@@ -21,3 +21,60 @@ C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\obj\Debug\StudentManagemen
 C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.csproj.CoreCompileInputs.cache
 C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.exe
 C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.pdb
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\StudentManagementSystem.exe.config
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.exe
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.pdb
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.csprojResolveAssemblyReference.cache
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.Properties.Resources.resources
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.View.frmDangNhap.resources
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.View.frmHocKy.resources
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.View.frmHome.resources
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.View.frmLop.resources
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.View.frmLopHocPhan.resources
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.View.frmSinhVien.resources
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.csproj.GenerateResource.Cache
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\StudentManagementSystem.exe
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\StudentManagementSystem.pdb
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\Emgu.CV.UI.dll
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\Emgu.CV.World.dll
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\ZedGraph.dll
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\Emgu.CV.UI.xml
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\Emgu.CV.World.xml
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\ZedGraph.xml
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\de\ZedGraph.resources.dll
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\es\ZedGraph.resources.dll
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\fr\ZedGraph.resources.dll
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\hu\ZedGraph.resources.dll
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\it\ZedGraph.resources.dll
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\ja\ZedGraph.resources.dll
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\pt\ZedGraph.resources.dll
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\ru\ZedGraph.resources.dll
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\sk\ZedGraph.resources.dll
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\sv\ZedGraph.resources.dll
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\tr\ZedGraph.resources.dll
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\zh-cn\ZedGraph.resources.dll
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\zh-tw\ZedGraph.resources.dll
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\Emgu.CV.UI.dll
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\Emgu.CV.World.dll
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\ZedGraph.dll
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\Emgu.CV.UI.xml
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\Emgu.CV.World.xml
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\ZedGraph.xml
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\de\ZedGraph.resources.dll
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\es\ZedGraph.resources.dll
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\fr\ZedGraph.resources.dll
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\hu\ZedGraph.resources.dll
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\it\ZedGraph.resources.dll
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\ja\ZedGraph.resources.dll
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\pt\ZedGraph.resources.dll
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\ru\ZedGraph.resources.dll
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\sk\ZedGraph.resources.dll
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\sv\ZedGraph.resources.dll
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\tr\ZedGraph.resources.dll
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\zh-cn\ZedGraph.resources.dll
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\zh-tw\ZedGraph.resources.dll
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.View.frmHocKy.resources
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.View.frmLop.resources
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.View.frmLopHocPhan.resources
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.View.frmSinhVien.resources
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.csproj.CopyComplete

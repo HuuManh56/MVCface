@@ -182,6 +182,7 @@
             this.tvLopChuyenNganh.Name = "tvLopChuyenNganh";
             this.tvLopChuyenNganh.Size = new System.Drawing.Size(187, 69);
             this.tvLopChuyenNganh.TabIndex = 0;
+            this.tvLopChuyenNganh.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvLopChuyenNganh_NodeMouseClick);
             // 
             // splitContainer4
             // 
@@ -223,6 +224,7 @@
             this.tvLopHocPhan.Name = "tvLopHocPhan";
             this.tvLopHocPhan.Size = new System.Drawing.Size(193, 257);
             this.tvLopHocPhan.TabIndex = 0;
+            this.tvLopHocPhan.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvLopHocPhan_NodeMouseClick);
             // 
             // groupBox3
             // 
@@ -535,14 +537,14 @@
             // XoaLop
             // 
             this.XoaLop.Name = "XoaLop";
-            this.XoaLop.Size = new System.Drawing.Size(216, 26);
+            this.XoaLop.Size = new System.Drawing.Size(171, 26);
             this.XoaLop.Text = "Xóa lớp";
             this.XoaLop.Click += new System.EventHandler(this.xóaLớpToolStripMenuItem_Click);
             // 
             // XoaSinhVien
             // 
             this.XoaSinhVien.Name = "XoaSinhVien";
-            this.XoaSinhVien.Size = new System.Drawing.Size(216, 26);
+            this.XoaSinhVien.Size = new System.Drawing.Size(171, 26);
             this.XoaSinhVien.Text = "Xóa sinh viên";
             // 
             // DiemDanh
@@ -566,7 +568,7 @@
             this.sửaToolStripMenuItem,
             this.xóaToolStripMenuItem1});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(177, 100);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 128);
             // 
             // thêmLớpToolStripMenuItem1
             // 
@@ -615,14 +617,15 @@
             this.xoaLopToolStripMenuItem,
             this.xoaSinhVienToolStripMenuItem});
             this.xóaToolStripMenuItem1.Name = "xóaToolStripMenuItem1";
-            this.xóaToolStripMenuItem1.Size = new System.Drawing.Size(176, 24);
+            this.xóaToolStripMenuItem1.Size = new System.Drawing.Size(210, 24);
             this.xóaToolStripMenuItem1.Text = "Xóa";
             // 
             // xoaLopToolStripMenuItem
             // 
             this.xoaLopToolStripMenuItem.Name = "xoaLopToolStripMenuItem";
-            this.xoaLopToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.xoaLopToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.xoaLopToolStripMenuItem.Text = "Xoa lop";
+            this.xoaLopToolStripMenuItem.Click += new System.EventHandler(this.xoaLopToolStripMenuItem_Click);
             // 
             // xoaSinhVienToolStripMenuItem
             // 
