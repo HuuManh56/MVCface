@@ -66,5 +66,11 @@ namespace StudentManagementSystem.View
             }
         }
 
+        private void xóaLớpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TreeNode treeLopCN = this.tvLopChuyenNganh.SelectedNode;
+            MessageBox.Show(" Ban co chac chan muon xoa khong", "Thong bao", MessageBoxButtons.YesNo);
+            string
+        }
     }
 }

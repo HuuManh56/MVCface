@@ -33,6 +33,13 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tvLopChuyenNganh = new System.Windows.Forms.TreeView();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.tvLopHocPhan = new System.Windows.Forms.TreeView();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvDanhSach = new System.Windows.Forms.DataGridView();
@@ -58,8 +65,6 @@
             this.thêmSinhViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chỉnhSửaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sửaLớpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sửaLớpHọcPhầnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sửaLớpHọcPhầnToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.sửaThôngTinSinhVienToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xóaLớpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,13 +78,6 @@
             this.thêmSinhViênToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.sửaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xóaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.tvLopChuyenNganh = new System.Windows.Forms.TreeView();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.tvLopHocPhan = new System.Windows.Forms.TreeView();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -89,6 +87,12 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
+            this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.Panel2.SuspendLayout();
+            this.splitContainer3.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -98,12 +102,6 @@
             this.toolStrip2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
-            this.splitContainer3.Panel1.SuspendLayout();
-            this.splitContainer3.Panel2.SuspendLayout();
-            this.splitContainer3.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -155,6 +153,80 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lớp chuyên ngành";
+            // 
+            // tvLopChuyenNganh
+            // 
+            this.tvLopChuyenNganh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tvLopChuyenNganh.Location = new System.Drawing.Point(3, 18);
+            this.tvLopChuyenNganh.Name = "tvLopChuyenNganh";
+            this.tvLopChuyenNganh.Size = new System.Drawing.Size(193, 115);
+            this.tvLopChuyenNganh.TabIndex = 0;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.tvLopHocPhan);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox4.Location = new System.Drawing.Point(0, 58);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(199, 278);
+            this.groupBox4.TabIndex = 1;
+            this.groupBox4.TabStop = false;
+            // 
+            // tvLopHocPhan
+            // 
+            this.tvLopHocPhan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tvLopHocPhan.Location = new System.Drawing.Point(3, 18);
+            this.tvLopHocPhan.Name = "tvLopHocPhan";
+            this.tvLopHocPhan.Size = new System.Drawing.Size(193, 257);
+            this.tvLopHocPhan.TabIndex = 0;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.splitContainer3);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox3.Location = new System.Drawing.Point(0, 0);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(199, 58);
+            this.groupBox3.TabIndex = 0;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Lớp học phần";
+            // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.Location = new System.Drawing.Point(3, 18);
+            this.splitContainer3.Name = "splitContainer3";
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.comboBox1);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.comboBox2);
+            this.splitContainer3.Size = new System.Drawing.Size(193, 37);
+            this.splitContainer3.SplitterDistance = 69;
+            this.splitContainer3.TabIndex = 0;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(0, 0);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(69, 24);
+            this.comboBox1.TabIndex = 0;
+            this.comboBox1.Text = "Học kỳ";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(0, 0);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(120, 24);
+            this.comboBox2.TabIndex = 0;
+            this.comboBox2.Text = "Năm học";
             // 
             // toolStripContainer1
             // 
@@ -396,24 +468,9 @@
             // 
             // sửaLớpToolStripMenuItem
             // 
-            this.sửaLớpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sửaLớpHọcPhầnToolStripMenuItem,
-            this.sửaLớpHọcPhầnToolStripMenuItem1});
             this.sửaLớpToolStripMenuItem.Name = "sửaLớpToolStripMenuItem";
             this.sửaLớpToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
             this.sửaLớpToolStripMenuItem.Text = "Sửa lớp";
-            // 
-            // sửaLớpHọcPhầnToolStripMenuItem
-            // 
-            this.sửaLớpHọcPhầnToolStripMenuItem.Name = "sửaLớpHọcPhầnToolStripMenuItem";
-            this.sửaLớpHọcPhầnToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
-            this.sửaLớpHọcPhầnToolStripMenuItem.Text = "Sửa lớp chuyên ngành";
-            // 
-            // sửaLớpHọcPhầnToolStripMenuItem1
-            // 
-            this.sửaLớpHọcPhầnToolStripMenuItem1.Name = "sửaLớpHọcPhầnToolStripMenuItem1";
-            this.sửaLớpHọcPhầnToolStripMenuItem1.Size = new System.Drawing.Size(230, 26);
-            this.sửaLớpHọcPhầnToolStripMenuItem1.Text = "Sửa lớp học phần ";
             // 
             // sửaThôngTinSinhVienToolStripMenuItem
             // 
@@ -434,8 +491,9 @@
             // xóaLớpToolStripMenuItem
             // 
             this.xóaLớpToolStripMenuItem.Name = "xóaLớpToolStripMenuItem";
-            this.xóaLớpToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.xóaLớpToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.xóaLớpToolStripMenuItem.Text = "Xóa lớp";
+            this.xóaLớpToolStripMenuItem.Click += new System.EventHandler(this.xóaLớpToolStripMenuItem_Click);
             // 
             // xóaSinhViênToolStripMenuItem
             // 
@@ -505,80 +563,6 @@
             this.xóaToolStripMenuItem1.Size = new System.Drawing.Size(176, 24);
             this.xóaToolStripMenuItem1.Text = "Xóa";
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.splitContainer3);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox3.Location = new System.Drawing.Point(0, 0);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(199, 58);
-            this.groupBox3.TabIndex = 0;
-            this.groupBox3.TabStop = false;
-            // 
-            // tvLopChuyenNganh
-            // 
-            this.tvLopChuyenNganh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tvLopChuyenNganh.Location = new System.Drawing.Point(3, 18);
-            this.tvLopChuyenNganh.Name = "tvLopChuyenNganh";
-            this.tvLopChuyenNganh.Size = new System.Drawing.Size(193, 115);
-            this.tvLopChuyenNganh.TabIndex = 0;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.tvLopHocPhan);
-            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox4.Location = new System.Drawing.Point(0, 58);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(199, 278);
-            this.groupBox4.TabIndex = 1;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Lớp học phần";
-            // 
-            // tvLopHocPhan
-            // 
-            this.tvLopHocPhan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tvLopHocPhan.Location = new System.Drawing.Point(3, 18);
-            this.tvLopHocPhan.Name = "tvLopHocPhan";
-            this.tvLopHocPhan.Size = new System.Drawing.Size(193, 257);
-            this.tvLopHocPhan.TabIndex = 0;
-            // 
-            // splitContainer3
-            // 
-            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer3.Location = new System.Drawing.Point(3, 18);
-            this.splitContainer3.Name = "splitContainer3";
-            // 
-            // splitContainer3.Panel1
-            // 
-            this.splitContainer3.Panel1.Controls.Add(this.comboBox1);
-            // 
-            // splitContainer3.Panel2
-            // 
-            this.splitContainer3.Panel2.Controls.Add(this.comboBox2);
-            this.splitContainer3.Size = new System.Drawing.Size(193, 37);
-            this.splitContainer3.SplitterDistance = 69;
-            this.splitContainer3.TabIndex = 0;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(0, 0);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(69, 24);
-            this.comboBox1.TabIndex = 0;
-            this.comboBox1.Text = "Học kỳ";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(0, 0);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(120, 24);
-            this.comboBox2.TabIndex = 0;
-            this.comboBox2.Text = "Năm học";
-            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -601,6 +585,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
+            this.splitContainer3.ResumeLayout(false);
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.PerformLayout();
@@ -615,12 +605,6 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.splitContainer3.Panel1.ResumeLayout(false);
-            this.splitContainer3.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
-            this.splitContainer3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -663,8 +647,6 @@
         private System.Windows.Forms.ToolStripMenuItem thêmSinhViênToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem sửaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem sửaLớpHọcPhầnToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sửaLớpHọcPhầnToolStripMenuItem1;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
