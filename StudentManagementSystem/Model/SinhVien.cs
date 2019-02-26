@@ -71,6 +71,19 @@ namespace StudentManagementSystem.Model
             }
         }
 
+        public DateTime NgaySinh
+        {
+            get
+            {
+                return _NgaySinh;
+            }
+
+            set
+            {
+                _NgaySinh = value;
+            }
+        }
+
         public Image<Bgr, byte> Image
         {
             get

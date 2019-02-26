@@ -70,7 +70,7 @@ namespace StudentManagementSystem.View
         {
             TreeNode treeLopCN = this.tvLopChuyenNganh.SelectedNode;
             MessageBox.Show(" Ban co chac chan muon xoa khong", "Thong bao", MessageBoxButtons.YesNo);
-            string
+           // string
         }
     }
 }
