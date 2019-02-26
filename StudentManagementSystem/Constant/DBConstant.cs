@@ -8,10 +8,10 @@ namespace StudentManagementSystem.Constant
 {
     class DBConstant
     {
-        public static String DBstring = "Data Source=DESKTOP-Q6195BH;Initial Catalog=sms;"
-                                    + "Persist Security Info=True;User ID=diemdanh;Password=123";
-
-        //public static String DBstring = "Data Source=HUUMANH\\SQLEXPRESS;Initial Catalog=sms;"
+        //public static String DBstring = "Data Source=DESKTOP-Q6195BH;Initial Catalog=sms;"
         //                            + "Persist Security Info=True;User ID=diemdanh;Password=123";
+
+        public static String DBstring = "Data Source=HUUMANH\\SQLEXPRESS;Initial Catalog=sms;"
+                                   + "Persist Security Info=True;User ID=diemdanh;Password=123";
     }
 }

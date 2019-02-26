@@ -35,5 +35,10 @@ namespace StudentManagementSystem.View
                 MessageBox.Show("Nhập lại", "Thông báo");
             }
         }
+
+        private void frmLop_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

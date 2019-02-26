@@ -101,6 +101,7 @@
             this.Name = "frmLop";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Lớp chuyên ngành";
+            this.Load += new System.EventHandler(this.frmLop_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

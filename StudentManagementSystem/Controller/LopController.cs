@@ -63,11 +63,11 @@ namespace StudentManagementSystem.Controller
             }
         }
 
-        public int Delete(String CodeView)
+        public int Delete(String TenLop)
         {
             SqlConnection connect = cn.getConnect();
             connect.Open();
-            string sql = "delete Lop where CodeView=N'"+CodeView+"'";
+            string sql = "delete Lop where TenLop=N'"+TenLop+"'";
             SqlCommand cmd = new SqlCommand(sql, connect);
             try
             {
