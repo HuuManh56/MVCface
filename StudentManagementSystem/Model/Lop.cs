@@ -14,6 +14,11 @@ namespace StudentManagementSystem.Model
         private int _NienKhoaID;
         public Lop()
         {
+            this._id=0;
+            this._TenLop = "";
+            this._CodeView = "";
+            this._NienKhoaID = 0;
+
 
         }
 

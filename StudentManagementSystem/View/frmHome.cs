@@ -48,7 +48,7 @@ namespace StudentManagementSystem.View
             showTVLopHocPhan();
         }
 
-        private void showTVLopHocPhan()
+        public void showTVLopHocPhan()
         {
          //   ConnectDB connect = new ConnectDB();
          //   string sql = " select * from LopHocPhan ";
@@ -74,9 +74,11 @@ namespace StudentManagementSystem.View
         {
             TreeNode node = tvLopChuyenNganh.SelectedNode;
             if ( node != null){
+                MessageBox.Show("Ban co chac chan muon xoa", "Thong bao", MessageBoxButtons.YesNo);
                 int ret = lopController.Delete(node.Text);
                 if (ret > 0)
                 {
+                    MessageBox.Show("Xoa thanh cong");
                     tvLopChuyenNganh.Nodes.Clear();
                     showTvLopChuyenNganh();
                 }
@@ -116,6 +118,20 @@ namespace StudentManagementSystem.View
         private void xoaLopToolStripMenuItem_Click(object sender, EventArgs e)
         {
             xóaLớpToolStripMenuItem_Click(sender, e);
+        }
+
+        private void tdmThemLopChuyenNganh_Click(object sender, EventArgs e)
+        {
+            frmLop frmLop = new frmLop();
+            frmLop.ShowDialog();
+            tvLopChuyenNganh.Nodes.Clear();
+            showTvLopChuyenNganh();
+
+        }
+
+        private void xóaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

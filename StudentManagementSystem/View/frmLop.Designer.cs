@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.txtTenLop = new System.Windows.Forms.TextBox();
-            this.txtMaLop = new System.Windows.Forms.TextBox();
+            this.txtCodeView = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnXacNhan = new System.Windows.Forms.Button();
@@ -43,12 +43,12 @@
             this.txtTenLop.Size = new System.Drawing.Size(257, 22);
             this.txtTenLop.TabIndex = 1;
             // 
-            // txtMaLop
+            // txtCodeView
             // 
-            this.txtMaLop.Location = new System.Drawing.Point(135, 27);
-            this.txtMaLop.Name = "txtMaLop";
-            this.txtMaLop.Size = new System.Drawing.Size(100, 22);
-            this.txtMaLop.TabIndex = 0;
+            this.txtCodeView.Location = new System.Drawing.Point(135, 27);
+            this.txtCodeView.Name = "txtCodeView";
+            this.txtCodeView.Size = new System.Drawing.Size(100, 22);
+            this.txtCodeView.TabIndex = 0;
             // 
             // label2
             // 
@@ -83,9 +83,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(27, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 17);
+            this.label1.Size = new System.Drawing.Size(68, 17);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Mã lớp";
+            this.label1.Text = "Codeview";
             // 
             // frmLop
             // 
@@ -93,7 +93,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(420, 178);
             this.Controls.Add(this.txtTenLop);
-            this.Controls.Add(this.txtMaLop);
+            this.Controls.Add(this.txtCodeView);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnXacNhan);
@@ -110,7 +110,7 @@
         #endregion
 
         public System.Windows.Forms.TextBox txtTenLop;
-        public System.Windows.Forms.TextBox txtMaLop;
+        public System.Windows.Forms.TextBox txtCodeView;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnXacNhan;

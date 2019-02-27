@@ -14,7 +14,7 @@ namespace StudentManagementSystem.View
 {
     public partial class frmLop : Form
     {
-        LopController controller= new LopController();
+        LopController lopcontroller= new LopController();
         public frmLop()
         {
             InitializeComponent();
@@ -23,22 +23,29 @@ namespace StudentManagementSystem.View
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
             Lop lop = new Lop();
-            lop.CodeView = txtMaLop.Text.ToUpper();
+            lop.CodeView = txtCodeView.ToString();
             lop.TenLop = txtTenLop.Text;
-            int ret = controller.Insert(lop);
-            if (ret > 0)
+            int red = lopcontroller.Insert(lop);
+            try
             {
-                this.Close();
+                if (red > 0)
+                {
+                    MessageBox.Show(" Them thanh cong");
+                    this.Close();
+                    
+                   
+                }
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("Nhập lại", "Thông báo");
+                MessageBox.Show(ex.Message);
             }
+            
         }
 
         private void frmLop_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

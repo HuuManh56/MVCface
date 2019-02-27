@@ -27,7 +27,8 @@ namespace StudentManagementSystem.Controller
         public int Update(Lop lop)
         {
             SqlConnection connect = cn.getConnect();
-            connect.Open();
+            if(connect.State==ConnectionState.Closed)
+             connect.Open();
             string sql = "update Lop set CodeView=N'"+lop.CodeView+"'"
                 +" set TenLop=N'"+lop.TenLop+"' where ID=" + lop.Id;
             SqlCommand cmd = new SqlCommand(sql, connect);
@@ -48,7 +49,7 @@ namespace StudentManagementSystem.Controller
         {
             SqlConnection connect = cn.getConnect();
             connect.Open();
-            string sql = "insert into Lop values ( N'" + lop.CodeView + "',N'" +lop.TenLop + "')";
+            string sql = "insert into Lop(TenLop) values (N'" +lop.TenLop + "')";
             SqlCommand cmd = new SqlCommand(sql, connect);
             try
             {
