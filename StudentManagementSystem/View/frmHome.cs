@@ -46,6 +46,7 @@ namespace StudentManagementSystem.View
         {
             showTvLopChuyenNganh();
             showTVLopHocPhan();
+            ShowCmbKhoa();
         }
 
         public void showTVLopHocPhan()
@@ -72,6 +73,11 @@ namespace StudentManagementSystem.View
 
         private void xóaLớpToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+            TreeNode treeLopCN = this.tvLopChuyenNganh.SelectedNode;
+            MessageBox.Show(" Ban co chac chan muon xoa khong", "Thong bao", MessageBoxButtons.YesNo);
+           // string
+
             TreeNode node = tvLopChuyenNganh.SelectedNode;
             if ( node != null){
                 MessageBox.Show("Ban co chac chan muon xoa", "Thong bao", MessageBoxButtons.YesNo);
@@ -132,6 +138,40 @@ namespace StudentManagementSystem.View
         private void xóaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+        private void ShowCmbKhoa()
+        {
+            ConnectDB connectDB = new ConnectDB();
+            string sql = " select * from NienKhoa";
+            DataTable dt = connectDB.getTable(sql);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+               cmbKhoa.Items.Add(dt.Rows[i]["TenKhoa"].ToString());
+            }
+        }
+
+        private void cmbKhoa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show(cmbKhoa.Text);
+            tvLopChuyenNganh.Nodes.Clear();
+            DataTable tb = lopController.Truyvan(cmbKhoa.Text);
+            for(int i = 0; i < tb.Rows.Count; i++)
+            {
+                string a = tb.Rows[i][0].ToString();
+                tvLopChuyenNganh.Nodes.Add(tb.Rows[i][0].ToString());
+            }
+        }
+
+        private void họcPhầnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHocPhan frmHocPhan = new frmHocPhan();
+            frmHocPhan.Show();
+        }
+
+        private void tdmThemLpHocPhan_Click(object sender, EventArgs e)
+        {
+            frmLopHocPhan frm = new frmLopHocPhan();
+            frm.Show();
         }
     }
 }

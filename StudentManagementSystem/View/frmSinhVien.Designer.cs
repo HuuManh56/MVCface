@@ -39,6 +39,7 @@
             this.txtMaSV = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnXacNhan = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,14 +49,14 @@
             this.btnStart = new System.Windows.Forms.Button();
             this.cbCamIndex = new System.Windows.Forms.ComboBox();
             this.btnHuy = new System.Windows.Forms.Button();
-            this.imgCamera = new Emgu.CV.UI.ImageBox();
             this.btnChup = new System.Windows.Forms.Button();
-            this.btnXacNhan = new System.Windows.Forms.Button();
             this.imgTrain = new Emgu.CV.UI.ImageBox();
             this.btnThoat = new System.Windows.Forms.Button();
+            this.imgCamera = new Emgu.CV.UI.ImageBox();
+            this.ofdMoFile = new System.Windows.Forms.OpenFileDialog();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgCamera)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgTrain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCamera)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -157,6 +158,16 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "Ngày sinh";
             // 
+            // btnXacNhan
+            // 
+            this.btnXacNhan.Location = new System.Drawing.Point(173, 399);
+            this.btnXacNhan.Name = "btnXacNhan";
+            this.btnXacNhan.Size = new System.Drawing.Size(130, 35);
+            this.btnXacNhan.TabIndex = 32;
+            this.btnXacNhan.Text = "Xác nhận";
+            this.btnXacNhan.UseVisualStyleBackColor = true;
+            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -192,6 +203,7 @@
             this.btnPrev.TabIndex = 38;
             this.btnPrev.Text = "<<";
             this.btnPrev.UseVisualStyleBackColor = true;
+            this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
             // 
             // btnNext
             // 
@@ -201,6 +213,7 @@
             this.btnNext.TabIndex = 37;
             this.btnNext.Text = ">>";
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnMoFile
             // 
@@ -210,6 +223,7 @@
             this.btnMoFile.TabIndex = 36;
             this.btnMoFile.Text = "Mở file";
             this.btnMoFile.UseVisualStyleBackColor = true;
+            this.btnMoFile.Click += new System.EventHandler(this.btnMoFile_Click);
             // 
             // btnStart
             // 
@@ -219,6 +233,7 @@
             this.btnStart.TabIndex = 35;
             this.btnStart.Text = "Bắt đầu";
             this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // cbCamIndex
             // 
@@ -237,16 +252,7 @@
             this.btnHuy.TabIndex = 33;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
-            // 
-            // imgCamera
-            // 
-            this.imgCamera.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imgCamera.Location = new System.Drawing.Point(12, 12);
-            this.imgCamera.Name = "imgCamera";
-            this.imgCamera.Size = new System.Drawing.Size(500, 500);
-            this.imgCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgCamera.TabIndex = 29;
-            this.imgCamera.TabStop = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnChup
             // 
@@ -256,15 +262,6 @@
             this.btnChup.TabIndex = 39;
             this.btnChup.Text = "Chụp";
             this.btnChup.UseVisualStyleBackColor = true;
-            // 
-            // btnXacNhan
-            // 
-            this.btnXacNhan.Location = new System.Drawing.Point(173, 399);
-            this.btnXacNhan.Name = "btnXacNhan";
-            this.btnXacNhan.Size = new System.Drawing.Size(130, 35);
-            this.btnXacNhan.TabIndex = 32;
-            this.btnXacNhan.Text = "Xác nhận";
-            this.btnXacNhan.UseVisualStyleBackColor = true;
             // 
             // imgTrain
             // 
@@ -285,11 +282,26 @@
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
             // 
+            // imgCamera
+            // 
+            this.imgCamera.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imgCamera.Location = new System.Drawing.Point(12, 12);
+            this.imgCamera.Name = "imgCamera";
+            this.imgCamera.Size = new System.Drawing.Size(500, 500);
+            this.imgCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgCamera.TabIndex = 41;
+            this.imgCamera.TabStop = false;
+            // 
+            // ofdMoFile
+            // 
+            this.ofdMoFile.FileName = "openFileDialog1";
+            // 
             // frmSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1295, 592);
+            this.Controls.Add(this.imgCamera);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnPrev);
             this.Controls.Add(this.btnNext);
@@ -297,17 +309,17 @@
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.cbCamIndex);
             this.Controls.Add(this.btnHuy);
-            this.Controls.Add(this.imgCamera);
             this.Controls.Add(this.btnChup);
             this.Controls.Add(this.imgTrain);
             this.Controls.Add(this.btnThoat);
             this.Name = "frmSinhVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Sinh viên";
+            this.Load += new System.EventHandler(this.frmSinhVien_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgCamera)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgTrain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCamera)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -333,10 +345,11 @@
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.ComboBox cbCamIndex;
         private System.Windows.Forms.Button btnHuy;
-        public Emgu.CV.UI.ImageBox imgCamera;
         private System.Windows.Forms.Button btnChup;
         private System.Windows.Forms.Button btnXacNhan;
         public Emgu.CV.UI.ImageBox imgTrain;
         private System.Windows.Forms.Button btnThoat;
+        public Emgu.CV.UI.ImageBox imgCamera;
+        private System.Windows.Forms.OpenFileDialog ofdMoFile;
     }
 }

@@ -43,24 +43,24 @@ namespace StudentManagementSystem.Controller
             }
         }
 
-        public int Insert(Lop lop)
-        {
-            SqlConnection connect = cn.getConnect();
-            connect.Open();
-            string sql = "insert into LopHocPhan values ( N'" + lop.CodeView + "',N'" + lop.TenLop + "')";
-            SqlCommand cmd = new SqlCommand(sql, connect);
-            try
-            {
-                cmd.ExecuteNonQuery();
-                connect.Close();
-                return 1;
-            }
-            catch (Exception ex)
-            {
-                //MessageBox.Show(ex.ToString());
-                return -1;
-            }
-        }
+        //public int Insert(Lop lop)
+        //{
+        //    SqlConnection connect = cn.getConnect();
+        //    connect.Open();
+        //    string sql = "insert into LopHocPhan values ( N'" + lop.CodeView + "',N'" + lop.TenLop + "')";
+        //    SqlCommand cmd = new SqlCommand(sql, connect);
+        //    try
+        //    {
+        //        cmd.ExecuteNonQuery();
+        //        connect.Close();
+        //        return 1;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        //MessageBox.Show(ex.ToString());
+        //        return -1;
+        //    }
+        //}
 
         public int Delete(String TenLopHocPhan)
         {

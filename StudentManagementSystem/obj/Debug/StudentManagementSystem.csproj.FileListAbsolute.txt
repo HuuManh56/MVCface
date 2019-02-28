@@ -35,12 +35,24 @@ E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\ob
 E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.csproj.GenerateResource.Cache
 E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\StudentManagementSystem.exe
 E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\StudentManagementSystem.pdb
-E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\Emgu.CV.UI.dll
 E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\Emgu.CV.World.dll
-E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\ZedGraph.dll
 E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\Emgu.CV.UI.xml
 E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\Emgu.CV.World.xml
 E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\ZedGraph.xml
+<<<<<<< HEAD
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\x64\concrt140.dll
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\x64\cvextern.dll
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\x64\msvcp140.dll
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\x64\opencv_ffmpeg343_64.dll
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\x64\vcruntime140.dll
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\x86\concrt140.dll
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\x86\cvextern.dll
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\x86\msvcp140.dll
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\x86\opencv_ffmpeg343.dll
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\x86\vcruntime140.dll
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\Microsoft.VisualStudio.DebuggerVisualizers.dll
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.csproj.StudentManagementSystem.exe.config
+=======
 E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\de\ZedGraph.resources.dll
 E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\es\ZedGraph.resources.dll
 E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\fr\ZedGraph.resources.dll
@@ -54,9 +66,7 @@ E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bi
 E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\tr\ZedGraph.resources.dll
 E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\zh-cn\ZedGraph.resources.dll
 E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\bin\Debug\zh-tw\ZedGraph.resources.dll
-C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\Emgu.CV.UI.dll
 C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\Emgu.CV.World.dll
-C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\ZedGraph.dll
 C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\Emgu.CV.UI.xml
 C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\Emgu.CV.World.xml
 C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\ZedGraph.xml
@@ -78,3 +88,17 @@ C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\obj\Debug\StudentManagemen
 C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.View.frmLopHocPhan.resources
 C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.View.frmSinhVien.resources
 C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.csproj.CopyComplete
+>>>>>>> 5df85d169462090f761832d58f807aabe8019635
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.exe.config
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\x64\concrt140.dll
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\x64\cvextern.dll
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\x64\msvcp140.dll
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\x64\opencv_ffmpeg343_64.dll
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\x64\vcruntime140.dll
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\x86\concrt140.dll
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\x86\cvextern.dll
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\x86\msvcp140.dll
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\x86\opencv_ffmpeg343.dll
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\x86\vcruntime140.dll
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\Microsoft.VisualStudio.DebuggerVisualizers.dll
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.View.frmHocPhan.resources

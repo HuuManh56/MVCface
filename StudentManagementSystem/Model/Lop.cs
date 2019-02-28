@@ -8,76 +8,52 @@ namespace StudentManagementSystem.Model
 {
     class Lop
     {
-        private int _id;
+        private string _IDLopCN;
+
         private String _TenLop;
-        private string _CodeView;
-        private int _NienKhoaID;
+        private string _IDNienKHoa;
+        public Lop(string IDLopCN, string TenLop, string IDNienKhoa)
+        {
+            this._IDLopCN = IDLopCN;
+            this._TenLop = TenLop;
+            this._IDNienKHoa = IDNienKhoa;
+        }
+
         public Lop()
         {
-            this._id=0;
-            this._TenLop = "";
-            this._CodeView = "";
-            this._NienKhoaID = 0;
-
-
+           
         }
-
-        public Lop(int _id, String _TenLop, String _CodeView, int _NienKhoaID)
-        {
-            this._id = _id;
-            this._TenLop = _TenLop;
-            this._CodeView = _CodeView;
-            this._NienKhoaID = _NienKhoaID;
-        }
-
-        public int Id
+        public string IDLopCN
         {
             get
             {
-                return _id;
+                return _IDLopCN;
             }
-
             set
             {
-                _id = value;
+                value = _IDLopCN;
             }
         }
-
         public string TenLop
         {
             get
             {
                 return _TenLop;
             }
-
             set
             {
-                _TenLop = value;
+                value = _TenLop;
             }
         }
-
-        public string CodeView
+        public string IDNienKhoa
         {
             get
             {
-                return _CodeView;
+                return _IDNienKHoa;
             }
-
             set
             {
-                _CodeView = value;
-            }
-        }
-        public int NienKhoaID
-        {
-            get
-            {
-                return _NienKhoaID;
-            }
-
-            set
-            {
-                _NienKhoaID = value;
+                value = _IDNienKHoa;
             }
         }
     }
