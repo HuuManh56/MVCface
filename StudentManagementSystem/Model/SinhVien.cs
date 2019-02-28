@@ -11,15 +11,15 @@ namespace StudentManagementSystem.Model
 {
     class SinhVien
     {
-        private int _id;
-        private String _HoTen;
+        private string _id;
+        private string _HoTen;
         private DateTime _NgaySinh;
         private int _GioiTinh; //0-nu, 1-nam
-        private int _lopId;
+        private string _lopId;
         private Image<Bgr, Byte> _image;
          
 
-        public int Id
+        public string Id
         {
             get
             {
@@ -58,7 +58,7 @@ namespace StudentManagementSystem.Model
             }
         }
 
-        public int LopId
+        public string LopId
         {
             get
             {
@@ -102,7 +102,7 @@ namespace StudentManagementSystem.Model
 
         }
 
-        public SinhVien(int _id, String _HoTen, DateTime _NgaySinh, int _GioiTinh, int _lopId, Image<Bgr, Byte> _image)
+        public SinhVien(string _id, string _HoTen, DateTime _NgaySinh, int _GioiTinh, string _lopId, Image<Bgr, Byte> _image)
         {
             this._id = _id;
             this._HoTen = _HoTen;

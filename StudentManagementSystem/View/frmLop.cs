@@ -25,7 +25,7 @@ namespace StudentManagementSystem.View
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
            
-            string a = txtMaLopCN.Text;
+            string a = txtMaLopCN.Text.ToUpper();
             string b = txtTenLop.Text;
             string c = txtIDNienKhoa.Text;
             Lop lop = new Lop(a, b, c);

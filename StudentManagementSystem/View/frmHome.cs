@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using StudentManagementSystem.Database;
 using StudentManagementSystem.Constant;
 using StudentManagementSystem.Controller;
+using StudentManagementSystem.Model;
 
 namespace StudentManagementSystem.View
 {
@@ -17,6 +18,7 @@ namespace StudentManagementSystem.View
     {
         LopController lopController = new LopController();
         LopHocPhanController lopHocPhanController = new LopHocPhanController();
+        SinhVienController sinhVienController = new SinhVienController();
         public frmHome()
         {
             InitializeComponent();
@@ -47,6 +49,16 @@ namespace StudentManagementSystem.View
             showTvLopChuyenNganh();
             showTVLopHocPhan();
             ShowCmbKhoa();
+        }
+        public void getNode()
+        {
+
+        }
+        public void showListSV()
+        {
+            TreeNode node = tvLopChuyenNganh.SelectedNode;
+            string IdLop = lopController.getIdByName(node.Text);
+            dgvDanhSach.DataSource = sinhVienController.getListCN(IdLop);
         }
 
         public void showTVLopHocPhan()
@@ -172,6 +184,27 @@ namespace StudentManagementSystem.View
         {
             frmLopHocPhan frm = new frmLopHocPhan();
             frm.Show();
+        }
+
+        private void tdmSVLopChuyenNganh_Click(object sender, EventArgs e)
+        {
+            TreeNode node = tvLopChuyenNganh.SelectedNode;
+            Lop lop = lopController.getByName(node.Text);
+            if (lop.IDLopCN.Equals("")==true)
+            {
+                MessageBox.Show("Bạn chưa chọn lớp", "Thông báo");
+            }
+            else
+            {
+                frmSinhVien frm = new frmSinhVien(lop);
+                frm.Show();
+                this.showListSV();
+            }
+        }
+
+        private void tvLopChuyenNganh_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            this.showListSV();
         }
     }
 }
