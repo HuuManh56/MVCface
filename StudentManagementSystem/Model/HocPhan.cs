@@ -8,58 +8,70 @@ namespace StudentManagementSystem.Model
 {
     class HocPhan
     {
-        private int _id;
-        private String _TenHocPhan;
-        private int _SoDVHT;
+        private string _IDHocPhan;
+        private string _TenHocPhan;
+        private string _IDHocKy;
+        private int _SoTC;
         public HocPhan()
         {
 
         }
 
-        public HocPhan(int _id, String _TenHocPhan, int _SoDVHT)
+        public HocPhan(string IdHP, String TenHocPhan, int SoTC, string IDHocky)
         {
-            this._id = _id;
-            this._TenHocPhan = _TenHocPhan;
-            this._SoDVHT = _SoDVHT;
+            this._IDHocPhan = IdHP;
+            this._TenHocPhan = TenHocPhan;
+            this._SoTC = SoTC;
+            this._IDHocKy = IDHocky;
         }
-
-        public int Id
+        public string IDHocPhan
         {
             get
             {
-                return _id;
+                return _IDHocPhan;
             }
-
             set
             {
-                _id = value;
+                value = _IDHocPhan;
             }
-        }
 
+        }
+        public string IDHocKy
+        {
+            get
+            {
+                return _IDHocKy;
+            }
+            set
+            {
+                value = _IDHocKy;
+            }
+
+        }
         public string TenHocPhan
         {
             get
             {
                 return _TenHocPhan;
             }
-
             set
             {
-                _TenHocPhan = value;
+                value = _TenHocPhan;
             }
-        }
 
-        public int SoDVHT
+        }
+        public int SoTC
         {
             get
             {
-                return _SoDVHT;
+                return _SoTC;
             }
-
             set
             {
-                _SoDVHT = value;
+                value = _SoTC;
             }
+
         }
+
     }
 }

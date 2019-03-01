@@ -7,39 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
+using System.Data.SqlClient;
+using StudentManagementSystem.Model;
 
 namespace StudentManagementSystem.Controller
 {
     class HocKyController
     {
         ConnectDB cn = new ConnectDB();
-        public void Update()
-        {
-
+        public DataTable GetALL()
+        {   // hien thi toan bo du lieu bang học kỳ
+            SqlConnection connection = cn.getConnect();
+            string sql = "exec [dbo].[Select_HocKy]";
+            SqlDataAdapter da = new SqlDataAdapter(sql, connection);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
         }
 
-        public int Insert(HocKy _hocky)
-        {
-            SqlConnection connect = cn.getConnect();
-            connect.Open();
-            string sql = "insert into HocKy values ( N'" + _hocky.TenHocKy + "',"+_hocky.NamBatDau+","+_hocky.NamKetThuc+")";
-            SqlCommand cmd = new SqlCommand(sql, connect);
-            try
-            {
-                cmd.ExecuteNonQuery();
-                connect.Close();
-                return 1;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-                return -1;
-            }
-        }
-
-        public void Delete()
-        {
-
-        }
     }
 }
+

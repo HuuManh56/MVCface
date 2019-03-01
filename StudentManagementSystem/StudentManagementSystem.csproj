@@ -82,6 +82,7 @@
   <ItemGroup>
     <Compile Include="Constant\HaarConstant.cs" />
     <Compile Include="Controller\HocKyController.cs" />
+    <Compile Include="Controller\HocPhanController.cs" />
     <Compile Include="Controller\LopController.cs" />
     <Compile Include="Controller\LopHocPhanController.cs" />
     <Compile Include="Controller\SinhVienController.cs" />
