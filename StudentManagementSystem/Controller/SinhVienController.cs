@@ -17,30 +17,32 @@ namespace StudentManagementSystem.Controller
     class SinhVienController
     {
         ConnectDB connect = new ConnectDB();
+        public DataTable getListCN(string IdLop)
+        {
+            string sql = "select * from SinhVien where IDLopCN='" + IdLop + "'";
+            DataTable tb = connect.getTable(sql);
+            return tb;
+        }
+        public DataTable getListHP(string IdLop)
+        {
+            string sql = "select * from SinhVien a join SinhVien_LopHocPhan b on(a.MSV=b.MSV) where IDMaLopHP='" + IdLop + "'";
+            DataTable tb = connect.getTable(sql);
+            return tb;
+        }
         public int Insert(SinhVien sinhvien, byte[] pic)
         {
             int ret=0;
-            String sql = "insert into SinhVien values(@HoTen,@NgaySinh,@GioiTinh,@LopID,@image)";
+            String sql = "insert into SinhVien values(@MaSV,@HoTen,@NgaySinh,@GioiTinh,@image,@LopID)";
             SqlCommand cmd = new SqlCommand();
             SqlConnection cn = connect.getConnect();
             cn.Open();
             cmd.CommandText = sql;
             cmd.Connection = cn;
-
-            //ImageBox img = new ImageBox();
-            //img.Image = sinhvien.Image;
-            //MemoryStream stream = new MemoryStream();
-            //int width = Convert.ToInt32(sinhvien.Image.Width);
-            //int height = Convert.ToInt32(sinhvien.Image.Height);
-            //Bitmap bmp = new Bitmap(width, height);
-            //img.DrawToBitmap(bmp, new Rectangle(0, 0, Width, Height));
-            //bmp.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
-            //byte[] pic = stream.ToArray();
-
+            cmd.Parameters.Add("@MaSV", SqlDbType.NVarChar).Value = sinhvien.Id;
             cmd.Parameters.Add("@HoTen", SqlDbType.NVarChar).Value = sinhvien.HoTen;
             cmd.Parameters.Add("@NgaySinh", SqlDbType.Date).Value = sinhvien.NgaySinh;
             cmd.Parameters.Add("@GioiTinh", SqlDbType.Int).Value = sinhvien.GioiTinh;
-            cmd.Parameters.Add("@LopID", SqlDbType.Int).Value = sinhvien.LopId;
+            cmd.Parameters.Add("@LopID", SqlDbType.NVarChar).Value = sinhvien.LopId;
             cmd.Parameters.Add("@image", SqlDbType.Image).Value = pic;
 
             ret = cmd.ExecuteNonQuery();

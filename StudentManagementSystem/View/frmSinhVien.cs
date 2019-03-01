@@ -21,6 +21,7 @@ namespace StudentManagementSystem.View
     {
         //Controller
         SinhVienController sinhvienController = new SinhVienController();
+        LopController lopController = new LopController();
 
         private Capture capture;         // camera input
         private bool captureInProcess = false;
@@ -35,12 +36,27 @@ namespace StudentManagementSystem.View
         int stt = 1;
         DsDevice[] multiCam;
         string text;
-        int LopId = 1;
+        string TenLop;
+        string IDLop;
+        Lop lop;
         public object HaarConstant { get; private set; }
 
         public frmSinhVien()
         {
             InitializeComponent();
+            this.loadCam();
+        }
+
+        public frmSinhVien(Lop  lop)
+        {
+            InitializeComponent();
+            this.loadCam();
+            this.lop = lop;
+            txtLop.ReadOnly = true;
+            txtLop.Text = lop.TenLop;
+        }
+        void loadCam()
+        {
             multiCam = DsDevice.GetDevicesOfCat(FilterCategory.VideoInputDevice);
             string name = "";
             int i = 1;
@@ -49,8 +65,6 @@ namespace StudentManagementSystem.View
                 name = i + ":" + cam.Name;
                 cbCamIndex.Items.Add(name);
             }
-            
-
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -270,19 +284,20 @@ namespace StudentManagementSystem.View
             byte[] pic = stream.ToArray();
 
             SinhVien sinhvien = new SinhVien();
-           // sinhvien.Id = txtMaSV.Text;
+            sinhvien.Id = txtMaSV.Text;
             sinhvien.HoTen = txtHoTen.Text;
-            String[] a = txtNgaySinh.Text.Split('/');
+            string[] a = txtNgaySinh.Text.Split('/');
             sinhvien.NgaySinh = new DateTime(Convert.ToInt16(a[2]), Convert.ToInt16(a[1]), Convert.ToInt16(a[0])); // nam/thang/ngay
             sinhvien.GioiTinh = radNam.Checked == true ? 1 : 0;
-            sinhvien.LopId = LopId;
+            sinhvien.LopId = lop.IDLopCN;
             sinhvien.Image = objFace;
 
 
             int ret = sinhvienController.Insert(sinhvien,pic);
             if (ret > 0)
             {
-                //to do something
+                //to do something 
+                this.Dispose();
             }
             else
             {

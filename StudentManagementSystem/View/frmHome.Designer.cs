@@ -85,6 +85,8 @@
             this.xóaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.xoaLopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xoaSinhVienToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tdmSVLopChuyenNganh = new System.Windows.Forms.ToolStripMenuItem();
+            this.tdmSVLopHocPhan = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -183,6 +185,7 @@
             this.tvLopChuyenNganh.Name = "tvLopChuyenNganh";
             this.tvLopChuyenNganh.Size = new System.Drawing.Size(187, 69);
             this.tvLopChuyenNganh.TabIndex = 0;
+            this.tvLopChuyenNganh.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvLopChuyenNganh_AfterSelect);
             this.tvLopChuyenNganh.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvLopChuyenNganh_NodeMouseClick);
             // 
             // splitContainer4
@@ -510,6 +513,9 @@
             // 
             // thêmSinhViênToolStripMenuItem
             // 
+            this.thêmSinhViênToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tdmSVLopChuyenNganh,
+            this.tdmSVLopHocPhan});
             this.thêmSinhViênToolStripMenuItem.Name = "thêmSinhViênToolStripMenuItem";
             this.thêmSinhViênToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
             this.thêmSinhViênToolStripMenuItem.Size = new System.Drawing.Size(272, 26);
@@ -646,6 +652,19 @@
             this.xoaSinhVienToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.xoaSinhVienToolStripMenuItem.Text = "Xoa sinh vien";
             // 
+            // tdmSVLopChuyenNganh
+            // 
+            this.tdmSVLopChuyenNganh.Name = "tdmSVLopChuyenNganh";
+            this.tdmSVLopChuyenNganh.Size = new System.Drawing.Size(204, 26);
+            this.tdmSVLopChuyenNganh.Text = "Lớp chuyên ngành";
+            this.tdmSVLopChuyenNganh.Click += new System.EventHandler(this.tdmSVLopChuyenNganh_Click);
+            // 
+            // tdmSVLopHocPhan
+            // 
+            this.tdmSVLopHocPhan.Name = "tdmSVLopHocPhan";
+            this.tdmSVLopHocPhan.Size = new System.Drawing.Size(204, 26);
+            this.tdmSVLopHocPhan.Text = "Lớp học phần";
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -753,5 +772,7 @@
         public System.Windows.Forms.TreeView tvLopChuyenNganh;
         public System.Windows.Forms.ComboBox cmbKhoa;
         private System.Windows.Forms.ToolStripMenuItem họcPhầnToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tdmSVLopChuyenNganh;
+        private System.Windows.Forms.ToolStripMenuItem tdmSVLopHocPhan;
     }
 }

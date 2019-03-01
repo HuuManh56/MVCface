@@ -6,55 +6,64 @@ using System.Threading.Tasks;
 
 namespace StudentManagementSystem.Model
 {
-    class Lop
+    public class Lop
     {
         private string _IDLopCN;
+        private string _TenLop;
+        private string _IDNienKhoa;
 
-        private String _TenLop;
-        private string _IDNienKHoa;
-        public Lop(string IDLopCN, string TenLop, string IDNienKhoa)
-        {
-            this._IDLopCN = IDLopCN;
-            this._TenLop = TenLop;
-            this._IDNienKHoa = IDNienKhoa;
-        }
-
-        public Lop()
-        {
-           
-        }
         public string IDLopCN
         {
             get
             {
                 return _IDLopCN;
             }
+
             set
             {
-                value = _IDLopCN;
+                _IDLopCN = value;
             }
         }
+
         public string TenLop
         {
             get
             {
                 return _TenLop;
             }
+
             set
             {
-                value = _TenLop;
+                _TenLop = value;
             }
         }
+
         public string IDNienKhoa
         {
             get
             {
-                return _IDNienKHoa;
+                return _IDNienKhoa;
             }
+
             set
             {
-                value = _IDNienKHoa;
+                _IDNienKhoa = value;
             }
         }
+
+        public Lop(string IDLopCN, string TenLop, string IDNienKhoa)
+        {
+            this.IDLopCN = IDLopCN;
+            this.TenLop = TenLop;
+            this.IDNienKhoa = IDNienKhoa;
+        }
+
+        public Lop()
+        {
+            this.IDLopCN = "";
+            this.TenLop = "";
+            this.IDNienKhoa = "";
+        }
+       
     }
 }

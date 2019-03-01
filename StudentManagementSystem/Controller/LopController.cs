@@ -18,7 +18,7 @@ namespace StudentManagementSystem.Controller
         public DataTable GetAll()
         {
             SqlConnection connect = cn.getConnect();
-            String sql = "select * from Lop";
+            string sql = "select * from Lop";
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(sql, connect);
             da.Fill(dt);
@@ -41,7 +41,7 @@ namespace StudentManagementSystem.Controller
         //    }
         //    catch (Exception ex)
         //    {
-        //        //MessageBox.Show(ex.ToString());
+        //        //MessageBox.Show(ex.Tostring());
         //        return -1;
         //    }
         //}
@@ -65,7 +65,7 @@ namespace StudentManagementSystem.Controller
             }
         }
 
-        public int Delete(String TenLop)
+        public int Delete(string TenLop)
         {
             SqlConnection connect = cn.getConnect();
             connect.Open();
@@ -79,7 +79,7 @@ namespace StudentManagementSystem.Controller
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.ToString());
+                //MessageBox.Show(ex.Tostring());
                 return -1;
             }
         }
@@ -87,7 +87,7 @@ namespace StudentManagementSystem.Controller
         public DataTable Truyvan(string TenNienKhoa)
         {
             SqlConnection connect = cn.getConnect();
-            String sql = "select TenLop from Lop inner join NienKhoa"
+            string sql = "select TenLop from Lop inner join NienKhoa"
                 + " on lop.IDNienKhoa = NienKhoa.IDNienKhoa "
                 + "where TenKhoa = N'" + TenNienKhoa + "'";
             DataTable dt = new DataTable();
@@ -95,5 +95,35 @@ namespace StudentManagementSystem.Controller
             da.Fill(dt);
             return dt;
         }
+
+        public string getIdByName(string name)
+        {
+            string ID = "";
+            string sql = "select IDLopCN from Lop where TenLop=N'" + name + "'";
+            DataTable tb = cn.getTable(sql);
+            if(tb.Rows.Count>0)
+            {
+                ID = tb.Rows[0][0].ToString();
+            }
+            return ID;
+        }
+        public Lop getByName(string name)
+        {
+            Lop lop = new Lop();
+
+            SqlConnection connect = cn.getConnect();
+            string sql = "select * from Lop where TenLop=N'" + name + "'";
+
+            DataTable dt = cn.getTable(sql);
+           
+            if (dt.Rows.Count > 0)
+            {
+                lop.IDLopCN = dt.Rows[0][0].ToString();
+                lop.TenLop = dt.Rows[0][1].ToString();
+                lop.IDNienKhoa = dt.Rows[0]["IDNienKhoa"].ToString();
+            }
+            return lop;
+        }
+
     }
 }
