@@ -53,9 +53,9 @@ namespace StudentManagementSystem.Model
 
         public Lop(string IDLopCN, string TenLop, string IDNienKhoa)
         {
-            this.IDLopCN = IDLopCN;
+            this.IDLopCN = IDLopCN.ToUpper();
             this.TenLop = TenLop;
-            this.IDNienKhoa = IDNienKhoa;
+            this.IDNienKhoa = IDNienKhoa.ToUpper();
         }
 
         public Lop()

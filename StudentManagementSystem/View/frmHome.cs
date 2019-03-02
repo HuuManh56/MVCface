@@ -85,41 +85,29 @@ namespace StudentManagementSystem.View
 
         private void xóaLớpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            TreeNode treeLopCN = this.tvLopChuyenNganh.SelectedNode;
-            MessageBox.Show(" Ban co chac chan muon xoa khong", "Thong bao", MessageBoxButtons.YesNo);
-           // string
-
             TreeNode node = tvLopChuyenNganh.SelectedNode;
+
             if ( node != null){
-                MessageBox.Show("Ban co chac chan muon xoa", "Thong bao", MessageBoxButtons.YesNo);
-                int ret = lopController.Delete(node.Text);
-                if (ret > 0)
+
+                DialogResult resul= MessageBox.Show("Ban co chac chan muon xoa", "Thong bao", MessageBoxButtons.YesNo);
+                if(resul == DialogResult.Yes)
                 {
-                    MessageBox.Show("Xoa thanh cong");
-                    tvLopChuyenNganh.Nodes.Clear();
-                    showTvLopChuyenNganh();
-                }
-                else
-                {
-                    MessageBox.Show("CO Loi", "thong bao");
-                }
-            }
-            else
-            {
-                 node = tvLopHocPhan.SelectedNode;
-                int red = lopHocPhanController.Delete(node.Text);
-                if (red > 0)
-                {
-                    tvLopHocPhan.Nodes.Clear();
-                    //showTVLopHocPhan();
-                }
-                else
-                {
-                    MessageBox.Show("Da xay ra loi", " Thong bao");
+                    int ret = lopController.Delete(node.Text);
+                    if (ret > 0)
+                    {
+                        MessageBox.Show("Xoa thanh cong");
+                        tvLopChuyenNganh.Nodes.Clear();
+                        showTvLopChuyenNganh();
+                    }
+                    else
+                    {
+                        MessageBox.Show("CO Loi", "thong bao");
+                    }
                 }
 
+                
             }
+            
             
         }
 

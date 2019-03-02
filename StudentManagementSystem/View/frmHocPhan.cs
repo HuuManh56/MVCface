@@ -24,7 +24,7 @@ namespace StudentManagementSystem.View
         public void ShowHocPhan()
         {
             DataTable dt = hocPhanController.GetAll();
-            dtgvHocPhan.DataSource = dt;
+            dtgvHocPhan.DataSource = dt;// do du dieu ra dtgv
         }
         public void ShowHocKy()
         {
@@ -93,7 +93,8 @@ namespace StudentManagementSystem.View
             {
                 MessageBox.Show("Không được bỏ trống thông tin hoặc mã học phần đã tồn tại","Thông báo",MessageBoxButtons.YesNo);
             }
-           
+            ShowHocPhan();
+
         }
 
         private void Reset()
@@ -122,6 +123,39 @@ namespace StudentManagementSystem.View
             frm.txtTenHP1.Text = txtTenHP.Text;
             frm.txtSoTC1.Text = txtSoTC.Text;
             frm.txtHocKy.Tag = dtgvHocPhan.Tag.ToString();
+            
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DialogResult result=MessageBox.Show("Ban co chac chan muon xoa hoc phan nay", "Thong bao", MessageBoxButtons.YesNo);
+            if ( result==DialogResult.Yes)
+            {
+                string a = txtIDHocPhan.Text;
+                HocPhan hocPhan = new HocPhan(a);
+
+                int red = hocPhanController.Delete(hocPhan);
+                try
+                {
+                    if (red > 0)
+                    {
+                        MessageBox.Show(" Xóa thành công");
+                    }
+                    else
+                    {
+                        MessageBox.Show(" xóa không thành công ");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                // this.Dispose();
+                ShowHocPhan();
+                Reset();//text rỗng
+            }
+
+            
         }
     }
 }

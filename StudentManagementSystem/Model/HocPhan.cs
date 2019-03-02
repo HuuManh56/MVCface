@@ -14,16 +14,24 @@ namespace StudentManagementSystem.Model
         private int _SoTC;
         public HocPhan()
         {
+            this._IDHocKy = "";
+            this._IDHocPhan = "";
+            this.TenHocPhan = "";
+            this.SoTC = 0;
 
+        }
+        public HocPhan(string IdHP)
+        {
+            this._IDHocPhan = IdHP;
         }
 
         public HocPhan(string IdHP, String TenHocPhan, int SoTC, string IDHocky)
         {
             
-            this._IDHocPhan = IdHP;
-            this._TenHocPhan = TenHocPhan.ToUpper();
+            this._IDHocPhan = IdHP.ToUpper();
+            this._TenHocPhan = TenHocPhan;
             this._SoTC = SoTC;
-            this._IDHocKy = IDHocky;
+            this._IDHocKy = IDHocky.ToUpper();
         }
         public string IDHocPhan
         {
@@ -34,8 +42,8 @@ namespace StudentManagementSystem.Model
             }
             set
             {
-                string a = _IDHocPhan.ToUpper();
-                value = a ;
+                
+                value = _IDHocPhan;
             }
 
         }

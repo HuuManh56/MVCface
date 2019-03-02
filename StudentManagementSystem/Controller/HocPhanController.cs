@@ -56,9 +56,26 @@ namespace StudentManagementSystem.Controller
                 return -1;
             }
         }
-        public void Delete()
+        public int  Delete( HocPhan hocPhan)
         {
-
+            SqlConnection connect = cn.getConnect();
+            string sql = "exec [dbo].[Delete_HocPhan] '"+hocPhan.IDHocPhan+"'";
+            SqlCommand sqlCommand = new SqlCommand(sql, connect);
+   
+            try
+            {
+                if (connect.State == ConnectionState.Closed)
+                {
+                    connect.Open();
+                }
+                sqlCommand.ExecuteNonQuery();
+                return 1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return -1;
+            }
         }
         public int Update( HocPhan hocPhan)
         {
