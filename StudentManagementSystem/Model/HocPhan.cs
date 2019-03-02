@@ -19,8 +19,9 @@ namespace StudentManagementSystem.Model
 
         public HocPhan(string IdHP, String TenHocPhan, int SoTC, string IDHocky)
         {
+            
             this._IDHocPhan = IdHP;
-            this._TenHocPhan = TenHocPhan;
+            this._TenHocPhan = TenHocPhan.ToUpper();
             this._SoTC = SoTC;
             this._IDHocKy = IDHocky;
         }
@@ -28,11 +29,13 @@ namespace StudentManagementSystem.Model
         {
             get
             {
+                
                 return _IDHocPhan;
             }
             set
             {
-                value = _IDHocPhan;
+                string a = _IDHocPhan.ToUpper();
+                value = a ;
             }
 
         }

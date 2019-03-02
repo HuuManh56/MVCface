@@ -103,3 +103,4 @@ C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\x86\vcruntime140
 C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\bin\Debug\Microsoft.VisualStudio.DebuggerVisualizers.dll
 C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.View.frmHocPhan.resources
 E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.View.frmHocPhan.resources
+C:\Users\Asus\Desktop\MVCface\StudentManagementSystem\obj\Debug\StudentManagementSystem.View.frmHocPhan_Update.resources

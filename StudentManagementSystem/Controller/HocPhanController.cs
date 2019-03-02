@@ -26,6 +26,7 @@ namespace StudentManagementSystem.Controller
         }
         public DataTable HocPhanHK(string IDHocKy)
         {
+            // select hoc phan theo ma hoc ky duoc chon
             SqlConnection connection = cn.getConnect();
             string sql = "exec [dbo].[select_HP_Hk] "+IDHocKy;
             //   string sql = " select * from HocPhan";
@@ -59,9 +60,28 @@ namespace StudentManagementSystem.Controller
         {
 
         }
-        public int Update()
+        public int Update( HocPhan hocPhan)
         {
-            return 1;
+            SqlConnection connect = cn.getConnect();
+            string sql = "exec [dbo].[Update_HocPhan] '" + hocPhan.IDHocPhan
+                + "', N'" + hocPhan.TenHocPhan + "'," + 
+                hocPhan.SoTC + ",'" + hocPhan.IDHocKy + "'";
+            SqlCommand sqlCommand = new SqlCommand(sql, connect);
+            
+            try
+            {
+                if (connect.State == ConnectionState.Closed)
+                {
+                    connect.Open();
+                }
+                sqlCommand.ExecuteNonQuery();
+                return 1;
+            }
+            catch(Exception ex )
+            {
+                MessageBox.Show(ex.Message);
+                return -1;
+            }
         }
     }
 }

@@ -100,6 +100,7 @@
             this.dtgvHocPhan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvHocPhan.Size = new System.Drawing.Size(606, 396);
             this.dtgvHocPhan.TabIndex = 0;
+            this.dtgvHocPhan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvHocPhan_CellClick);
             // 
             // splitContainer2
             // 
@@ -205,6 +206,7 @@
             this.button2.TabIndex = 9;
             this.button2.Text = "Sửa học phần";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
@@ -281,20 +283,20 @@
 
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dtgvHocPhan;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txtSoTC;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtTenHP;
-        private System.Windows.Forms.TextBox txtIDHocPhan;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dtgvHocKy;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtHocKyNamHoc;
+        public System.Windows.Forms.TextBox txtSoTC;
+        public System.Windows.Forms.TextBox txtTenHP;
+        public System.Windows.Forms.TextBox txtIDHocPhan;
+        public System.Windows.Forms.TextBox txtHocKyNamHoc;
+        public System.Windows.Forms.DataGridView dtgvHocKy;
+        public System.Windows.Forms.DataGridView dtgvHocPhan;
     }
 }

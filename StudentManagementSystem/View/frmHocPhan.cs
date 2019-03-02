@@ -39,6 +39,7 @@ namespace StudentManagementSystem.View
         }
         public void ShowHP_HK ( string IDHk )
         {
+            // do du lieu ra dtgv theo id hoc ky
             DataTable dt = hocPhanController.HocPhanHK(IDHk);
             dtgvHocPhan.DataSource = dt;
         }
@@ -73,13 +74,14 @@ namespace StudentManagementSystem.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string IDHocPhan = txtIDHocPhan.Text;
-            string TenHocPhan = txtTenHP.Text;
-            int SoTc =Convert.ToInt16( txtSoTC.Text);
-            string IDHocky =dtgvHocPhan.Tag.ToString();
-            HocPhan hp = new HocPhan(IDHocPhan, TenHocPhan, SoTc, IDHocky);
             try
             {
+                string IDHocPhan = txtIDHocPhan.Text.ToUpper();
+                string TenHocPhan = txtTenHP.Text;
+                int SoTc =Convert.ToInt16( txtSoTC.Text);
+                string IDHocky =dtgvHocPhan.Tag.ToString();
+                HocPhan hp = new HocPhan(IDHocPhan, TenHocPhan, SoTc, IDHocky);
+           
                 int red= hocPhanController.Insert(hp);
                 if( red > 0)
                 {
@@ -89,7 +91,7 @@ namespace StudentManagementSystem.View
             }
             catch( Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Không được bỏ trống thông tin hoặc mã học phần đã tồn tại","Thông báo",MessageBoxButtons.YesNo);
             }
            
         }
@@ -100,6 +102,26 @@ namespace StudentManagementSystem.View
             txtSoTC.ResetText();
             txtTenHP.ResetText();
 
+        }
+
+        private void dtgvHocPhan_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = dtgvHocPhan.Rows[e.RowIndex];
+            txtIDHocPhan.Text = row.Cells[0].Value + "";
+            txtTenHP.Text = row.Cells[1].Value + "";
+            txtSoTC.Text = row.Cells[2].Value + "";
+            dtgvHocPhan.Tag = row.Cells[3].Value + "";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmHocPhan_Update frm = new frmHocPhan_Update();
+            frm.Show();
+            frm.txtHocKy.Text = txtHocKyNamHoc.Text;
+            frm.txtIDHp.Text = txtIDHocPhan.Text;
+            frm.txtTenHP1.Text = txtTenHP.Text;
+            frm.txtSoTC1.Text = txtSoTC.Text;
+            frm.txtHocKy.Tag = dtgvHocPhan.Tag.ToString();
         }
     }
 }

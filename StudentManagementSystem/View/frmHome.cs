@@ -47,7 +47,7 @@ namespace StudentManagementSystem.View
         private void frmHome_Load(object sender, EventArgs e)
         {
             showTvLopChuyenNganh();
-            showTVLopHocPhan();
+            //showTVLopHocPhan();
             ShowCmbKhoa();
         }
         public void getNode()
@@ -61,16 +61,16 @@ namespace StudentManagementSystem.View
             dgvDanhSach.DataSource = sinhVienController.getListCN(IdLop);
         }
 
-        public void showTVLopHocPhan()
-        {
-         //   ConnectDB connect = new ConnectDB();
-         //   string sql = " select * from LopHocPhan ";
-            DataTable tb = lopHocPhanController.GetAll();//connect.getTable(sql);
-            for (int i = 0; i < tb.Rows.Count; i++)
-            {
-                tvLopHocPhan.Nodes.Add(tb.Rows[i]["TenLopHocPhan"].ToString());
-            }
-        }
+        //public void showTVLopHocPhan()
+        //{
+        // //   ConnectDB connect = new ConnectDB();
+        // //   string sql = " select * from LopHocPhan ";
+        //    DataTable tb = lopHocPhanController.GetAll();//connect.getTable(sql);
+        //    for (int i = 0; i < tb.Rows.Count; i++)
+        //    {
+        //        tvLopHocPhan.Nodes.Add(tb.Rows[i]["TenLopHocPhan"].ToString());
+        //    }
+        //}
 
         private void showTvLopChuyenNganh()
         {
@@ -112,7 +112,7 @@ namespace StudentManagementSystem.View
                 if (red > 0)
                 {
                     tvLopHocPhan.Nodes.Clear();
-                    showTVLopHocPhan();
+                    //showTVLopHocPhan();
                 }
                 else
                 {
