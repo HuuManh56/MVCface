@@ -25,7 +25,16 @@ namespace StudentManagementSystem.Controller
             da.Fill(dt);
             return dt;
         }
-
+        public DataTable GetHk(string IDhk)
+        {
+            SqlConnection connection = cn.getConnect();
+            string sql = "exec [dbo].[Tim_HocKy] '" + IDhk+"'";
+            SqlDataAdapter da = new SqlDataAdapter(sql, connection);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
     }
+
 }
 

@@ -49,6 +49,7 @@ namespace StudentManagementSystem.View
             showTvLopChuyenNganh();
             //showTVLopHocPhan();
             ShowCmbKhoa();
+            
         }
         public void getNode()
         {

@@ -3,37 +3,58 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace StudentManagementSystem.Model
 {
     class LopHocPhan
     {
-        private int _id;
+        private string _IDLopHP;
         private String _TenLopHocPhan;
-        private int _HocPhan_HocKyID;
-        private String _CodeView;
+        private string _IDHP;
+       
         public LopHocPhan()
         {
 
         }
-        public LopHocPhan(int _id, String _TenLopHocPhan, int _HocPhan_HocKyID,String _CodeView)
+        public int Kiemtra(string ID)
         {
-            this._id = _id;
+            if( ID != null && ID.Length>3)
+            {
+                return 1;
+            }
+            else
+            {
+                DialogResult result= MessageBox.Show(" ID không được bỏ trống và ID phải có độ dài bằng 3","thong bao",MessageBoxButtons.OK);
+                if(result== DialogResult.OK)
+                {
+                   
+                }
+                return -1;
+            }
+        }
+        public LopHocPhan(string _id, string _IDHP, String _TenLopHocPhan)
+        {
+            int red=Kiemtra(_id);
+            if (red > 0)
+            {
+                this._IDLopHP = _id.ToUpper();
+            }
+            
             this._TenLopHocPhan = _TenLopHocPhan;
-            this._HocPhan_HocKyID = _HocPhan_HocKyID;
-            this._CodeView = _CodeView;
+            this._IDHP = _IDHP.ToUpper();
         }
 
-        public int Id
+        public string IDLopHP
         {
             get
             {
-                return _id;
+                return _IDLopHP;
             }
 
             set
             {
-                _id = value;
+                value = _IDLopHP;
             }
         }
 
@@ -50,30 +71,19 @@ namespace StudentManagementSystem.Model
             }
         }
 
-        public int HocPhan_HocKyID
+        public string IDHocKyHP
         {
             get
             {
-                return _HocPhan_HocKyID;
+                return _IDHP;
             }
 
             set
             {
-                _HocPhan_HocKyID = value;
+                _IDHP = value;
             }
         }
 
-        public string CodeView
-        {
-            get
-            {
-                return _CodeView;
-            }
-
-            set
-            {
-                _CodeView = value;
-            }
-        }
+        
     }
 }

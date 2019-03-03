@@ -28,8 +28,19 @@ namespace StudentManagementSystem.Controller
         {
             // select hoc phan theo ma hoc ky duoc chon
             SqlConnection connection = cn.getConnect();
-            string sql = "exec [dbo].[select_HP_Hk] "+IDHocKy;
+            string sql = "exec [dbo].[select_HP_Hk] '"+IDHocKy+"'";
             //   string sql = " select * from HocPhan";
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(sql, connection);
+            da.Fill(dt);
+            return dt;
+        }
+        public DataTable NamHp(string ten)
+        {
+            // select hoc phan theo ma hoc ky duoc chon
+            SqlConnection connection = cn.getConnect();
+            string sql = "exec [dbo].[select_Ten_HocPhan] N'" + ten+"'" ;
+            
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(sql, connection);
             da.Fill(dt);

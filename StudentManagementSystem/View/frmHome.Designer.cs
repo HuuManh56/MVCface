@@ -71,6 +71,8 @@
             this.tdmSVLopHocPhan = new System.Windows.Forms.ToolStripMenuItem();
             this.chỉnhSửaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SuaLop = new System.Windows.Forms.ToolStripMenuItem();
+            this.sửaLớpChuyênNgànhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sửaLớpHọcPhầnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SuaThongTinSinhVien = new System.Windows.Forms.ToolStripMenuItem();
             this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.XoaLop = new System.Windows.Forms.ToolStripMenuItem();
@@ -87,8 +89,6 @@
             this.xóaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.xoaLopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xoaSinhVienToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sửaLớpChuyênNgànhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sửaLớpHọcPhầnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -554,6 +554,18 @@
             this.SuaLop.Size = new System.Drawing.Size(234, 26);
             this.SuaLop.Text = "Sửa lớp";
             // 
+            // sửaLớpChuyênNgànhToolStripMenuItem
+            // 
+            this.sửaLớpChuyênNgànhToolStripMenuItem.Name = "sửaLớpChuyênNgànhToolStripMenuItem";
+            this.sửaLớpChuyênNgànhToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
+            this.sửaLớpChuyênNgànhToolStripMenuItem.Text = "Sửa lớp chuyên ngành";
+            // 
+            // sửaLớpHọcPhầnToolStripMenuItem
+            // 
+            this.sửaLớpHọcPhầnToolStripMenuItem.Name = "sửaLớpHọcPhầnToolStripMenuItem";
+            this.sửaLớpHọcPhầnToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
+            this.sửaLớpHọcPhầnToolStripMenuItem.Text = "Sửa lớp học phần";
+            // 
             // SuaThongTinSinhVien
             // 
             this.SuaThongTinSinhVien.Name = "SuaThongTinSinhVien";
@@ -574,14 +586,14 @@
             // XoaLop
             // 
             this.XoaLop.Name = "XoaLop";
-            this.XoaLop.Size = new System.Drawing.Size(216, 26);
+            this.XoaLop.Size = new System.Drawing.Size(171, 26);
             this.XoaLop.Text = "Xóa lớp";
             this.XoaLop.Click += new System.EventHandler(this.xóaLớpToolStripMenuItem_Click);
             // 
             // XoaSinhVien
             // 
             this.XoaSinhVien.Name = "XoaSinhVien";
-            this.XoaSinhVien.Size = new System.Drawing.Size(216, 26);
+            this.XoaSinhVien.Size = new System.Drawing.Size(171, 26);
             this.XoaSinhVien.Text = "Xóa sinh viên";
             // 
             // DiemDanh
@@ -669,18 +681,6 @@
             this.xoaSinhVienToolStripMenuItem.Name = "xoaSinhVienToolStripMenuItem";
             this.xoaSinhVienToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.xoaSinhVienToolStripMenuItem.Text = "Xoa sinh vien";
-            // 
-            // sửaLớpChuyênNgànhToolStripMenuItem
-            // 
-            this.sửaLớpChuyênNgànhToolStripMenuItem.Name = "sửaLớpChuyênNgànhToolStripMenuItem";
-            this.sửaLớpChuyênNgànhToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
-            this.sửaLớpChuyênNgànhToolStripMenuItem.Text = "Sửa lớp chuyên ngành";
-            // 
-            // sửaLớpHọcPhầnToolStripMenuItem
-            // 
-            this.sửaLớpHọcPhầnToolStripMenuItem.Name = "sửaLớpHọcPhầnToolStripMenuItem";
-            this.sửaLớpHọcPhầnToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
-            this.sửaLớpHọcPhầnToolStripMenuItem.Text = "Sửa lớp học phần";
             // 
             // frmHome
             // 

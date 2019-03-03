@@ -35,7 +35,7 @@ namespace StudentManagementSystem.View
         {
             ShowHocPhan();
             ShowHocKy();
-
+           // KiemTraNgay();
         }
         public void ShowHP_HK ( string IDHk )
         {
@@ -156,6 +156,24 @@ namespace StudentManagementSystem.View
             }
 
             
+        }
+        public void  KiemTraNgay()
+        {
+            // lay ra hoc ky gan nhat
+            DataTable dt = HocKyController.GetALL();
+            for (int i=0; i<dt.Rows.Count; i++){
+                DateTime a = Convert.ToDateTime(dt.Rows[i][3]);
+                DateTime b = Convert.ToDateTime(dt.Rows[i][4]);
+                DateTime date = DateTime.Now;
+                if (a < date && b > date)
+                {
+                    dtgvHocKy.Tag = dt.Rows[i][0];
+                  //  MessageBox.Show(dtgvHocKy.Tag+"");
+                }
+
+            }
+            
+
         }
     }
 }

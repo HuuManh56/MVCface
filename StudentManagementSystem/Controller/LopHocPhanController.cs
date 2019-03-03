@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace StudentManagementSystem.Controller
 {
@@ -23,31 +24,12 @@ namespace StudentManagementSystem.Controller
             return dt;
         }
 
-        public int Update(LopHocPhan lop)
-        {
-            SqlConnection connect = cn.getConnect();
-            connect.Open();
-            string sql = "update LopHocPhan set CodeView=N'" + lop.CodeView + "'"
-                + " set TenLopHocPhan=N'" + lop.TenLopHocPhan + "' where ID=" + lop.Id;
-            SqlCommand cmd = new SqlCommand(sql, connect);
-            try
-            {
-                cmd.ExecuteNonQuery();
-                connect.Close();
-                return 1;
-            }
-            catch (Exception ex)
-            {
-                //MessageBox.Show(ex.ToString());
-                return -1;
-            }
-        }
-
-        //public int Insert(Lop lop)
+        //public int Update(LopHocPhan lop)
         //{
         //    SqlConnection connect = cn.getConnect();
         //    connect.Open();
-        //    string sql = "insert into LopHocPhan values ( N'" + lop.CodeView + "',N'" + lop.TenLop + "')";
+        //    string sql = "update LopHocPhan set CodeView=N'" + lop.CodeView + "'"
+        //        + " set TenLopHocPhan=N'" + lop.TenLopHocPhan + "' where ID=" + lop.Id;
         //    SqlCommand cmd = new SqlCommand(sql, connect);
         //    try
         //    {
@@ -61,6 +43,26 @@ namespace StudentManagementSystem.Controller
         //        return -1;
         //    }
         //}
+
+        public int Insert(LopHocPhan lop)
+        {
+            SqlConnection connect = cn.getConnect();
+            connect.Open();
+            string sql = "exec [dbo].[Insert_LopHP] '" + lop.IDLopHP + "','" + lop.IDHocKyHP + "',N'"
+                + lop.TenLopHocPhan + "'";
+            SqlCommand cmd = new SqlCommand(sql, connect);
+            try
+            {
+                cmd.ExecuteNonQuery();
+                connect.Close();
+                return 1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return -1;
+            }
+        }
 
         public int Delete(String TenLopHocPhan)
         {
