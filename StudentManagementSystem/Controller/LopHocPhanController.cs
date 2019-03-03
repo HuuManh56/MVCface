@@ -63,7 +63,17 @@ namespace StudentManagementSystem.Controller
                 return -1;
             }
         }
+        public DataTable LopHP_HK(string IDHK)
+        {
+            // select hoc phan theo ma hoc ky duoc chon
+            SqlConnection connection = cn.getConnect();
+            string sql = "exec [dbo].[Select_LopHP_Hk]'" + IDHK + "'";
 
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(sql, connection);
+            da.Fill(dt);
+            return dt;
+        }
         public int Delete(String TenLopHocPhan)
         {
             SqlConnection connect = cn.getConnect();

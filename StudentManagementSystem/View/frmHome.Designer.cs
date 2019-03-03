@@ -41,8 +41,10 @@
             this.tvLopHocPhan = new System.Windows.Forms.TreeView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.listTenHK = new System.Windows.Forms.ListBox();
+            this.hocKyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.faceDBDataSet = new StudentManagementSystem.FaceDBDataSet();
+            this.listNamhk = new System.Windows.Forms.ListBox();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvDanhSach = new System.Windows.Forms.DataGridView();
@@ -89,6 +91,7 @@
             this.xóaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.xoaLopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xoaSinhVienToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hocKyTableAdapter = new StudentManagementSystem.FaceDBDataSetTableAdapters.HocKyTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -108,6 +111,8 @@
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hocKyBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.faceDBDataSet)).BeginInit();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -252,34 +257,50 @@
             // 
             // splitContainer3.Panel1
             // 
-            this.splitContainer3.Panel1.Controls.Add(this.comboBox1);
+            this.splitContainer3.Panel1.Controls.Add(this.listTenHK);
             // 
             // splitContainer3.Panel2
             // 
-            this.splitContainer3.Panel2.Controls.Add(this.comboBox2);
+            this.splitContainer3.Panel2.Controls.Add(this.listNamhk);
             this.splitContainer3.Size = new System.Drawing.Size(193, 37);
-            this.splitContainer3.SplitterDistance = 69;
+            this.splitContainer3.SplitterDistance = 91;
             this.splitContainer3.TabIndex = 0;
             // 
-            // comboBox1
+            // listTenHK
             // 
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(0, 0);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(69, 24);
-            this.comboBox1.TabIndex = 0;
-            this.comboBox1.Text = "Học kỳ";
+            this.listTenHK.DataSource = this.hocKyBindingSource;
+            this.listTenHK.DisplayMember = "TenHocKy";
+            this.listTenHK.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listTenHK.FormattingEnabled = true;
+            this.listTenHK.ItemHeight = 16;
+            this.listTenHK.Location = new System.Drawing.Point(0, 0);
+            this.listTenHK.Name = "listTenHK";
+            this.listTenHK.Size = new System.Drawing.Size(91, 37);
+            this.listTenHK.TabIndex = 0;
+            this.listTenHK.SelectedIndexChanged += new System.EventHandler(this.listTenHK_SelectedIndexChanged);
+            this.listTenHK.SelectedValueChanged += new System.EventHandler(this.listTenHK_SelectedValueChanged);
             // 
-            // comboBox2
+            // hocKyBindingSource
             // 
-            this.comboBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(0, 0);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(120, 24);
-            this.comboBox2.TabIndex = 0;
-            this.comboBox2.Text = "Năm học";
+            this.hocKyBindingSource.DataMember = "HocKy";
+            this.hocKyBindingSource.DataSource = this.faceDBDataSet;
+            // 
+            // faceDBDataSet
+            // 
+            this.faceDBDataSet.DataSetName = "FaceDBDataSet";
+            this.faceDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // listNamhk
+            // 
+            this.listNamhk.DataSource = this.hocKyBindingSource;
+            this.listNamhk.DisplayMember = "Nam";
+            this.listNamhk.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listNamhk.FormattingEnabled = true;
+            this.listNamhk.ItemHeight = 16;
+            this.listNamhk.Location = new System.Drawing.Point(0, 0);
+            this.listNamhk.Name = "listNamhk";
+            this.listNamhk.Size = new System.Drawing.Size(98, 37);
+            this.listNamhk.TabIndex = 1;
             // 
             // toolStripContainer1
             // 
@@ -682,6 +703,10 @@
             this.xoaSinhVienToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.xoaSinhVienToolStripMenuItem.Text = "Xoa sinh vien";
             // 
+            // hocKyTableAdapter
+            // 
+            this.hocKyTableAdapter.ClearBeforeFill = true;
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -714,6 +739,8 @@
             this.splitContainer3.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.hocKyBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.faceDBDataSet)).EndInit();
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.PerformLayout();
@@ -777,9 +804,6 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.SplitContainer splitContainer3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.SplitContainer splitContainer4;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.ToolStripMenuItem suaLopToolStripMenuItem;
@@ -793,5 +817,11 @@
         private System.Windows.Forms.ToolStripMenuItem tdmSVLopHocPhan;
         private System.Windows.Forms.ToolStripMenuItem sửaLớpChuyênNgànhToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sửaLớpHọcPhầnToolStripMenuItem;
+        private FaceDBDataSet faceDBDataSet;
+        private System.Windows.Forms.BindingSource hocKyBindingSource;
+        private FaceDBDataSetTableAdapters.HocKyTableAdapter hocKyTableAdapter;
+        private System.Windows.Forms.SplitContainer splitContainer3;
+        private System.Windows.Forms.ListBox listTenHK;
+        private System.Windows.Forms.ListBox listNamhk;
     }
 }

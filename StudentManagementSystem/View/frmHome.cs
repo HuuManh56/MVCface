@@ -17,6 +17,7 @@ namespace StudentManagementSystem.View
     public partial class frmHome : Form
     {
         LopController lopController = new LopController();
+        HocKyController hocKyController = new HocKyController();
         LopHocPhanController lopHocPhanController = new LopHocPhanController();
         SinhVienController sinhVienController = new SinhVienController();
         public frmHome()
@@ -46,9 +47,12 @@ namespace StudentManagementSystem.View
 
         private void frmHome_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'faceDBDataSet.HocKy' table. You can move, or remove it, as needed.
+            this.hocKyTableAdapter.Fill(this.faceDBDataSet.HocKy);
             showTvLopChuyenNganh();
             //showTVLopHocPhan();
             ShowCmbKhoa();
+           
             
         }
         public void getNode()
@@ -194,6 +198,44 @@ namespace StudentManagementSystem.View
         private void tvLopChuyenNganh_AfterSelect(object sender, TreeViewEventArgs e)
         {
             this.showListSV();
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void listTenHK_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tvLopHocPhan.Nodes.Clear();
+            string a = listTenHK.SelectedIndex.ToString();
+            int i = 0;
+            i=Convert.ToInt16(a );
+
+            //MessageBox.Show(a);
+            if (i >= 0)
+            {
+                DataTable dt = hocKyController.GetALL();
+                string idhk = dt.Rows[i][0] + "";
+                DataTable dt1 = lopHocPhanController.LopHP_HK(idhk);
+                for (int j = 0; j < dt1.Rows.Count; j++)
+                {
+                    tvLopHocPhan.Nodes.Add(dt1.Rows[j][2] + "");
+                }
+                
+            }
+            else
+            {
+                this.Close();
+                
+            }
+            
+                       
+        }
+
+        private void listTenHK_SelectedValueChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

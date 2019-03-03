@@ -46,6 +46,7 @@ namespace StudentManagementSystem.Controller
             da.Fill(dt);
             return dt;
         }
+        
         public int Insert ( HocPhan hocPhan)
         {
             SqlConnection connect = cn.getConnect();

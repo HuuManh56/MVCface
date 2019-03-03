@@ -89,6 +89,11 @@
     <Compile Include="Database\ConnectDB.cs" />
     <Compile Include="Constant\DBConstant.cs" />
     <Compile Include="Controller\UserController.cs" />
+    <Compile Include="FaceDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FaceDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Model\HocKy.cs" />
     <Compile Include="Model\HocPhan.cs" />
     <Compile Include="Model\Lop.cs" />
@@ -179,6 +184,17 @@
     <EmbeddedResource Include="View\frmHocPhan_Update.resx">
       <DependentUpon>frmHocPhan_Update.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="FaceDBDataSet.xsc">
+      <DependentUpon>FaceDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FaceDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FaceDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FaceDBDataSet.xss">
+      <DependentUpon>FaceDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

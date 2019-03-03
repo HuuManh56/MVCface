@@ -24,14 +24,15 @@ namespace StudentManagementSystem.View
 
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
-            string IDLophocPhan = txtMaLopHP.Text;
-            string IDHocPhan = cmbChonHocPhan.Tag.ToString();
-            txtTenLopHP.Text = cmbChonHocPhan.Text + " " + IDLophocPhan;
             
-            LopHocPhan lop = new LopHocPhan(IDLophocPhan, IDHocPhan, txtTenLopHP.Text);
-            int red = LopHpcontroller.Insert(lop);
             try
             {
+                string IDLophocPhan = txtMaLopHP.Text;
+                string IDHocPhan = cmbChonHocPhan.Tag.ToString();
+                txtTenLopHP.Text = cmbChonHocPhan.Text + " " + IDLophocPhan;
+
+                LopHocPhan lop = new LopHocPhan(IDLophocPhan, IDHocPhan, txtTenLopHP.Text);
+                int red = LopHpcontroller.Insert(lop);
                 if (red > 0)
                 {
                     MessageBox.Show(" Them thanh cong");
@@ -44,10 +45,10 @@ namespace StudentManagementSystem.View
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(" khong duoc bo trong thong tin");
+              //  MessageBox.Show(ex.Message);
             }
-            this.Dispose();
+           // this.Dispose();
 
         }
         public void showCmbHP(string IDHk)
@@ -85,6 +86,11 @@ namespace StudentManagementSystem.View
         private void txtMaLopHP_TextChanged(object sender, EventArgs e)
         {
             txtTenLopHP.Text = cmbChonHocPhan.Text + " " + txtMaLopHP.Text;
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
