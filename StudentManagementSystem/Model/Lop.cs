@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace StudentManagementSystem.Model
 {
@@ -53,11 +54,12 @@ namespace StudentManagementSystem.Model
 
         public Lop(string IDLopCN, string TenLop, string IDNienKhoa)
         {
+           
             this.IDLopCN = IDLopCN.ToUpper();
             this.TenLop = TenLop;
             this.IDNienKhoa = IDNienKhoa.ToUpper();
         }
-
+        
         public Lop()
         {
             this.IDLopCN = "";

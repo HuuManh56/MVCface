@@ -21,14 +21,27 @@ namespace StudentManagementSystem.View
         {
             InitializeComponent();
         }
+        public string ChuanHoa(string str)
+        {
+            if (str.Length <3)
+            {
+                DialogResult result= MessageBox.Show(" chuoi dua va phai co do dai lon hon 3","Thong bao",MessageBoxButtons.OK);
+                if( result== DialogResult.OK)
+                {
 
+                }
+                
+            }
+            return str;
+        }
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
            
-            string a = txtMaLopCN.Text.ToUpper();
-            string b = txtTenLop.Text;
-            string c = txtIDNienKhoa.Text;
-            Lop lop = new Lop(a, b, c);
+            string IDLop = txtMaLopCN.Text.ToUpper();
+            ChuanHoa(IDLop);
+            string Ten = txtTenLop.Text;
+            string IDNienKhoa = cmbChonKhoa.Tag.ToString();
+            Lop lop = new Lop(IDLop,Ten,IDNienKhoa);
            // lopcontroller.Insert(lop);
             int red = lopcontroller.Insert(lop);
             try
@@ -70,7 +83,7 @@ namespace StudentManagementSystem.View
             ConnectDB connectDB = new ConnectDB();
             string sql = " select * from NienKhoa where TenKhoa=N'"+cmbChonKhoa.Text+"'";
             DataTable dt = connectDB.getTable(sql);
-            txtIDNienKhoa.Text= dt.Rows[0][0].ToString();
+            cmbChonKhoa.Tag= dt.Rows[0][0].ToString();
 
         }
     }

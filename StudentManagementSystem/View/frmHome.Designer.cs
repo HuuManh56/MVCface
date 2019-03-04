@@ -277,6 +277,7 @@
             this.listTenHK.Name = "listTenHK";
             this.listTenHK.Size = new System.Drawing.Size(91, 37);
             this.listTenHK.TabIndex = 0;
+            this.listTenHK.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listTenHK_MouseClick);
             this.listTenHK.SelectedIndexChanged += new System.EventHandler(this.listTenHK_SelectedIndexChanged);
             this.listTenHK.SelectedValueChanged += new System.EventHandler(this.listTenHK_SelectedValueChanged);
             // 
@@ -301,6 +302,7 @@
             this.listNamhk.Name = "listNamhk";
             this.listNamhk.Size = new System.Drawing.Size(98, 37);
             this.listNamhk.TabIndex = 1;
+            this.listNamhk.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listNamhk_MouseClick);
             // 
             // toolStripContainer1
             // 

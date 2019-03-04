@@ -157,7 +157,7 @@ namespace StudentManagementSystem.View
 
         private void cmbKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MessageBox.Show(cmbKhoa.Text);
+            //MessageBox.Show(cmbKhoa.Text);
             tvLopChuyenNganh.Nodes.Clear();
             DataTable tb = lopController.Truyvan(cmbKhoa.Text);
             for(int i = 0; i < tb.Rows.Count; i++)
@@ -207,6 +207,16 @@ namespace StudentManagementSystem.View
 
         private void listTenHK_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
+        }
+
+        private void listTenHK_SelectedValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void listTenHK_MouseClick(object sender, MouseEventArgs e)
+        {
             tvLopHocPhan.Nodes.Clear();
             string a = listTenHK.SelectedIndex.ToString();
             int i = 0;
@@ -233,9 +243,20 @@ namespace StudentManagementSystem.View
                        
         }
 
-        private void listTenHK_SelectedValueChanged(object sender, EventArgs e)
+        private void listNamhk_MouseClick(object sender, MouseEventArgs e)
         {
-            
+            tvLopHocPhan.Nodes.Clear();
+            string a = listNamhk.SelectedIndex.ToString();
+            int i = 0;
+            i = Convert.ToInt16(a);
+            DataTable dt = hocKyController.GetALL();
+            string idhk = dt.Rows[i][0] + "";
+            DataTable dt1 = lopHocPhanController.LopHP_HK(idhk);
+            for (int j = 0; j < dt1.Rows.Count; j++)
+            {
+              tvLopHocPhan.Nodes.Add(dt1.Rows[j][2] + "");
+            }
+
         }
     }
 }

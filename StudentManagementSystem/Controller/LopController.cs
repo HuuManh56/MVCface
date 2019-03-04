@@ -18,7 +18,7 @@ namespace StudentManagementSystem.Controller
         public DataTable GetAll()
         {
             SqlConnection connect = cn.getConnect();
-            string sql = "select * from Lop";
+            string sql = "exec [dbo].[select_Lop]";
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(sql, connect);
             da.Fill(dt);
@@ -50,7 +50,8 @@ namespace StudentManagementSystem.Controller
         {
             SqlConnection connect = cn.getConnect();
             connect.Open();
-            string sql = "insert into Lop values (N'"+lop.IDLopCN+"',N'"+lop.TenLop+"',"+lop.IDNienKhoa+")";
+            string sql = "exec [dbo].[insert_Lop] '"
+                + lop.IDLopCN + "',N'" + lop.TenLop + "','" + lop.IDNienKhoa + "'";
             SqlCommand cmd = new SqlCommand(sql, connect);
             try
             {
@@ -69,7 +70,7 @@ namespace StudentManagementSystem.Controller
         {
             SqlConnection connect = cn.getConnect();
             connect.Open();
-            string sql = "delete Lop where TenLop=N'"+TenLop+"'";
+            string sql = "exec [dbo].[delete_Lop] N'" + TenLop+"'";
             SqlCommand cmd = new SqlCommand(sql, connect);
             try
             {

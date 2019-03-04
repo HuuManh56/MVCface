@@ -85,6 +85,10 @@ namespace StudentManagementSystem.View
 
         private void txtMaLopHP_TextChanged(object sender, EventArgs e)
         {
+            if (txtMaLopHP.MaxLength < 2)
+            {
+                MessageBox.Show("nhap lai");
+            }
             txtTenLopHP.Text = cmbChonHocPhan.Text + " " + txtMaLopHP.Text;
         }
 

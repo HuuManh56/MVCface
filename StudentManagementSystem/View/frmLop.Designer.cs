@@ -36,7 +36,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Khoa = new System.Windows.Forms.Label();
             this.cmbChonKhoa = new System.Windows.Forms.ComboBox();
-            this.txtIDNienKhoa = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtTenLop
@@ -108,19 +107,11 @@
             this.cmbChonKhoa.TabIndex = 13;
             this.cmbChonKhoa.SelectedIndexChanged += new System.EventHandler(this.cmbChonKhoa_SelectedIndexChanged);
             // 
-            // txtIDNienKhoa
-            // 
-            this.txtIDNienKhoa.Location = new System.Drawing.Point(306, 20);
-            this.txtIDNienKhoa.Name = "txtIDNienKhoa";
-            this.txtIDNienKhoa.Size = new System.Drawing.Size(86, 22);
-            this.txtIDNienKhoa.TabIndex = 14;
-            // 
             // frmLop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(433, 224);
-            this.Controls.Add(this.txtIDNienKhoa);
             this.Controls.Add(this.cmbChonKhoa);
             this.Controls.Add(this.txtTenLop);
             this.Controls.Add(this.txtMaLopCN);
@@ -148,6 +139,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Khoa;
         private System.Windows.Forms.ComboBox cmbChonKhoa;
-        private System.Windows.Forms.TextBox txtIDNienKhoa;
     }
 }
