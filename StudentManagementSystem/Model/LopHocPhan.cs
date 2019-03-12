@@ -17,32 +17,12 @@ namespace StudentManagementSystem.Model
         {
 
         }
-        public int Kiemtra(string ID)
-        {
-            if( ID != null && ID.Length>3)
-            {
-                return 1;
-            }
-            else
-            {
-                DialogResult result= MessageBox.Show(" ID không được bỏ trống và ID phải có độ dài bằng 3","thong bao",MessageBoxButtons.OK);
-                if(result== DialogResult.OK)
-                {
-                   
-                }
-                return -1;
-            }
-        }
+        
         public LopHocPhan(string _id, string _IDHP, String _TenLopHocPhan)
         {
-            int red=Kiemtra(_id);
-            if (red > 0)
-            {
-                this._IDLopHP = _id.ToUpper();
-            }
-            
+            this._IDLopHP = _id;
             this._TenLopHocPhan = _TenLopHocPhan;
-            this._IDHP = _IDHP.ToUpper();
+            this._IDHP = _IDHP;
         }
 
         public string IDLopHP

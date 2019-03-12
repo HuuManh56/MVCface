@@ -74,11 +74,11 @@ namespace StudentManagementSystem.Controller
             da.Fill(dt);
             return dt;
         }
-        public int Delete(String TenLopHocPhan)
+        public int Delete(string TenLop)
         {
             SqlConnection connect = cn.getConnect();
             connect.Open();
-            string sql = "delete LopHocPhan where  TenLopHocPhan=N'" + TenLopHocPhan + "'";
+            string sql = "exec [dbo].[delete_LopHP] N'" + TenLop + "'";
             SqlCommand cmd = new SqlCommand(sql, connect);
             try
             {
@@ -88,7 +88,7 @@ namespace StudentManagementSystem.Controller
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.ToString());
+                //MessageBox.Show(ex.Tostring());
                 return -1;
             }
         }

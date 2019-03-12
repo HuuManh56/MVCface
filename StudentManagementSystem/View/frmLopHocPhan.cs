@@ -12,8 +12,10 @@ using System.Windows.Forms;
 
 namespace StudentManagementSystem.View
 {
+    
     public partial class frmLopHocPhan : Form
     {
+        ChuanHoaController ChuanHoaController = new ChuanHoaController();
         LopHocPhanController LopHpcontroller = new LopHocPhanController();
         HocPhanController HocPhanController = new HocPhanController();
         HocKyController HocKyController = new HocKyController();
@@ -21,7 +23,11 @@ namespace StudentManagementSystem.View
         {
             InitializeComponent();
         }
-
+        public void Reset()
+        {
+            cmbChonHocPhan.ResetText();
+            txtMaLopHP.ResetText();
+        }
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
             
@@ -30,9 +36,10 @@ namespace StudentManagementSystem.View
                 string IDLophocPhan = txtMaLopHP.Text;
                 string IDHocPhan = cmbChonHocPhan.Tag.ToString();
                 txtTenLopHP.Text = cmbChonHocPhan.Text + " " + IDLophocPhan;
-
+                // chuan hoa chuoi
+                int red = ChuanHoaController.ChuanHoa(IDLophocPhan, txtTenLopHP.Text);
                 LopHocPhan lop = new LopHocPhan(IDLophocPhan, IDHocPhan, txtTenLopHP.Text);
-                int red = LopHpcontroller.Insert(lop);
+                 LopHpcontroller.Insert(lop);
                 if (red > 0)
                 {
                     MessageBox.Show(" Them thanh cong");
@@ -41,14 +48,15 @@ namespace StudentManagementSystem.View
                 else
                 {
                     MessageBox.Show(" them khong thanh cong");
+                    Reset();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(" khong duoc bo trong thong tin");
-              //  MessageBox.Show(ex.Message);
+              
+                MessageBox.Show(ex.Message);
             }
-           // this.Dispose();
+            this.Close();
 
         }
         public void showCmbHP(string IDHk)

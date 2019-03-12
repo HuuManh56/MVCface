@@ -79,41 +79,68 @@ namespace StudentManagementSystem.View
 
         private void showTvLopChuyenNganh()
         {
-            // ConnectDB connect = new ConnectDB();
-            //string sql = " select * from Lop ";
+            
             DataTable tb = lopController.GetAll(); //connect.getTable(sql);
             for (int i = 0; i < tb.Rows.Count; i++)
             {
                 tvLopChuyenNganh.Nodes.Add(tb.Rows[i]["TenLop"].ToString());
             }
         }
-
+        private void showTvLopHocPhan()
+        {
+            DataTable tb = lopHocPhanController.GetAll();
+            for (int i = 0; i < tb.Rows.Count; i++)
+            {
+                tvLopHocPhan.Nodes.Add(tb.Rows[i][2].ToString());
+            }
+        }
         private void xóaLớpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TreeNode node = tvLopChuyenNganh.SelectedNode;
-
-            if ( node != null){
-
-                DialogResult resul= MessageBox.Show("Ban co chac chan muon xoa", "Thong bao", MessageBoxButtons.YesNo);
-                if(resul == DialogResult.Yes)
+            TreeNode nodeCN = tvLopChuyenNganh.SelectedNode;
+            TreeNode nodeHP = tvLopHocPhan.SelectedNode;
+                if (nodeCN != null && nodeHP == null)// xoa lop chuyen nganh
                 {
-                    int ret = lopController.Delete(node.Text);
-                    if (ret > 0)
+
+                    DialogResult resul = MessageBox.Show("Ban co chac chan muon xoa", "Thong bao", MessageBoxButtons.YesNo);
+                    if (resul == DialogResult.Yes)
                     {
-                        MessageBox.Show("Xoa thanh cong");
-                        tvLopChuyenNganh.Nodes.Clear();
-                        showTvLopChuyenNganh();
+                        int ret = lopController.Delete(nodeCN.Text);
+                        if (ret > 0)
+                        {
+                            MessageBox.Show("Xoa thanh cong");
+                            tvLopChuyenNganh.Nodes.Clear();
+                            cmbKhoa.Refresh();
+                            showTvLopChuyenNganh();
+                        }
+                        else
+                        {
+                            MessageBox.Show("CO Loi", "thong bao");
+                        }
                     }
-                    else
+                    
+                }
+                else if(nodeHP != null && nodeCN == null)// xoa lop hoc phan
+                {
+                    DialogResult resul = MessageBox.Show("Ban co chac chan muon xoa", "Thong bao", MessageBoxButtons.YesNo);
+                    if (resul == DialogResult.Yes)
                     {
-                        MessageBox.Show("CO Loi", "thong bao");
+                        int ret = lopHocPhanController.Delete(nodeHP.Text);
+                        if (ret > 0)
+                        {
+                            MessageBox.Show("Xoa thanh cong");
+                            tvLopHocPhan.Nodes.Clear();
+                            showTvLopHocPhan();
+                        }
+                        else
+                        {
+                            MessageBox.Show("CO Loi", "thong bao");
+                        }
                     }
                 }
-
-                
-            }
-            
-            
+                else
+                {
+                    MessageBox.Show("Bạn chưa chọn lớp");
+                }
         }
 
         private void tvLopChuyenNganh_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
@@ -135,6 +162,7 @@ namespace StudentManagementSystem.View
         {
             frmLop frmLop = new frmLop();
             frmLop.ShowDialog();
+            cmbKhoa.Text = "";
             tvLopChuyenNganh.Nodes.Clear();
             showTvLopChuyenNganh();
 
@@ -256,6 +284,11 @@ namespace StudentManagementSystem.View
             {
               tvLopHocPhan.Nodes.Add(dt1.Rows[j][2] + "");
             }
+
+        }
+
+        private void sửaLớpChuyênNgànhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
         }
     }

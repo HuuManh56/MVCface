@@ -28,10 +28,10 @@ namespace StudentManagementSystem.Model
         public HocPhan(string IdHP, String TenHocPhan, int SoTC, string IDHocky)
         {
             
-            this._IDHocPhan = IdHP.ToUpper();
+            this._IDHocPhan = IdHP;
             this._TenHocPhan = TenHocPhan;
             this._SoTC = SoTC;
-            this._IDHocKy = IDHocky.ToUpper();
+            this._IDHocKy = IDHocky;
         }
         public string IDHocPhan
         {

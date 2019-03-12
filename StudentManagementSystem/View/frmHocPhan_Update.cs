@@ -50,10 +50,9 @@ namespace StudentManagementSystem.View
             {
                 MessageBox.Show(ex.Message);
             }
-            this.Dispose();      
-            this.Close();
             frm.ShowHocPhan();
-            
+            this.Dispose();
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -582,6 +582,7 @@
             this.sửaLớpChuyênNgànhToolStripMenuItem.Name = "sửaLớpChuyênNgànhToolStripMenuItem";
             this.sửaLớpChuyênNgànhToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
             this.sửaLớpChuyênNgànhToolStripMenuItem.Text = "Sửa lớp chuyên ngành";
+            this.sửaLớpChuyênNgànhToolStripMenuItem.Click += new System.EventHandler(this.sửaLớpChuyênNgànhToolStripMenuItem_Click);
             // 
             // sửaLớpHọcPhầnToolStripMenuItem
             // 

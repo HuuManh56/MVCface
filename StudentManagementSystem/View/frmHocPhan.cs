@@ -16,7 +16,7 @@ namespace StudentManagementSystem.View
     {
         HocPhanController hocPhanController = new HocPhanController();
         HocKyController HocKyController = new HocKyController();
-
+        ChuanHoaController ChuanHoaController = new ChuanHoaController();
         public frmHocPhan()
         {
             InitializeComponent();
@@ -76,22 +76,31 @@ namespace StudentManagementSystem.View
         {
             try
             {
-                string IDHocPhan = txtIDHocPhan.Text.ToUpper();
+
+                string IDHocPhan = txtIDHocPhan.Text;
                 string TenHocPhan = txtTenHP.Text;
-                int SoTc =Convert.ToInt16( txtSoTC.Text);
+                int SoTc =Convert.ToInt16(txtSoTC.Text);
                 string IDHocky =dtgvHocPhan.Tag.ToString();
+                // chuan hoa chuoi 
+                int red = ChuanHoaController.ChuanHoa(IDHocPhan, TenHocPhan);
+                //
                 HocPhan hp = new HocPhan(IDHocPhan, TenHocPhan, SoTc, IDHocky);
            
-                int red= hocPhanController.Insert(hp);
+                hocPhanController.Insert(hp);
                 if( red > 0)
                 {
                     MessageBox.Show("Them thanh cong");
                     Reset();
                 }
+                else
+                {
+                    MessageBox.Show(" Them khong thanh cong");
+                    Reset();
+                }
             }
             catch( Exception ex)
             {
-                MessageBox.Show("Không được bỏ trống thông tin hoặc mã học phần đã tồn tại","Thông báo",MessageBoxButtons.YesNo);
+                MessageBox.Show(ex.Message);
             }
             ShowHocPhan();
 
@@ -104,28 +113,28 @@ namespace StudentManagementSystem.View
             txtTenHP.ResetText();
 
         }
-
+        //chon hoc phan
         private void dtgvHocPhan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = dtgvHocPhan.Rows[e.RowIndex];
-            txtIDHocPhan.Text = row.Cells[0].Value + "";
-            txtTenHP.Text = row.Cells[1].Value + "";
-            txtSoTC.Text = row.Cells[2].Value + "";
+            DataGridViewRow row = dtgvHocPhan.Rows[e.RowIndex];// dòng được chọn
+            txtIDHocPhan.Tag = row.Cells[0].Value + "";
+            txtTenHP.Tag = row.Cells[1].Value + "";
+            txtSoTC.Tag = Convert.ToString( row.Cells[2].Value );
             dtgvHocPhan.Tag = row.Cells[3].Value + "";
         }
-
+        // update
         private void button2_Click(object sender, EventArgs e)
         {
             frmHocPhan_Update frm = new frmHocPhan_Update();
             frm.Show();
             frm.txtHocKy.Text = txtHocKyNamHoc.Text;
-            frm.txtIDHp.Text = txtIDHocPhan.Text;
-            frm.txtTenHP1.Text = txtTenHP.Text;
-            frm.txtSoTC1.Text = txtSoTC.Text;
+            frm.txtIDHp.Text = txtIDHocPhan.Tag.ToString();
+            frm.txtTenHP1.Text = txtTenHP.Tag.ToString();
+            frm.txtSoTC1.Text = txtSoTC.Tag.ToString();
             frm.txtHocKy.Tag = dtgvHocPhan.Tag.ToString();
             
         }
-
+        //xoa hoc phan
         private void button3_Click(object sender, EventArgs e)
         {
             DialogResult result=MessageBox.Show("Ban co chac chan muon xoa hoc phan nay", "Thong bao", MessageBoxButtons.YesNo);
@@ -157,6 +166,7 @@ namespace StudentManagementSystem.View
 
             
         }
+        //chon ra hoc ky gan nhât
         public void  KiemTraNgay()
         {
             // lay ra hoc ky gan nhat
