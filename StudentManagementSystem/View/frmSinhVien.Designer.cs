@@ -262,6 +262,7 @@
             this.btnChup.TabIndex = 39;
             this.btnChup.Text = "Chụp";
             this.btnChup.UseVisualStyleBackColor = true;
+            this.btnChup.Click += new System.EventHandler(this.btnChup_Click);
             // 
             // imgTrain
             // 

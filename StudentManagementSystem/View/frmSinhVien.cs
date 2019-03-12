@@ -305,6 +305,9 @@ namespace StudentManagementSystem.View
             }
         }
 
-        
+        private void btnChup_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -92,6 +92,7 @@
             this.xoaLopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xoaSinhVienToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hocKyTableAdapter = new StudentManagementSystem.FaceDBDataSetTableAdapters.HocKyTableAdapter();
+            this.hocKyTableAdapter1 = new StudentManagementSystem.FaceDBDataSetTableAdapters.HocKyTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -710,6 +711,10 @@
             // 
             this.hocKyTableAdapter.ClearBeforeFill = true;
             // 
+            // hocKyTableAdapter1
+            // 
+            this.hocKyTableAdapter1.ClearBeforeFill = true;
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -826,5 +831,6 @@
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.ListBox listTenHK;
         private System.Windows.Forms.ListBox listNamhk;
+        private FaceDBDataSetTableAdapters.HocKyTableAdapter hocKyTableAdapter1;
     }
 }
