@@ -89,11 +89,11 @@
     <Compile Include="Entities\SV_LHP.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Entities\User_Role.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="frmHome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmHome.Designer.cs">
+      <DependentUpon>frmHome.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmLop.cs">
       <SubType>Form</SubType>
@@ -109,8 +109,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="frmHome.resx">
+      <DependentUpon>frmHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmLop.resx">
       <DependentUpon>frmLop.cs</DependentUpon>
