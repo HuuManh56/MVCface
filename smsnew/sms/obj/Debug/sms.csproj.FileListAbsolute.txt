@@ -18,3 +18,6 @@ E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\git\sms\sms\obj\Debug\sms.Properties.Resource
 E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\git\sms\sms\obj\Debug\sms.csproj.GenerateResource.Cache
 E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\git\sms\sms\obj\Debug\sms.exe
 E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\git\sms\sms\obj\Debug\sms.pdb
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\smsnew\sms\bin\Debug\sms.exe.config
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\smsnew\sms\obj\Debug\sms.exe
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\smsnew\sms\obj\Debug\sms.pdb
