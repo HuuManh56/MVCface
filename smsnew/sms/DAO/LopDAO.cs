@@ -3,26 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using sms.Entities;
+using System.Windows.Forms;
 
 namespace sms.DAO
 {
-    class NienKhoaDAO
+    class LopDAO
     {
         private MyDBContext db;
 
-        public NienKhoaDAO()
+        public LopDAO()
         {
-            db = new MyDBContext();
+            db= new MyDBContext();
         }
 
-        public int Insert(NienKhoa _nienKhoa)
+        public int Insert(Lop _lop)
         {
             int ret = 0;
             try
             {
-                db.NienKhoas.Add(_nienKhoa);
+                db.Lops.Add(_lop);
                 ret = db.SaveChanges();
             }
             catch (Exception e)
@@ -32,14 +32,14 @@ namespace sms.DAO
             return ret;
         }
 
-        public int Update(NienKhoa _nienKhoa)
+        public int Update(Lop _lop)
         {
             int ret = 0;
-            NienKhoa nienKhoa = db.NienKhoas.Find(_nienKhoa.ID);
-            if (nienKhoa != null)
+            Lop lop = db.Lops.Find(_lop.ID);
+            if (lop != null)
             {
-                nienKhoa.IDView = _nienKhoa.IDView;
-                nienKhoa.Ten = _nienKhoa.Ten;
+                lop.IDView = _lop.IDView;
+                lop.TenLop = _lop.TenLop;
                 ret = db.SaveChanges();
             }
             return ret;
@@ -48,26 +48,19 @@ namespace sms.DAO
         public int Delete(int id)
         {
             int ret = 0;
-            NienKhoa nienKhoa = db.NienKhoas.Find(id);
-            if (nienKhoa != null)
+            Lop lop = db.Lops.Find(id);
+            if (lop != null)
             {
-                db.NienKhoas.Remove(nienKhoa);
+                db.Lops.Remove(lop);
                 ret = db.SaveChanges();
             }
             return ret;
         }
 
-        public List<NienKhoa> GetAll()
+        public List<Lop> GetAll()
         {
-            List<NienKhoa> list = db.NienKhoas.ToList();
+            List<Lop> list = db.Lops.ToList();
             return list;
-        }
-
-        public NienKhoa GetByID(int id)
-        {
-            NienKhoa nienKhoa;
-            nienKhoa = db.NienKhoas.Find(id);
-            return nienKhoa;
         }
     }
 }

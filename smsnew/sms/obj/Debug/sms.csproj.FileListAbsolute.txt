@@ -43,3 +43,4 @@ E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\smsnew\sms\obj\Debug\sms.F
 E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\smsnew\sms\obj\Debug\sms.Properties.Resources.resources
 E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\smsnew\sms\obj\Debug\sms.csproj.GenerateResource.Cache
 E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\smsnew\sms\obj\Debug\sms.GUI.frmNienKhoa.resources
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\MVCface\smsnew\sms\obj\Debug\sms.GUI.frmLop.resources

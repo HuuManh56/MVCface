@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\LopDAO.cs" />
     <Compile Include="DAO\NhanVienDAO.cs" />
     <Compile Include="DAO\NienKhoaDAO.cs" />
     <Compile Include="DTO\NhanVienDTO.cs" />
@@ -94,6 +95,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmLop.Designer.cs">
+      <DependentUpon>frmLop.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmNienKhoa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +111,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmLop.resx">
+      <DependentUpon>frmLop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmNienKhoa.resx">
       <DependentUpon>frmNienKhoa.cs</DependentUpon>
