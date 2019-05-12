@@ -6,21 +6,27 @@ namespace sms.Entities
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Role")]
-    public partial class Role
+    [Table("NamHoc")]
+    public partial class NamHoc
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Role()
+        public NamHoc()
         {
-            User_Role = new HashSet<User_Role>();
+            //HocKies = new HashSet<HocKy>();
         }
 
         public int ID { get; set; }
 
-        [StringLength(50)]
-        public string NhiemVu { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime? BatDau { get; set; }
+
+        [Column(TypeName = "date")]
+        public DateTime? KetThuc { get; set; }
+
+        [StringLength(20)]
+        public string Code { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<User_Role> User_Role { get; set; }
+        public virtual ICollection<HocKy> HocKies { get; set; }
     }
 }

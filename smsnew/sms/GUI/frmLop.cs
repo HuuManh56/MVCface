@@ -24,6 +24,7 @@ namespace sms.GUI
 
         public frmLop(int _idNienKhoa)
         {
+            
             InitializeComponent();
             this.id = -1;
             NienKhoaDAO dao = new NienKhoaDAO();

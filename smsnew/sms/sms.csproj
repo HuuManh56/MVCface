@@ -72,34 +72,77 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\HocKyDAO.cs" />
+    <Compile Include="DAO\HocPhanDAO.cs" />
     <Compile Include="DAO\LopDAO.cs" />
+    <Compile Include="DAO\LopHpDAO.cs" />
+    <Compile Include="DAO\NamHocDAO.cs" />
     <Compile Include="DAO\NhanVienDAO.cs" />
     <Compile Include="DAO\NienKhoaDAO.cs" />
+    <Compile Include="DTO\Ten.cs" />
     <Compile Include="DTO\NhanVienDTO.cs" />
     <Compile Include="Entities\DiemDanh.cs" />
+    <Compile Include="Entities\HK1.cs" />
     <Compile Include="Entities\HocKy.cs" />
+    <Compile Include="Entities\HocKyLQ.cs" />
     <Compile Include="Entities\HocPhan.cs" />
     <Compile Include="Entities\HocPhan_HocKy.cs" />
     <Compile Include="Entities\Lop.cs" />
     <Compile Include="Entities\LopHocPhan.cs" />
     <Compile Include="Entities\MyDBContext.cs" />
+    <Compile Include="Entities\NamHoc.cs" />
+    <Compile Include="Entities\NamHocLNQ.cs" />
     <Compile Include="Entities\NienKhoa.cs" />
-    <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\SinhVien.cs" />
     <Compile Include="Entities\SV_LHP.cs" />
-    <Compile Include="Entities\User.cs" />
-    <Compile Include="Entities\User_Role.cs" />
+    <Compile Include="Entities\sysdiagram.cs" />
     <Compile Include="frmHome.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmHome.Designer.cs">
       <DependentUpon>frmHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmHocKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmHocKy.Designer.cs">
+      <DependentUpon>frmHocKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmHocPhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmHocPhan.Designer.cs">
+      <DependentUpon>frmHocPhan.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmLop.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\frmLop.Designer.cs">
       <DependentUpon>frmLop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmLopHP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmLopHP.Designer.cs">
+      <DependentUpon>frmLopHP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmLopHP_Sua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmLopHP_Sua.Designer.cs">
+      <DependentUpon>frmLopHP_Sua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmLopHP_Them.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmLopHP_Them.Designer.cs">
+      <DependentUpon>frmLopHP_Them.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmNamHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmNamHoc.Designer.cs">
+      <DependentUpon>frmNamHoc.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmNienKhoa.cs">
       <SubType>Form</SubType>
@@ -112,8 +155,26 @@
     <EmbeddedResource Include="frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmHocKy.resx">
+      <DependentUpon>frmHocKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmHocPhan.resx">
+      <DependentUpon>frmHocPhan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmLop.resx">
       <DependentUpon>frmLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmLopHP.resx">
+      <DependentUpon>frmLopHP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmLopHP_Sua.resx">
+      <DependentUpon>frmLopHP_Sua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmLopHP_Them.resx">
+      <DependentUpon>frmLopHP_Them.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmNamHoc.resx">
+      <DependentUpon>frmNamHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmNienKhoa.resx">
       <DependentUpon>frmNienKhoa.cs</DependentUpon>

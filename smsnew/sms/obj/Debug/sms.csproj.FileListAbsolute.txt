@@ -72,3 +72,9 @@ C:\Users\user\Desktop\MVCface\smsnew\sms\obj\Debug\sms.csproj.CopyComplete
 C:\Users\user\Desktop\MVCface\smsnew\sms\obj\Debug\sms.exe
 C:\Users\user\Desktop\MVCface\smsnew\sms\obj\Debug\sms.pdb
 C:\Users\user\Desktop\MVCface\smsnew\sms\obj\Debug\sms.frmHome.resources
+C:\Users\user\Desktop\MVCface\smsnew\sms\obj\Debug\sms.GUI.frmNamHoc.resources
+C:\Users\user\Desktop\MVCface\smsnew\sms\obj\Debug\sms.GUI.frmHocKy.resources
+C:\Users\user\Desktop\MVCface\smsnew\sms\obj\Debug\sms.GUI.frmHocPhan.resources
+C:\Users\user\Desktop\MVCface\smsnew\sms\obj\Debug\sms.GUI.frmLopHP.resources
+C:\Users\user\Desktop\MVCface\smsnew\sms\obj\Debug\sms.GUI.frmLopHP_Them.resources
+C:\Users\user\Desktop\MVCface\smsnew\sms\obj\Debug\sms.GUI.frmLopHP_Sua.resources
