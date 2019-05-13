@@ -28,7 +28,7 @@ namespace sms.Entities
 
         public int? LopID { get; set; }
 
-        [MaxLength(1000)]
+        [MaxLength(8000)]
         public byte[] image { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

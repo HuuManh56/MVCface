@@ -104,5 +104,28 @@ namespace sms.GUI
                 txtTenNienKhoa.Text = dgvKhoa.Rows[row].Cells[2].Value.ToString();
             }
         }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            NienKhoaDAO dao = new NienKhoaDAO();
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa " + dao.GetByID(this.id1).Ten,
+                "Xác nhận", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                int ret = dao.Delete(this.id1);
+                if (ret < 0)
+                {
+                    MessageBox.Show("Không xóa được bản ghi");
+
+                }
+                else
+                {
+                    this.id1 = -1;
+                    txtMaNienKhoa.Text = "";
+                    txtTenNienKhoa.Text = "";
+                    dgvKhoa.DataSource = dao.GetAll2();
+                }
+            }
+        }
     }
 }

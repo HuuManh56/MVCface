@@ -74,5 +74,10 @@ namespace sms.DAO
                 new SqlParameter("param", id)).ToList();
             return list;
         }
+
+        public SinhVien GetByID(int id)
+        {
+            return db.SinhViens.Find(id);
+        }
     }
 }

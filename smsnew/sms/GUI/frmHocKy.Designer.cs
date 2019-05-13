@@ -34,9 +34,9 @@
             this.btnThem_HK = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtTenHK = new System.Windows.Forms.ComboBox();
             this.cmbNamHk = new System.Windows.Forms.ComboBox();
             this.dgvHocKy = new System.Windows.Forms.DataGridView();
-            this.txtTenHK = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -115,6 +115,20 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Năm học";
             // 
+            // txtTenHK
+            // 
+            this.txtTenHK.FormattingEnabled = true;
+            this.txtTenHK.Items.AddRange(new object[] {
+            "HK1",
+            "HK2",
+            "HK Hè",
+            "HK Tối"});
+            this.txtTenHK.Location = new System.Drawing.Point(122, 112);
+            this.txtTenHK.Name = "txtTenHK";
+            this.txtTenHK.Size = new System.Drawing.Size(100, 24);
+            this.txtTenHK.TabIndex = 0;
+            this.txtTenHK.SelectedIndexChanged += new System.EventHandler(this.cmbNamHk_SelectedIndexChanged);
+            // 
             // cmbNamHk
             // 
             this.cmbNamHk.FormattingEnabled = true;
@@ -135,20 +149,6 @@
             this.dgvHocKy.Size = new System.Drawing.Size(525, 268);
             this.dgvHocKy.TabIndex = 0;
             this.dgvHocKy.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHocKy_CellClick);
-            // 
-            // txtTenHK
-            // 
-            this.txtTenHK.FormattingEnabled = true;
-            this.txtTenHK.Items.AddRange(new object[] {
-            "HK1",
-            "HK2",
-            "HK Hè",
-            "HK Tối"});
-            this.txtTenHK.Location = new System.Drawing.Point(122, 112);
-            this.txtTenHK.Name = "txtTenHK";
-            this.txtTenHK.Size = new System.Drawing.Size(100, 24);
-            this.txtTenHK.TabIndex = 0;
-            this.txtTenHK.SelectedIndexChanged += new System.EventHandler(this.cmbNamHk_SelectedIndexChanged);
             // 
             // frmHocKy
             // 

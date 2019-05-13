@@ -58,8 +58,12 @@ namespace sms.GUI
             id = _sinhVien.ID;
             idLop =(int) _sinhVien.LopID;
             txtHoTen.Text = _sinhVien.HoTen;
-            txtLop.Text = lopDao.GetById((int)_sinhVien.ID).TenLop;
-            txtNgaySinh.Text = _sinhVien.NgaySinh.ToString();
+            Lop lop = lopDao.GetById((int) _sinhVien.LopID);
+            txtLop.Text = lop.TenLop;
+            txtNgaySinh.Text = ((DateTime)_sinhVien.NgaySinh).ToString("dd/MM/yyyy"); ;
+            MemoryStream stream = new MemoryStream(_sinhVien.image);
+            Image<Gray, byte>  img = new Image<Gray, byte>(new Bitmap(stream));
+            imgTrain.Image = img;
             if (_sinhVien.GioiTinh == 1)
             {
                 radNam.Checked = true;
@@ -362,6 +366,7 @@ namespace sms.GUI
             catch
             {
                 MessageBox.Show("Ngày sinh không đúng định dạng", "Thông báo");
+                return;
             }
 
             sinhVien.HoTen = txtHoTen.Text;
@@ -402,6 +407,12 @@ namespace sms.GUI
         private void btnLuuThoat_Click(object sender, EventArgs e)
         {
             add(true);
+        }
+
+        private void frmSinhVien_FormClosed(object sender, FormClosedEventArgs e)
+        {
+          //  capture = null;
+            this.Dispose();
         }
 
         private void txtNgaySinh_KeyPress(object sender, KeyPressEventArgs e)

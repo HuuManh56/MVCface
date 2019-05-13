@@ -102,6 +102,7 @@
     <Compile Include="Entities\SV_LHP.cs" />
     <Compile Include="Entities\sysdiagram.cs" />
     <Compile Include="Entities\ViewModel\NienKhoaVM.cs" />
+    <Compile Include="Entities\ViewModel\SinhVienCNVM.cs" />
     <Compile Include="frmHome.cs">
       <SubType>Form</SubType>
     </Compile>

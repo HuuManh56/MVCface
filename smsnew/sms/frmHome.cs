@@ -12,11 +12,13 @@ using sms.DTO;
 using sms.Entities;
 using sms.Entities.ViewModel;
 using sms.GUI;
+using System.Globalization;
 
 namespace sms
 {
     public partial class frmHome : Form
     {
+        
         public frmHome()
         {
             InitializeComponent();
@@ -314,6 +316,110 @@ namespace sms
         private void stmXoaLopCN_Click(object sender, EventArgs e)
         {
             tsXoaLopCN_Click(sender,e);
+        }
+
+        private void tdmSVLopChuyenNganh_Click(object sender, EventArgs e)
+        {
+            TreeNode theNode = new TreeNode();
+            theNode = tvLopChuyenNganh.SelectedNode;
+            if (theNode == null)
+            {
+                MessageBox.Show("Chưa chọn lớp chuyên ngành");
+                return;
+            }
+            frmSinhVien frm = new frmSinhVien((int)theNode.Tag);
+            frm.ShowDialog();
+            LoadSVLopCN();
+        }
+
+        private void LoadSVLopCN()
+        {
+            TreeNode theNode = new TreeNode();
+            theNode = tvLopChuyenNganh.SelectedNode;
+            if (theNode == null)
+            {
+               // MessageBox.Show("Chưa chọn lớp chuyên ngành");
+                return;
+            }
+
+            SinhVienDAO dao = new SinhVienDAO();
+            List<SinhVien> list = dao.GetByClassID((int) theNode.Tag);
+            List<SinhVienCNVM> listVM = new List<SinhVienCNVM>();
+            foreach (var item  in list)
+            {
+                SinhVienCNVM vm = new SinhVienCNVM();
+                vm.id = item.ID;
+                vm.HoTen = item.HoTen;
+                vm.GioiTinh = (item.GioiTinh == 1 ? "Nam" : "Nữ");
+              //  vm.NgaySinh = date2string((DateTime)item.NgaySinh);
+                vm.NgaySinh = ((DateTime)item.NgaySinh).ToString("dd/MM/yyyy"); ;
+                listVM.Add(vm);
+            }
+
+            dgvDanhSach.DataSource = listVM;
+        }
+
+        private string date2string(DateTime date)
+        {
+            string result="";
+            DateTime dt = DateTime.ParseExact(date.ToString(), "MM/dd/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture);
+
+            result = dt.ToString("dd/M/yyyy", CultureInfo.InvariantCulture);
+            return result;
+        }
+
+        private void tvLopChuyenNganh_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            LoadSVLopCN();
+        }
+
+        private void tsXoaSV_Click(object sender, EventArgs e)
+        {
+            var select = dgvDanhSach.SelectedRows;
+            if (select == null)
+            {
+                MessageBox.Show("Chưa chọn sinh viên");
+                return;
+            }
+
+            DialogResult result = MessageBox.Show(
+                "Bạn có chắc chắn muốn xóa sinh viên " + select[0].Cells[1].Value.ToString(),
+                "Xác nhận", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                SinhVienDAO dao = new SinhVienDAO();
+                int ret = dao.Delete(Int32.Parse(select[0].Cells[0].Value.ToString()));
+                if (ret < 0)
+                {
+                    MessageBox.Show("Không xóa được bản ghi");
+                    return;
+                }
+                else
+                {
+                    LoadSVLopCN();
+                }
+            }
+            
+            
+        }
+
+        private void tsSuaSV_Click(object sender, EventArgs e)
+        {
+            var select = dgvDanhSach.SelectedRows;
+            if (select == null)
+            {
+                MessageBox.Show("Chưa chọn sinh viên");
+                return;
+            }
+            SinhVienDAO dao = new SinhVienDAO();
+            SinhVien sinhVien = dao.GetByID(Int32.Parse(select[0].Cells[0].Value.ToString()));
+            if (sinhVien != null)
+            {
+                frmSinhVien frm = new frmSinhVien(sinhVien);
+                frm.ShowDialog();
+                LoadSVLopCN();
+            }
+
         }
     }
 }
