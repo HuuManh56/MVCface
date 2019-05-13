@@ -617,6 +617,7 @@
             this.tdmSVLopHocPhan.Name = "tdmSVLopHocPhan";
             this.tdmSVLopHocPhan.Size = new System.Drawing.Size(204, 26);
             this.tdmSVLopHocPhan.Text = "Lớp học phần";
+            this.tdmSVLopHocPhan.Click += new System.EventHandler(this.tdmSVLopHocPhan_Click);
             // 
             // tsSuaSV
             // 

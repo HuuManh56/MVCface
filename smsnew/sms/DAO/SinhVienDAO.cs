@@ -79,5 +79,21 @@ namespace sms.DAO
         {
             return db.SinhViens.Find(id);
         }
+
+        public List<SinhVienLHPVM> GetAllByLHP(int idLHP)
+            
+        {
+            var lst = from a in db.SV_LHP
+                      join b in db.SinhViens on a.SinhVienID equals b.ID
+                      join c in db.Lops on b.LopID equals c.ID
+                      where a.LopHocPhanID==idLHP
+                select new SinhVienLHPVM
+                {
+                    ID = b.ID, HoTen = b.HoTen, GioiTinh=(b.GioiTinh==1?"Nam":"Nữ")
+                    ,NgaySinh = (DateTime)b.NgaySinh, Diem1=(double)a.Diem1
+                    ,Diem2 = (double)a.Diem2, Diem3 = (double)a.Diem3, Lop=c.TenLop
+                };
+            return lst.ToList();
+        }
     }
 }

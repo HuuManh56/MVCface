@@ -160,6 +160,7 @@ namespace sms
             {
                 tvLopHocPhan.Tag = tvLopHocPhan.SelectedNode.Text;
             }
+            LoadSinhVienLHP();
         }
 
         private void xóaLớpHọcPhầnToolStripMenuItem_Click(object sender, EventArgs e)
@@ -420,6 +421,31 @@ namespace sms
                 LoadSVLopCN();
             }
 
+        }
+
+        private void tdmSVLopHocPhan_Click(object sender, EventArgs e)
+        {
+            TreeNode theNode = tvLopHocPhan.SelectedNode;
+            if (theNode == null)
+            {
+                MessageBox.Show("Chưa chọn lớp học phần");
+                return;
+            }
+            LopHpDAO dao = new LopHpDAO();
+            MyDBContext db = new MyDBContext();
+            LopHocPhan lopHp = db.LopHocPhans.Find(dao.IDLopHP(theNode.Text));
+            frmSinhVienLHP frm = new frmSinhVienLHP(lopHp);
+            frm.ShowDialog();
+            LoadSinhVienLHP();
+        }
+
+        private void LoadSinhVienLHP()
+        {
+            TreeNode theNode = tvLopHocPhan.SelectedNode;
+            LopHpDAO dao = new LopHpDAO();
+            int idLHP = dao.IDLopHP(theNode.Text);
+            SinhVienDAO sinhVienDao =new SinhVienDAO();
+            dgvDanhSach.DataSource = sinhVienDao.GetAllByLHP(idLHP);
         }
     }
 }
