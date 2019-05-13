@@ -14,23 +14,25 @@ namespace sms.GUI
 {
     public partial class frmNienKhoa : Form
     {
-        public  int id { get; set; }
+        public  int id1 { get; set; }
         public frmNienKhoa()
         {
             InitializeComponent();
-            this.id = -1;
+            this.id1 = -1;
+            NienKhoaDAO dao = new NienKhoaDAO();
+            dgvKhoa.DataSource = dao.GetAll2();
 
         }
         public frmNienKhoa(NienKhoa nienKhoa)
         {
             InitializeComponent();
-            this.id = nienKhoa.ID;
+            this.id1 = nienKhoa.ID;
             txtMaNienKhoa.Text = nienKhoa.IDView;
             txtTenNienKhoa.Text = nienKhoa.Ten;
         }
         public void SetInput(NienKhoa nienKhoa)
         {
-            this.id = nienKhoa.ID;
+            this.id1 = nienKhoa.ID;
             txtMaNienKhoa.Text = nienKhoa.IDView;
             txtTenNienKhoa.Text = nienKhoa.Ten;
         }
@@ -55,13 +57,13 @@ namespace sms.GUI
             }
 
             int add = 0;
-            if (id==-1)
+            if (id1==-1)
             {
                 add = 1;
             }
             else
             {
-                nienKhoa.ID = id;
+                nienKhoa.ID = id1;
             }
 
             int ret = 0;
@@ -77,7 +79,29 @@ namespace sms.GUI
             }
             else
             {
-                this.Dispose();
+                this.id1 = -1;
+                txtMaNienKhoa.Text = "";
+                txtTenNienKhoa.Text = "";
+                dgvKhoa.DataSource = dao.GetAll2();
+
+                // this.Dispose();
+            }
+        }
+
+        private void frmNienKhoa_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void list_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int row = e.RowIndex;
+            if (row >= 0)
+            {
+                var x = dgvKhoa.Rows[row];
+                this.id1 = Int32.Parse(dgvKhoa.Rows[row].Cells[0].Value.ToString());
+                txtMaNienKhoa.Text = dgvKhoa.Rows[row].Cells[1].Value.ToString();
+                txtTenNienKhoa.Text = dgvKhoa.Rows[row].Cells[2].Value.ToString();
             }
         }
     }

@@ -8,7 +8,8 @@ namespace sms.Entities
     public partial class MyDBContext : DbContext
     {
         public MyDBContext()
-            : base("name=MyDBContext1")
+            : base("name=MyDBContext")
+           // : base("name=MyDBContext1")
         {
         }
 

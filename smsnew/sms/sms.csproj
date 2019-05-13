@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DirectShowLib-2005">
+      <HintPath>D:\BAI TAP LON\git\Bai-tap-lon-C-Manh-Son-Update\DiemDanhKhuonMat\DiemDanhKhuonMat\bin\Debug\DirectShowLib-2005.dll</HintPath>
+    </Reference>
     <Reference Include="Emgu.CV, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\Emgu.CV.dll</HintPath>
@@ -79,8 +82,10 @@
     <Compile Include="DAO\NamHocDAO.cs" />
     <Compile Include="DAO\NhanVienDAO.cs" />
     <Compile Include="DAO\NienKhoaDAO.cs" />
+    <Compile Include="DAO\SinhVienDAO.cs" />
     <Compile Include="DTO\Ten.cs" />
     <Compile Include="DTO\NhanVienDTO.cs" />
+    <Compile Include="Entities\ComboboxItem.cs" />
     <Compile Include="Entities\DiemDanh.cs" />
     <Compile Include="Entities\HK1.cs" />
     <Compile Include="Entities\HocKy.cs" />
@@ -96,6 +101,7 @@
     <Compile Include="Entities\SinhVien.cs" />
     <Compile Include="Entities\SV_LHP.cs" />
     <Compile Include="Entities\sysdiagram.cs" />
+    <Compile Include="Entities\ViewModel\NienKhoaVM.cs" />
     <Compile Include="frmHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,12 @@
     <Compile Include="GUI\frmNienKhoa.Designer.cs">
       <DependentUpon>frmNienKhoa.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmSinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmSinhVien.Designer.cs">
+      <DependentUpon>frmSinhVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmHome.resx">
@@ -178,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmNienKhoa.resx">
       <DependentUpon>frmNienKhoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmSinhVien.resx">
+      <DependentUpon>frmSinhVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

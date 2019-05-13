@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -60,6 +61,18 @@ namespace sms.DAO
         public List<Lop> GetAll()
         {
             List<Lop> list = db.Lops.ToList();
+            return list;
+        }
+
+        public Lop GetById(int id)
+        {
+            Lop lop = db.Lops.Find(id);
+            return lop;
+
+        }
+        public List<Lop> GetByNienKhoa(int NienKhoaId)
+        {
+            List<Lop> list = db.Lops.SqlQuery("SELECT * FROM Lop WHERE NienKhoaID = @param",new  SqlParameter("param",NienKhoaId)).ToList();
             return list;
         }
     }

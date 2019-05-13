@@ -246,6 +246,7 @@
             this.cmbKhoa.Size = new System.Drawing.Size(74, 24);
             this.cmbKhoa.TabIndex = 0;
             this.cmbKhoa.Text = "Khóa";
+            this.cmbKhoa.SelectedIndexChanged += new System.EventHandler(this.cmbKhoa_SelectedIndexChanged);
             // 
             // groupBox4
             // 
@@ -276,7 +277,7 @@
             this.sửaLớpHọcPhầnToolStripMenuItem1,
             this.xóaLớpHọcPhầnToolStripMenuItem});
             this.MenuStrip_LopHP.Name = "MenuStrip_LopHP";
-            this.MenuStrip_LopHP.Size = new System.Drawing.Size(211, 104);
+            this.MenuStrip_LopHP.Size = new System.Drawing.Size(211, 76);
             // 
             // thêmLớpHọcPhầnToolStripMenuItem
             // 
@@ -707,6 +708,7 @@
             this.Khoa.Name = "Khoa";
             this.Khoa.Size = new System.Drawing.Size(55, 24);
             this.Khoa.Text = "Khóa";
+            this.Khoa.Click += new System.EventHandler(this.Khoa_Click);
             // 
             // nămHọcToolStripMenuItem
             // 

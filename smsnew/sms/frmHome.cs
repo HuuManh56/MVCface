@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using sms.DAO;
 using sms.DTO;
 using sms.Entities;
+using sms.Entities.ViewModel;
 using sms.GUI;
 
 namespace sms
@@ -56,6 +57,7 @@ namespace sms
 
         private void frmHome_Load(object sender, EventArgs e)
         {
+            LoadCBKhoa();
             ShowLopHP();
             HocKyDAO hoc = new HocKyDAO();
             //dgvHocKy.DataSource = hoc.GetALL();
@@ -196,6 +198,45 @@ namespace sms
                 }
             }
            
+        }
+
+        private void Khoa_Click(object sender, EventArgs e)
+        {
+            frmNienKhoa frm = new frmNienKhoa();
+            frm.ShowDialog();
+        }
+
+        public void LoadCBKhoa()
+        {
+            NienKhoaDAO dao = new NienKhoaDAO();
+            var lst =dao.GetAll2();
+            foreach (NienKhoaVM item in lst)
+            {
+                ComboboxItem a = new ComboboxItem();
+                a.Text = item.idview;
+                a.Value = item.id;
+                cmbKhoa.Items.Add(a);
+            }
+        }
+
+        private void cmbKhoa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tvLopChuyenNganh.Nodes.Clear();
+            ComboboxItem select = (ComboboxItem)cmbKhoa.SelectedItem;
+            LoadLopChuyenNganh(select.Value);
+        }
+
+        private void LoadLopChuyenNganh(int NienKhoaId)
+        {
+            
+            LopDAO dao = new LopDAO();
+            List<Lop> list = dao.GetByNienKhoa(NienKhoaId);
+            tvLopHocPhan.Nodes.Clear();
+            foreach (Lop item in list)
+            {
+                string a = item.TenLop;
+                tvLopChuyenNganh.Nodes.Add(a);
+            }
         }
     }
 }

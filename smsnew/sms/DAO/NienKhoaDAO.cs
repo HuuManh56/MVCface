@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using sms.Entities;
+using sms.Entities.ViewModel;
 
 namespace sms.DAO
 {
@@ -68,6 +70,21 @@ namespace sms.DAO
             NienKhoa nienKhoa;
             nienKhoa = db.NienKhoas.Find(id);
             return nienKhoa;
+        }
+
+        public NienKhoa GetByIDView(string idview)
+        {
+            NienKhoa nienKhoa;
+            var list = db.NienKhoas.SqlQuery("Select * from NienKhoa where IDView =@param"
+                , new SqlParameter("param",idview)).ToList();
+            return (NienKhoa)list[0];
+        }
+
+        public List<NienKhoaVM> GetAll2()
+        {
+            var lst = from a in db.NienKhoas orderby a.IDView select new NienKhoaVM { id = a.ID,idview = a.IDView,ten = a.Ten };
+
+            return lst.ToList();
         }
     }
 }

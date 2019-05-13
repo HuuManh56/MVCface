@@ -39,7 +39,8 @@ namespace sms.DAO
         public int GetIDHocKY( string tenhk, string code)
         {
             int id = GetIDNamhoc( code);
-            var lst = db.HocKies.SqlQuery("select * from HocKy where TenHocKy =@tenhk and Id_Namhoc=@id  ", new SqlParameter("tenhk", tenhk), new SqlParameter ("id",id)).ToList();
+            var lst = db.HocKies.SqlQuery("select * from HocKy where TenHocKy =@tenhk and Id_Namhoc=@id  "
+                , new SqlParameter("tenhk", tenhk), new SqlParameter ("id",id)).ToList();
             int IDHK = lst[0].ID;
             return IDHK;
         }
