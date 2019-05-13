@@ -212,7 +212,7 @@ namespace sms
             var lst =dao.GetAll2();
             foreach (NienKhoaVM item in lst)
             {
-                ComboboxItem a = new ComboboxItem();
+                Item a = new Item();
                 a.Text = item.idview;
                 a.Value = item.id;
                 cmbKhoa.Items.Add(a);
@@ -221,22 +221,99 @@ namespace sms
 
         private void cmbKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tvLopChuyenNganh.Nodes.Clear();
-            ComboboxItem select = (ComboboxItem)cmbKhoa.SelectedItem;
-            LoadLopChuyenNganh(select.Value);
+            LoadLopChuyenNganh();
         }
 
-        private void LoadLopChuyenNganh(int NienKhoaId)
+        private void LoadLopChuyenNganh()
         {
-            
+            tvLopChuyenNganh.Nodes.Clear();
+            Item select = (Item)cmbKhoa.SelectedItem;
             LopDAO dao = new LopDAO();
-            List<Lop> list = dao.GetByNienKhoa(NienKhoaId);
+            List<Lop> list = dao.GetByNienKhoa(select.Value);
             tvLopHocPhan.Nodes.Clear();
             foreach (Lop item in list)
             {
-                string a = item.TenLop;
+                TreeNode a = new TreeNode();
+                a.Text = item.TenLop;
+                a.Tag = item.ID;
+               // string a = item.TenLop;
                 tvLopChuyenNganh.Nodes.Add(a);
+                
             }
+        }
+
+        private void tsThemLopCN_Click(object sender, EventArgs e)
+        {
+            Item select = (Item)cmbKhoa.SelectedItem;
+            if (select == null)
+            {
+                MessageBox.Show("Chưa chọn khóa");
+                return;
+
+            }
+            frmLop frm = new frmLop(select.Value);
+            frm.ShowDialog();
+            LoadLopChuyenNganh();
+
+        }
+
+        private void tsSuaLopCN_Click(object sender, EventArgs e)
+        {
+            TreeNode theNode = new TreeNode();
+            theNode = tvLopChuyenNganh.SelectedNode;
+            if (theNode == null)
+            {
+                MessageBox.Show("Chưa chọn lớp chuyên ngành");
+                return;
+
+            }
+            LopDAO dao = new LopDAO();
+            Lop lop = dao.GetById((int)theNode.Tag);
+            frmLop frm = new frmLop(lop);
+            frm.ShowDialog();
+            LoadLopChuyenNganh();
+        }
+
+        private void tsXoaLopCN_Click(object sender, EventArgs e)
+        {
+            TreeNode theNode = new TreeNode();
+            theNode = tvLopChuyenNganh.SelectedNode;
+            if (theNode == null)
+            {
+                MessageBox.Show("Chưa chọn lớp chuyên ngành");
+                return;
+
+            }
+            LopDAO dao = new LopDAO();
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa lớp " + theNode.Text + "?","Xác nhận",
+                MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                int ret = dao.Delete((int) theNode.Tag);
+                if (ret < 0)
+                {
+                    MessageBox.Show("Xóa không thành công");
+                }
+                else
+                {
+                    LoadLopChuyenNganh();
+                }
+            }
+        }
+
+        private void stmThemLopCN_Click(object sender, EventArgs e)
+        {
+            tsThemLopCN_Click(sender, e);
+        }
+
+        private void stmSuaLopCN_Click(object sender, EventArgs e)
+        {
+            tsSuaLopCN_Click(sender,e);
+        }
+
+        private void stmXoaLopCN_Click(object sender, EventArgs e)
+        {
+            tsXoaLopCN_Click(sender,e);
         }
     }
 }

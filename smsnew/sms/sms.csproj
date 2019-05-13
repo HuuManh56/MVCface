@@ -85,7 +85,7 @@
     <Compile Include="DAO\SinhVienDAO.cs" />
     <Compile Include="DTO\Ten.cs" />
     <Compile Include="DTO\NhanVienDTO.cs" />
-    <Compile Include="Entities\ComboboxItem.cs" />
+    <Compile Include="Entities\Item.cs" />
     <Compile Include="Entities\DiemDanh.cs" />
     <Compile Include="Entities\HK1.cs" />
     <Compile Include="Entities\HocKy.cs" />

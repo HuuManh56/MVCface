@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace sms.Entities
 {
-    class ComboboxItem
+    class Item
     {
         public string Text { get; set; }
         public int Value { get; set; }

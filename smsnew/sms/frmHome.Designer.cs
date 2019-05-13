@@ -36,9 +36,9 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.tvLopChuyenNganh = new System.Windows.Forms.TreeView();
             this.MenuStrip_LopCN = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.thêmLớpChuyênNgànhToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.sửaLớpChuyênNgànhToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.xóaLớpChuyênNgànhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stmThemLopCN = new System.Windows.Forms.ToolStripMenuItem();
+            this.stmSuaLopCN = new System.Windows.Forms.ToolStripMenuItem();
+            this.stmXoaLopCN = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.cmbKhoa = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -82,9 +82,9 @@
             this.sửaSinhViênToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.xóaSinhViênToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.LopCN = new System.Windows.Forms.ToolStripMenuItem();
-            this.thêmLớpChuyênNgànhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sửaLớpChuyênNgànhToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.XoaLop = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsThemLopCN = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsSuaLopCN = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsXoaLopCN = new System.Windows.Forms.ToolStripMenuItem();
             this.LopHP = new System.Windows.Forms.ToolStripMenuItem();
             this.thêmLớpHọcPhầnToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.sửaLớpHọcPhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -200,29 +200,32 @@
             // 
             this.MenuStrip_LopCN.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.MenuStrip_LopCN.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.thêmLớpChuyênNgànhToolStripMenuItem1,
-            this.sửaLớpChuyênNgànhToolStripMenuItem2,
-            this.xóaLớpChuyênNgànhToolStripMenuItem});
+            this.stmThemLopCN,
+            this.stmSuaLopCN,
+            this.stmXoaLopCN});
             this.MenuStrip_LopCN.Name = "MenuStrip_LopCN";
             this.MenuStrip_LopCN.Size = new System.Drawing.Size(237, 76);
             // 
-            // thêmLớpChuyênNgànhToolStripMenuItem1
+            // stmThemLopCN
             // 
-            this.thêmLớpChuyênNgànhToolStripMenuItem1.Name = "thêmLớpChuyênNgànhToolStripMenuItem1";
-            this.thêmLớpChuyênNgànhToolStripMenuItem1.Size = new System.Drawing.Size(236, 24);
-            this.thêmLớpChuyênNgànhToolStripMenuItem1.Text = "Thêm lớp chuyên ngành";
+            this.stmThemLopCN.Name = "stmThemLopCN";
+            this.stmThemLopCN.Size = new System.Drawing.Size(236, 24);
+            this.stmThemLopCN.Text = "Thêm lớp chuyên ngành";
+            this.stmThemLopCN.Click += new System.EventHandler(this.stmThemLopCN_Click);
             // 
-            // sửaLớpChuyênNgànhToolStripMenuItem2
+            // stmSuaLopCN
             // 
-            this.sửaLớpChuyênNgànhToolStripMenuItem2.Name = "sửaLớpChuyênNgànhToolStripMenuItem2";
-            this.sửaLớpChuyênNgànhToolStripMenuItem2.Size = new System.Drawing.Size(236, 24);
-            this.sửaLớpChuyênNgànhToolStripMenuItem2.Text = "Sửa lớp chuyên ngành ";
+            this.stmSuaLopCN.Name = "stmSuaLopCN";
+            this.stmSuaLopCN.Size = new System.Drawing.Size(236, 24);
+            this.stmSuaLopCN.Text = "Sửa lớp chuyên ngành ";
+            this.stmSuaLopCN.Click += new System.EventHandler(this.stmSuaLopCN_Click);
             // 
-            // xóaLớpChuyênNgànhToolStripMenuItem
+            // stmXoaLopCN
             // 
-            this.xóaLớpChuyênNgànhToolStripMenuItem.Name = "xóaLớpChuyênNgànhToolStripMenuItem";
-            this.xóaLớpChuyênNgànhToolStripMenuItem.Size = new System.Drawing.Size(236, 24);
-            this.xóaLớpChuyênNgànhToolStripMenuItem.Text = "Xóa lớp chuyên ngành";
+            this.stmXoaLopCN.Name = "stmXoaLopCN";
+            this.stmXoaLopCN.Size = new System.Drawing.Size(236, 24);
+            this.stmXoaLopCN.Text = "Xóa lớp chuyên ngành";
+            this.stmXoaLopCN.Click += new System.EventHandler(this.stmXoaLopCN_Click);
             // 
             // splitContainer4
             // 
@@ -628,31 +631,34 @@
             // LopCN
             // 
             this.LopCN.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.thêmLớpChuyênNgànhToolStripMenuItem,
-            this.sửaLớpChuyênNgànhToolStripMenuItem1,
-            this.XoaLop});
+            this.tsThemLopCN,
+            this.tsSuaLopCN,
+            this.tsXoaLopCN});
             this.LopCN.Name = "LopCN";
             this.LopCN.ShortcutKeys = System.Windows.Forms.Keys.Delete;
             this.LopCN.Size = new System.Drawing.Size(149, 24);
             this.LopCN.Text = "Lớp chuyên nghành";
             // 
-            // thêmLớpChuyênNgànhToolStripMenuItem
+            // tsThemLopCN
             // 
-            this.thêmLớpChuyênNgànhToolStripMenuItem.Name = "thêmLớpChuyênNgànhToolStripMenuItem";
-            this.thêmLớpChuyênNgànhToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
-            this.thêmLớpChuyênNgànhToolStripMenuItem.Text = "Thêm lớp chuyên ngành";
+            this.tsThemLopCN.Name = "tsThemLopCN";
+            this.tsThemLopCN.Size = new System.Drawing.Size(242, 26);
+            this.tsThemLopCN.Text = "Thêm lớp chuyên ngành";
+            this.tsThemLopCN.Click += new System.EventHandler(this.tsThemLopCN_Click);
             // 
-            // sửaLớpChuyênNgànhToolStripMenuItem1
+            // tsSuaLopCN
             // 
-            this.sửaLớpChuyênNgànhToolStripMenuItem1.Name = "sửaLớpChuyênNgànhToolStripMenuItem1";
-            this.sửaLớpChuyênNgànhToolStripMenuItem1.Size = new System.Drawing.Size(242, 26);
-            this.sửaLớpChuyênNgànhToolStripMenuItem1.Text = "Sửa lớp chuyên ngành";
+            this.tsSuaLopCN.Name = "tsSuaLopCN";
+            this.tsSuaLopCN.Size = new System.Drawing.Size(242, 26);
+            this.tsSuaLopCN.Text = "Sửa lớp chuyên ngành";
+            this.tsSuaLopCN.Click += new System.EventHandler(this.tsSuaLopCN_Click);
             // 
-            // XoaLop
+            // tsXoaLopCN
             // 
-            this.XoaLop.Name = "XoaLop";
-            this.XoaLop.Size = new System.Drawing.Size(242, 26);
-            this.XoaLop.Text = "Xóa lớp chuyên ngành";
+            this.tsXoaLopCN.Name = "tsXoaLopCN";
+            this.tsXoaLopCN.Size = new System.Drawing.Size(242, 26);
+            this.tsXoaLopCN.Text = "Xóa lớp chuyên ngành";
+            this.tsXoaLopCN.Click += new System.EventHandler(this.tsXoaLopCN_Click);
             // 
             // LopHP
             // 
@@ -805,24 +811,24 @@
         private System.Windows.Forms.ToolStripMenuItem tdmSVLopChuyenNganh;
         private System.Windows.Forms.ToolStripMenuItem tdmSVLopHocPhan;
         private System.Windows.Forms.ToolStripMenuItem LopCN;
-        private System.Windows.Forms.ToolStripMenuItem XoaLop;
+        private System.Windows.Forms.ToolStripMenuItem tsXoaLopCN;
         private System.Windows.Forms.ToolStripMenuItem LopHP;
         private System.Windows.Forms.ToolStripMenuItem DiemDanh;
         private System.Windows.Forms.ToolStripMenuItem HocPhan;
         private System.Windows.Forms.ToolStripMenuItem HocKy;
         private System.Windows.Forms.ToolStripMenuItem Khoa;
         private System.Windows.Forms.ContextMenuStrip MenuStrip_LopCN;
-        private System.Windows.Forms.ToolStripMenuItem thêmLớpChuyênNgànhToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem sửaLớpChuyênNgànhToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem xóaLớpChuyênNgànhToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stmThemLopCN;
+        private System.Windows.Forms.ToolStripMenuItem stmSuaLopCN;
+        private System.Windows.Forms.ToolStripMenuItem stmXoaLopCN;
         private System.Windows.Forms.ContextMenuStrip MenuStrip_LopHP;
         private System.Windows.Forms.ToolStripMenuItem thêmLớpHọcPhầnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sửaLớpHọcPhầnToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem xóaLớpHọcPhầnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sửaSinhViênToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem xóaSinhViênToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem thêmLớpChuyênNgànhToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sửaLớpChuyênNgànhToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem tsThemLopCN;
+        private System.Windows.Forms.ToolStripMenuItem tsSuaLopCN;
         private System.Windows.Forms.ToolStripMenuItem thêmLớpHọcPhầnToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem sửaLớpHọcPhânToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xóaLớpHọcPhầnToolStripMenuItem1;
