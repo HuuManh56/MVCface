@@ -344,7 +344,7 @@ namespace sms
             }
 
             SinhVienDAO dao = new SinhVienDAO();
-            List<SinhVien> list = dao.GetByClassID((int) theNode.Tag);
+            List<SinhVien> list = dao.GetByClassID2((int) theNode.Tag);
             List<SinhVienCNVM> listVM = new List<SinhVienCNVM>();
             foreach (var item  in list)
             {
@@ -353,7 +353,7 @@ namespace sms
                 vm.HoTen = item.HoTen;
                 vm.GioiTinh = (item.GioiTinh == 1 ? "Nam" : "Nữ");
               //  vm.NgaySinh = date2string((DateTime)item.NgaySinh);
-                vm.NgaySinh = ((DateTime)item.NgaySinh).ToString("dd/MM/yyyy"); ;
+                vm.NgaySinh = ((DateTime)item.NgaySinh).ToString("dd/MM/yyyy"); 
                 listVM.Add(vm);
             }
 
@@ -446,6 +446,20 @@ namespace sms
             int idLHP = dao.IDLopHP(theNode.Text);
             SinhVienDAO sinhVienDao =new SinhVienDAO();
             dgvDanhSach.DataSource = sinhVienDao.GetAllByLHP(idLHP);
+        }
+
+        private void DiemDanh_Click(object sender, EventArgs e)
+        {
+            TreeNode theNode = tvLopHocPhan.SelectedNode;
+            if (theNode == null)
+            {
+                MessageBox.Show("Chưa chọn lớp học phần");
+                return;
+            }
+            LopHpDAO dao = new LopHpDAO();
+            int idLHP = dao.IDLopHP(theNode.Text);
+            frmDiemDanh frm = new frmDiemDanh(idLHP);
+            frm.Show();
         }
     }
 }

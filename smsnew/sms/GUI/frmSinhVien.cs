@@ -411,7 +411,14 @@ namespace sms.GUI
 
         private void frmSinhVien_FormClosed(object sender, FormClosedEventArgs e)
         {
-          //  capture = null;
+            if (capture != null)
+                capture.Dispose();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            if (capture != null)
+                capture.Dispose();
             this.Dispose();
         }
 

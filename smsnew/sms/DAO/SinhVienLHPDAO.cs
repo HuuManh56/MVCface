@@ -21,5 +21,7 @@ namespace sms.DAO
             db.SV_LHP.Add(svLhp);
             return db.SaveChanges();
         }
+
+       
     }
 }

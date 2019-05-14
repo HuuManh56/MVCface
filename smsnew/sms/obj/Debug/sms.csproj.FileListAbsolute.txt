@@ -113,3 +113,4 @@ E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\xxx\MVCface\smsnew\sms\bin\Debug\Z
 E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\xxx\MVCface\smsnew\sms\bin\Debug\EntityFramework.xml
 E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\xxx\MVCface\smsnew\sms\bin\Debug\EntityFramework.SqlServer.xml
 E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\xxx\MVCface\smsnew\sms\obj\Debug\sms.GUI.frmSinhVienLHP.resources
+E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\xxx\MVCface\smsnew\sms\obj\Debug\sms.GUI.frmDiemDanh.resources

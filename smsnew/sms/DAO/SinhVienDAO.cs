@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using sms.Entities;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using sms.Entities.ViewModel;
 
 namespace sms.DAO
 {
@@ -67,12 +68,27 @@ namespace sms.DAO
             return list;
         }
 
-        public List<SinhVien> GetByClassID(int id)
+        public List<SinhVien> GetByClassID2(int id)
         {
-            List<SinhVien> list = new List<SinhVien>();
-            list =db.SinhViens.SqlQuery("Select * from SinhVien where LopID=@param",
+           // List<SinhVien> list = new List<SinhVien>();
+           var  list =db.SinhViens.SqlQuery("Select * from SinhVien where LopID=@param",
                 new SqlParameter("param", id)).ToList();
-            return list;
+            
+             return list;
+        }
+        public List<SinhVienVM> GetByClassID(int id)
+        {
+            //List<SinhVien> list = new List<SinhVien>();
+            //list =db.SinhViens.SqlQuery("Select * from SinhVien where LopID=@param",
+            //    new SqlParameter("param", id)).ToList();
+            var lst = from a in db.SinhViens
+                join b in db.SV_LHP on a.ID equals b.SinhVienID 
+                select new SinhVienVM { ID = a.ID, image = a.image, NgaySinh = (DateTime)a.NgaySinh
+                    ,LopID = (int)a.LopID,GioiTinh  = (int)a.GioiTinh
+                    , HoTen = a.HoTen};
+
+            return lst.ToList();
+          //  return list;
         }
 
         public SinhVien GetByID(int id)

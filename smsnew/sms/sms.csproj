@@ -105,11 +105,18 @@
     <Compile Include="Entities\sysdiagram.cs" />
     <Compile Include="Entities\ViewModel\NienKhoaVM.cs" />
     <Compile Include="Entities\ViewModel\SinhVienCNVM.cs" />
+    <Compile Include="Entities\ViewModel\SinhVienVM.cs" />
     <Compile Include="frmHome.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmHome.Designer.cs">
       <DependentUpon>frmHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmDiemDanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmDiemDanh.Designer.cs">
+      <DependentUpon>frmDiemDanh.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmHocKy.cs">
       <SubType>Form</SubType>
@@ -175,6 +182,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmDiemDanh.resx">
+      <DependentUpon>frmDiemDanh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmHocKy.resx">
       <DependentUpon>frmHocKy.cs</DependentUpon>

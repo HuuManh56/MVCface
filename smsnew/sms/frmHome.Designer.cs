@@ -699,6 +699,7 @@
             this.DiemDanh.Name = "DiemDanh";
             this.DiemDanh.Size = new System.Drawing.Size(94, 24);
             this.DiemDanh.Text = "Điểm danh";
+            this.DiemDanh.Click += new System.EventHandler(this.DiemDanh_Click);
             // 
             // HocPhan
             // 
