@@ -30,7 +30,6 @@ namespace sms.GUI
             }
             
         }
-
         private void cmbNamHk_SelectedIndexChanged(object sender, EventArgs e)
         {
             string a = cmbNamHk.SelectedItem.ToString();
@@ -38,7 +37,6 @@ namespace sms.GUI
            dgvHocKy.DataSource= hoc.GetByNamHoc(a);
             txtTenHK.Text = "";
         }
-
         private void btnThem_HK_Click(object sender, EventArgs e)
         {
             string a = cmbNamHk.SelectedItem.ToString();

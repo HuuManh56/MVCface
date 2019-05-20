@@ -52,6 +52,7 @@ namespace sms.GUI
                 if (ret > 0)
                 {
                     MessageBox.Show("Sửa thành công");
+                    this.Close();
                     //frmHome frmHome = new frmHome();
                     //frmHome.LoadLHP_HK();
                 }

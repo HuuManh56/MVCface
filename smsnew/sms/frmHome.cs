@@ -18,7 +18,7 @@ namespace sms
 {
     public partial class frmHome : Form
     {
-        
+
         public frmHome()
         {
             InitializeComponent();
@@ -28,7 +28,7 @@ namespace sms
         {
             LopHpDAO lopHpDAO = new LopHpDAO();
             var lis = lopHpDAO.GetTen();
-            foreach( Ten item in lis)
+            foreach (Ten item in lis)
             {
                 tvLopHocPhan.Nodes.Add(item.TenHp);
             }
@@ -70,7 +70,7 @@ namespace sms
                 cmbNamHK.Items.Add(a);
             }
 
-            
+
         }
 
         private void cmbNamHK_SelectedIndexChanged(object sender, EventArgs e)
@@ -90,21 +90,22 @@ namespace sms
 
         private void thêmLớpHọcPhầnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-            if( cmbHocKY.SelectedIndex<0 && cmbNamHK.SelectedIndex<0)
+
+            if (cmbHocKY.SelectedIndex < 0 || cmbNamHK.SelectedIndex < 0)
             {
-                MessageBox.Show(" ban chua chon nam hoc va hoc ky");
-                
+                MessageBox.Show(" Bạn phải chọn năm học và học kỳ");
+
             }
             else
             {
                 frmLopHP_Them frm = new frmLopHP_Them();
-                frm.txtHocKy.Text= cmbHocKY.Text+"";
-                frm.txtNamHK.Text= cmbNamHK.Text;
+                frm.txtHocKy.Text = cmbHocKY.Text + "";
+                frm.txtNamHK.Text = cmbNamHK.Text;
                 frm.ShowDialog();
-               
 
-                
+                LoadLHP_HK();
+
+
             }
         }
 
@@ -127,7 +128,7 @@ namespace sms
 
         private void sửaLớpHọcPhầnToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if( tvLopHocPhan.SelectedNode.Index <0 || cmbNamHK.SelectedIndex < 0)
+            if (tvLopHocPhan.SelectedNode.Index < 0 || cmbNamHK.SelectedIndex < 0 || tvLopHocPhan.SelectedNode == null)
             {
                 MessageBox.Show("Bạn chưa chọn lớp học phần");
             }
@@ -138,8 +139,8 @@ namespace sms
                 frm.txtNamHK.Text = cmbNamHK.Text;
                 string a = tvLopHocPhan.Tag + "";
                 string[] b = a.Split('-');
-               
-                frm.txtTenLopHP.Text =a;
+
+                frm.txtTenLopHP.Text = a;
                 frm.cmbHP.Text = b[0];
                 frm.txtMaLopHP.Text = b[1];
                 frm.txtTenLopHP.Tag = a;
@@ -156,7 +157,7 @@ namespace sms
 
         private void tvLopHocPhan_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            if(e.Node != null)
+            if (e.Node != null)
             {
                 tvLopHocPhan.Tag = tvLopHocPhan.SelectedNode.Text;
             }
@@ -166,7 +167,7 @@ namespace sms
         private void xóaLớpHọcPhầnToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            if (cmbHocKY.SelectedIndex < 0 && cmbNamHK.SelectedIndex < 0)
+            if (tvLopHocPhan.SelectedNode.Index < 0 || cmbNamHK.SelectedIndex < 0 || tvLopHocPhan.SelectedNode == null)
             {
                 MessageBox.Show(" ban chua chon nam hoc va hoc ky");
 
@@ -200,7 +201,7 @@ namespace sms
 
                 }
             }
-           
+
         }
 
         private void Khoa_Click(object sender, EventArgs e)
@@ -212,7 +213,7 @@ namespace sms
         public void LoadCBKhoa()
         {
             NienKhoaDAO dao = new NienKhoaDAO();
-            var lst =dao.GetAll2();
+            var lst = dao.GetAll2();
             foreach (NienKhoaVM item in lst)
             {
                 Item a = new Item();
@@ -239,9 +240,9 @@ namespace sms
                 TreeNode a = new TreeNode();
                 a.Text = item.TenLop;
                 a.Tag = item.ID;
-               // string a = item.TenLop;
+                // string a = item.TenLop;
                 tvLopChuyenNganh.Nodes.Add(a);
-                
+
             }
         }
 
@@ -288,11 +289,11 @@ namespace sms
 
             }
             LopDAO dao = new LopDAO();
-            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa lớp " + theNode.Text + "?","Xác nhận",
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa lớp " + theNode.Text + "?", "Xác nhận",
                 MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                int ret = dao.Delete((int) theNode.Tag);
+                int ret = dao.Delete((int)theNode.Tag);
                 if (ret < 0)
                 {
                     MessageBox.Show("Xóa không thành công");
@@ -311,12 +312,12 @@ namespace sms
 
         private void stmSuaLopCN_Click(object sender, EventArgs e)
         {
-            tsSuaLopCN_Click(sender,e);
+            tsSuaLopCN_Click(sender, e);
         }
 
         private void stmXoaLopCN_Click(object sender, EventArgs e)
         {
-            tsXoaLopCN_Click(sender,e);
+            tsXoaLopCN_Click(sender, e);
         }
 
         private void tdmSVLopChuyenNganh_Click(object sender, EventArgs e)
@@ -339,21 +340,21 @@ namespace sms
             theNode = tvLopChuyenNganh.SelectedNode;
             if (theNode == null)
             {
-               // MessageBox.Show("Chưa chọn lớp chuyên ngành");
+                // MessageBox.Show("Chưa chọn lớp chuyên ngành");
                 return;
             }
 
             SinhVienDAO dao = new SinhVienDAO();
-            List<SinhVien> list = dao.GetByClassID2((int) theNode.Tag);
+            List<SinhVien> list = dao.GetByClassID2((int)theNode.Tag);
             List<SinhVienCNVM> listVM = new List<SinhVienCNVM>();
-            foreach (var item  in list)
+            foreach (var item in list)
             {
                 SinhVienCNVM vm = new SinhVienCNVM();
                 vm.id = item.ID;
                 vm.HoTen = item.HoTen;
                 vm.GioiTinh = (item.GioiTinh == 1 ? "Nam" : "Nữ");
-              //  vm.NgaySinh = date2string((DateTime)item.NgaySinh);
-                vm.NgaySinh = ((DateTime)item.NgaySinh).ToString("dd/MM/yyyy"); 
+                //  vm.NgaySinh = date2string((DateTime)item.NgaySinh);
+                vm.NgaySinh = ((DateTime)item.NgaySinh).ToString("dd/MM/yyyy");
                 listVM.Add(vm);
             }
 
@@ -362,7 +363,7 @@ namespace sms
 
         private string date2string(DateTime date)
         {
-            string result="";
+            string result = "";
             DateTime dt = DateTime.ParseExact(date.ToString(), "MM/dd/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture);
 
             result = dt.ToString("dd/M/yyyy", CultureInfo.InvariantCulture);
@@ -400,8 +401,8 @@ namespace sms
                     LoadSVLopCN();
                 }
             }
-            
-            
+
+
         }
 
         private void tsSuaSV_Click(object sender, EventArgs e)
@@ -444,7 +445,7 @@ namespace sms
             TreeNode theNode = tvLopHocPhan.SelectedNode;
             LopHpDAO dao = new LopHpDAO();
             int idLHP = dao.IDLopHP(theNode.Text);
-            SinhVienDAO sinhVienDao =new SinhVienDAO();
+            SinhVienDAO sinhVienDao = new SinhVienDAO();
             dgvDanhSach.DataSource = sinhVienDao.GetAllByLHP(idLHP);
         }
 

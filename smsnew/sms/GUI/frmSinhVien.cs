@@ -95,8 +95,7 @@ namespace sms.GUI
                 cbCamIndex.Items.Add(name);
             }           
         }
-
-
+        
         public void ProcessFrame(object sender, EventArgs arg)
         {
             if (!picProcess)

@@ -50,8 +50,8 @@ namespace sms.GUI
             if (ret > 0)
             {
                 MessageBox.Show("Thêm thành công");
-                //frmHome frmHome = new frmHome();
-                //frmHome.LoadLHP_HK();
+                this.Close();
+                
             }
             else
             {

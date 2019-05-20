@@ -87,25 +87,25 @@
     <Compile Include="DTO\Ten.cs" />
     <Compile Include="DTO\NhanVienDTO.cs" />
     <Compile Include="Entities\Item.cs" />
-    <Compile Include="Entities\DiemDanh.cs" />
     <Compile Include="Entities\HK1.cs" />
+    <Compile Include="Entities\ViewModel\HocKyLQ.cs" />
+    <Compile Include="Entities\NamHocLNQ.cs" />
+    <Compile Include="Entities\SinhVienLHPVM.cs" />
+    <Compile Include="Entities\ViewModel\NienKhoaVM.cs" />
+    <Compile Include="Entities\ViewModel\SinhVienCNVM.cs" />
+    <Compile Include="Entities\ViewModel\SinhVienVM.cs" />
+    <Compile Include="Entities\DiemDanh.cs" />
     <Compile Include="Entities\HocKy.cs" />
-    <Compile Include="Entities\HocKyLQ.cs" />
     <Compile Include="Entities\HocPhan.cs" />
     <Compile Include="Entities\HocPhan_HocKy.cs" />
     <Compile Include="Entities\Lop.cs" />
     <Compile Include="Entities\LopHocPhan.cs" />
     <Compile Include="Entities\MyDBContext.cs" />
     <Compile Include="Entities\NamHoc.cs" />
-    <Compile Include="Entities\NamHocLNQ.cs" />
     <Compile Include="Entities\NienKhoa.cs" />
     <Compile Include="Entities\SinhVien.cs" />
-    <Compile Include="Entities\SinhVienLHPVM.cs" />
     <Compile Include="Entities\SV_LHP.cs" />
     <Compile Include="Entities\sysdiagram.cs" />
-    <Compile Include="Entities\ViewModel\NienKhoaVM.cs" />
-    <Compile Include="Entities\ViewModel\SinhVienCNVM.cs" />
-    <Compile Include="Entities\ViewModel\SinhVienVM.cs" />
     <Compile Include="frmHome.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -1,0 +1,15 @@
+C:\Users\user\Desktop\MVCface\smsnew\sms\obj\Release\sms.frmHome.resources
+C:\Users\user\Desktop\MVCface\smsnew\sms\obj\Release\sms.GUI.frmDiemDanh.resources
+C:\Users\user\Desktop\MVCface\smsnew\sms\obj\Release\sms.GUI.frmHocKy.resources
+C:\Users\user\Desktop\MVCface\smsnew\sms\obj\Release\sms.GUI.frmHocPhan.resources
+C:\Users\user\Desktop\MVCface\smsnew\sms\obj\Release\sms.GUI.frmLop.resources
+C:\Users\user\Desktop\MVCface\smsnew\sms\obj\Release\sms.GUI.frmLopHP.resources
+C:\Users\user\Desktop\MVCface\smsnew\sms\obj\Release\sms.GUI.frmLopHP_Sua.resources
+C:\Users\user\Desktop\MVCface\smsnew\sms\obj\Release\sms.GUI.frmLopHP_Them.resources
+C:\Users\user\Desktop\MVCface\smsnew\sms\obj\Release\sms.GUI.frmNamHoc.resources
+C:\Users\user\Desktop\MVCface\smsnew\sms\obj\Release\sms.GUI.frmNienKhoa.resources
+C:\Users\user\Desktop\MVCface\smsnew\sms\obj\Release\sms.GUI.frmSinhVien.resources
+C:\Users\user\Desktop\MVCface\smsnew\sms\obj\Release\sms.GUI.frmSinhVienLHP.resources
+C:\Users\user\Desktop\MVCface\smsnew\sms\obj\Release\sms.Properties.Resources.resources
+C:\Users\user\Desktop\MVCface\smsnew\sms\obj\Release\sms.csproj.GenerateResource.cache
+C:\Users\user\Desktop\MVCface\smsnew\sms\obj\Release\sms.csproj.CoreCompileInputs.cache

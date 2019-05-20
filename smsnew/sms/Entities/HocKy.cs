@@ -12,8 +12,8 @@ namespace sms.Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public HocKy()
         {
-            //HocPhan_HocKy = new HashSet<HocPhan_HocKy>();
-            //LopHocPhans = new HashSet<LopHocPhan>();
+            HocPhan_HocKy = new HashSet<HocPhan_HocKy>();
+            LopHocPhans = new HashSet<LopHocPhan>();
         }
 
         public int ID { get; set; }
@@ -25,10 +25,10 @@ namespace sms.Entities
 
         public virtual NamHoc NamHoc { get; set; }
 
-        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        //public virtual ICollection<HocPhan_HocKy> HocPhan_HocKy { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HocPhan_HocKy> HocPhan_HocKy { get; set; }
 
-        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        //public virtual ICollection<LopHocPhan> LopHocPhans { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<LopHocPhan> LopHocPhans { get; set; }
     }
 }

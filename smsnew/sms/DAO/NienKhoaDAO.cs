@@ -82,8 +82,8 @@ namespace sms.DAO
 
         public List<NienKhoaVM> GetAll2()
         {
-            var lst = from a in db.NienKhoas orderby a.IDView select new NienKhoaVM { id = a.ID,idview = a.IDView,ten = a.Ten };
-
+            //var lst = from a in db.NienKhoas orderby a.IDView select new NienKhoaVM { id = a.ID,idview = a.IDView,ten = a.Ten };
+            var lst = from a in db.NienKhoas select new  NienKhoaVM { id = a.ID, idview = a.IDView, ten = a.Ten };
             return lst.ToList();
         }
     }

@@ -9,10 +9,8 @@ namespace sms.Entities
     {
         public MyDBContext()
             : base("name=MyDBContext")
-           // : base("name=MyDBContext1")
         {
         }
-
         public virtual DbSet<DiemDanh> DiemDanhs { get; set; }
         public virtual DbSet<HocKy> HocKies { get; set; }
         public virtual DbSet<HocPhan> HocPhans { get; set; }
@@ -27,16 +25,6 @@ namespace sms.Entities
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<HocKy>()
-            //    .HasMany(e => e.HocPhan_HocKy)
-            //    .WithRequired(e => e.HocKy)
-            //    .WillCascadeOnDelete(false);
-
-            //modelBuilder.Entity<HocPhan>()
-            //    .HasMany(e => e.HocPhan_HocKy)
-            //    .WithRequired(e => e.HocPhan)
-            //    .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<NamHoc>()
                 .Property(e => e.Code)
                 .IsFixedLength();
