@@ -117,3 +117,4 @@ E:\IT_MTA\Nam 3\Ki_2\Thuc tap nhom\SourceCode\xxx\MVCface\smsnew\sms\obj\Debug\s
 C:\Users\user\Desktop\MVCface\smsnew\sms\obj\Debug\sms.GUI.frmDiemDanh.resources
 C:\Users\user\Desktop\MVCface\smsnew\sms\obj\Debug\sms.GUI.frmSinhVien.resources
 C:\Users\user\Desktop\MVCface\smsnew\sms\obj\Debug\sms.GUI.frmSinhVienLHP.resources
+C:\Users\user\Desktop\MVCface\smsnew\sms\obj\Debug\sms.GUI.frmDiem.resources

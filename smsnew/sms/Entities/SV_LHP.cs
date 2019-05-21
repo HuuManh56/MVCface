@@ -20,8 +20,8 @@ namespace sms.Entities
 
         public decimal? Diem3 { get; set; }
 
-        public virtual LopHocPhan LopHocPhan { get; set; }
+        //public virtual LopHocPhan LopHocPhan { get; set; }
 
-        public virtual SinhVien SinhVien { get; set; }
+        //public virtual SinhVien SinhVien { get; set; }
     }
 }

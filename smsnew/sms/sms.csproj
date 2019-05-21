@@ -112,6 +112,12 @@
     <Compile Include="frmHome.Designer.cs">
       <DependentUpon>frmHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmDiem.Designer.cs">
+      <DependentUpon>frmDiem.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmDiemDanh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +188,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmDiem.resx">
+      <DependentUpon>frmDiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmDiemDanh.resx">
       <DependentUpon>frmDiemDanh.cs</DependentUpon>

@@ -60,7 +60,7 @@ namespace sms
         private void frmHome_Load(object sender, EventArgs e)
         {
             LoadCBKhoa();
-            ShowLopHP();
+           
             HocKyDAO hoc = new HocKyDAO();
             //dgvHocKy.DataSource = hoc.GetALL();
             var lst = hoc.Getcode();
@@ -153,15 +153,21 @@ namespace sms
         private void tvLopHocPhan_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             tvLopHocPhan.SelectedNode = e.Node;
-        }
 
-        private void tvLopHocPhan_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-            if (e.Node != null)
-            {
-                tvLopHocPhan.Tag = tvLopHocPhan.SelectedNode.Text;
-            }
-            LoadSinhVienLHP();
+            // loat sinh vien lớp học phần 
+            SinhVienLHPDAO sv = new SinhVienLHPDAO();
+
+            //
+            LopHpDAO lopHpDAO = new LopHpDAO();
+            LopHocPhan lopHocPhan = new LopHocPhan();
+
+
+            lopHocPhan.ID = lopHpDAO.IDLopHP(e.Node.Text);
+            //
+            SinhVienDAO sinhVien = new SinhVienDAO();
+          
+
+            dgvDanhSach.DataSource= sinhVien.GetAllByLHP(lopHocPhan.ID);
         }
 
         private void xóaLớpHọcPhầnToolStripMenuItem_Click(object sender, EventArgs e)
@@ -415,6 +421,7 @@ namespace sms
             }
             SinhVienDAO dao = new SinhVienDAO();
             SinhVien sinhVien = dao.GetByID(Int32.Parse(select[0].Cells[0].Value.ToString()));
+
             if (sinhVien != null)
             {
                 frmSinhVien frm = new frmSinhVien(sinhVien);
@@ -434,12 +441,12 @@ namespace sms
             }
             LopHpDAO dao = new LopHpDAO();
             MyDBContext db = new MyDBContext();
+
             LopHocPhan lopHp = db.LopHocPhans.Find(dao.IDLopHP(theNode.Text));
             frmSinhVienLHP frm = new frmSinhVienLHP(lopHp);
             frm.ShowDialog();
             LoadSinhVienLHP();
         }
-
         private void LoadSinhVienLHP()
         {
             TreeNode theNode = tvLopHocPhan.SelectedNode;
@@ -461,6 +468,74 @@ namespace sms
             int idLHP = dao.IDLopHP(theNode.Text);
             frmDiemDanh frm = new frmDiemDanh(idLHP);
             frm.Show();
+        }
+
+        private void sửaĐiểmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void sửaĐiểmToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var select = dgvDanhSach.SelectedRows;
+            if (select == null)
+            {
+                MessageBox.Show("Chưa chọn sinh viên");
+                return;
+            }
+            SinhVienDAO dao = new SinhVienDAO();
+            SinhVien sinhVien = dao.GetByID(Int32.Parse(select[0].Cells[0].Value.ToString()));
+
+            //
+
+            if (sinhVien != null)
+            {
+                frmDiem frm = new frmDiem();
+                frm.txtDiem1.Text = select[0].Cells[5].Value.ToString();
+                frm.txtDiem2.Text = select[0].Cells[6].Value.ToString();
+                frm.txtDiem3.Text = select[0].Cells[7].Value.ToString();
+                frm.txtDiem1.Tag = sinhVien.ID;
+                frm.Show();
+
+                LoadSVLopCN();
+            }
+
+
+        }
+
+        private void sửaSinhViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tsSuaSV_Click( sender, e);
+        }
+
+        private void xóaSinhViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tsXoaSV_Click(sender, e);
+        }
+
+        private void lớpHọcPhầnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tdmSVLopHocPhan_Click(sender, e);
+        }
+
+        private void thêmSinhViênLớpChuyênNgànhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tdmSVLopChuyenNganh_Click(sender, e);
+        }
+
+        private void thêmLớpHọcPhầnToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            thêmLớpHọcPhầnToolStripMenuItem_Click(sender, e);
+        }
+
+        private void sửaLớpHọcPhânToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            sửaLớpHọcPhầnToolStripMenuItem1_Click(sender, e);
+        }
+
+        private void xóaLớpHọcPhầnToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            xóaLớpHọcPhầnToolStripMenuItem_Click(sender, e);
         }
     }
 }

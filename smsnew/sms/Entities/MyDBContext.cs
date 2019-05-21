@@ -45,15 +45,15 @@ namespace sms.Entities
 
             modelBuilder.Entity<SV_LHP>()
                 .Property(e => e.Diem1)
-                .HasPrecision(2, 2);
+                .HasPrecision(4, 2);
 
             modelBuilder.Entity<SV_LHP>()
                 .Property(e => e.Diem2)
-                .HasPrecision(2, 2);
+                .HasPrecision(4, 2);
 
             modelBuilder.Entity<SV_LHP>()
                 .Property(e => e.Diem3)
-                .HasPrecision(2, 2);
+                .HasPrecision(4, 2);
         }
     }
 }

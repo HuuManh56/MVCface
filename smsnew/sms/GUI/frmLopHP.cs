@@ -22,6 +22,7 @@ namespace sms.GUI
         {
             LopHpDAO lopHpDAO = new LopHpDAO();
             dgvLopHP.DataSource = lopHpDAO.GetAll();
+           
 
         }
     }
