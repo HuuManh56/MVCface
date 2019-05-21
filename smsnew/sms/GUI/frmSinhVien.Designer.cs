@@ -53,7 +53,6 @@
             this.btnStart = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.imgCamera = new Emgu.CV.UI.ImageBox();
-            this.btnChup = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imgTrain)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -267,7 +266,6 @@
             this.groupBox1.Controls.Add(this.cbCamIndex);
             this.groupBox1.Controls.Add(this.btnHuy);
             this.groupBox1.Controls.Add(this.imgCamera);
-            this.groupBox1.Controls.Add(this.btnChup);
             this.groupBox1.Controls.Add(this.imgTrain);
             this.groupBox1.Controls.Add(this.btnThoat);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -306,16 +304,6 @@
             this.imgCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgCamera.TabIndex = 17;
             this.imgCamera.TabStop = false;
-            // 
-            // btnChup
-            // 
-            this.btnChup.Location = new System.Drawing.Point(583, 365);
-            this.btnChup.Name = "btnChup";
-            this.btnChup.Size = new System.Drawing.Size(130, 35);
-            this.btnChup.TabIndex = 0;
-            this.btnChup.Text = "Chụp";
-            this.btnChup.UseVisualStyleBackColor = true;
-            this.btnChup.Click += new System.EventHandler(this.btnChup_Click);
             // 
             // frmSinhVien
             // 
@@ -361,7 +349,6 @@
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnHuy;
         public Emgu.CV.UI.ImageBox imgCamera;
-        private System.Windows.Forms.Button btnChup;
         private System.Windows.Forms.Button btnLuuThoat;
         private System.Windows.Forms.Button btnLuuTiepTuc;
     }

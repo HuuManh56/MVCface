@@ -50,6 +50,7 @@ namespace sms.GUI
             loadListCam();
             this.idLop = _idLop;
             loadListSV();
+            insertDate(_idLop);
         }
 
         void loadListSV()
@@ -60,7 +61,7 @@ namespace sms.GUI
             foreach (var item in list)
             {
                 listID.Add(item.ID.ToString());
-              //  listID.Add(item.HoTen);
+                //  listID.Add(item.HoTen);
                 MemoryStream stream = new MemoryStream(item.image);
                 img = new Image<Gray, byte>(new Bitmap(stream));
                 listImg.Add(img);
@@ -85,7 +86,6 @@ namespace sms.GUI
                 imgCamera.Image = ImageFrame;
                 RecognitionFace();
             }
-
         }
         public void RecognitionFace()
         {
@@ -108,8 +108,8 @@ namespace sms.GUI
                 {
 
                     check = 0;
-                  //  imgTrain.Image = ImageFrame.Copy(f.rect).Convert<Bgr, Byte>().Resize(148,
-                  //                                      161, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC); // hien thi 1 khuon mat len imgTrain => nhap thong tin
+                    //  imgTrain.Image = ImageFrame.Copy(f.rect).Convert<Bgr, Byte>().Resize(148,
+                    //                                      161, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC); // hien thi 1 khuon mat len imgTrain => nhap thong tin
                     objFace = ImageFrame.Copy(f.rect).Convert<Gray, Byte>().Resize(148,
                                                        161, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
                     ImageFrame.Draw(f.rect, new Bgr(Color.Red), 3); // danh dau khuon mat phat hien
@@ -127,7 +127,7 @@ namespace sms.GUI
 
                 }
 
-                if (check==1)
+                if (check == 1)
                 {
                     clearInput();
                 }
@@ -202,6 +202,8 @@ namespace sms.GUI
                 if (item.ID == id)
                 {
                     sinhVien = item;
+                    LopHpDAO dao = new LopHpDAO();
+                    dao.UpdateTT(id, idLop);
                     break;
                 }
             }
@@ -209,5 +211,29 @@ namespace sms.GUI
             return sinhVien;
 
         }
+
+        private void frmDiemDanh_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (capture != null)
+                capture.Dispose();
+        }
+
+
+
+        private void insertDate(int _idLop)
+        {
+            LopHpDAO dao = new LopHpDAO();
+            if (dao.isNew(_idLop))
+            {
+                dao.insertDate(listID, _idLop);
+            }
+        }
+
+        private void frmDiemDanh_FormClosing_1(object sender, FormClosingEventArgs e)
+        {
+            if (capture != null)
+                capture.Dispose();
+        }
     }
+
 }

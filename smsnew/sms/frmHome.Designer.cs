@@ -39,6 +39,7 @@
             this.stmThemLopCN = new System.Windows.Forms.ToolStripMenuItem();
             this.stmSuaLopCN = new System.Windows.Forms.ToolStripMenuItem();
             this.stmXoaLopCN = new System.Windows.Forms.ToolStripMenuItem();
+            this.thêmSinhViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.cmbKhoa = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -47,6 +48,7 @@
             this.thêmLớpHọcPhầnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sửaLớpHọcPhầnToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.xóaLớpHọcPhầnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thêmSinhViênToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.cmbNamHK = new System.Windows.Forms.ComboBox();
@@ -92,8 +94,7 @@
             this.HocKy = new System.Windows.Forms.ToolStripMenuItem();
             this.Khoa = new System.Windows.Forms.ToolStripMenuItem();
             this.nămHọcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.thêmSinhViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.thêmSinhViênToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmIn = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -141,8 +142,8 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.toolStripContainer1);
             this.splitContainer1.Panel2.Controls.Add(this.menuStrip1);
-            this.splitContainer1.Size = new System.Drawing.Size(1062, 570);
-            this.splitContainer1.SplitterDistance = 213;
+            this.splitContainer1.Size = new System.Drawing.Size(1295, 570);
+            this.splitContainer1.SplitterDistance = 259;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 2;
             // 
@@ -161,7 +162,7 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.groupBox4);
             this.splitContainer2.Panel2.Controls.Add(this.groupBox3);
-            this.splitContainer2.Size = new System.Drawing.Size(213, 570);
+            this.splitContainer2.Size = new System.Drawing.Size(259, 570);
             this.splitContainer2.SplitterDistance = 152;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -172,7 +173,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(213, 152);
+            this.groupBox1.Size = new System.Drawing.Size(259, 152);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lớp chuyên ngành";
@@ -183,7 +184,7 @@
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox5.Location = new System.Drawing.Point(3, 43);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(207, 106);
+            this.groupBox5.Size = new System.Drawing.Size(253, 106);
             this.groupBox5.TabIndex = 1;
             this.groupBox5.TabStop = false;
             // 
@@ -193,7 +194,7 @@
             this.tvLopChuyenNganh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tvLopChuyenNganh.Location = new System.Drawing.Point(3, 18);
             this.tvLopChuyenNganh.Name = "tvLopChuyenNganh";
-            this.tvLopChuyenNganh.Size = new System.Drawing.Size(201, 85);
+            this.tvLopChuyenNganh.Size = new System.Drawing.Size(247, 85);
             this.tvLopChuyenNganh.TabIndex = 0;
             this.tvLopChuyenNganh.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvLopChuyenNganh_AfterSelect);
             // 
@@ -229,6 +230,13 @@
             this.stmXoaLopCN.Text = "Xóa lớp chuyên ngành";
             this.stmXoaLopCN.Click += new System.EventHandler(this.stmXoaLopCN_Click);
             // 
+            // thêmSinhViênToolStripMenuItem
+            // 
+            this.thêmSinhViênToolStripMenuItem.Name = "thêmSinhViênToolStripMenuItem";
+            this.thêmSinhViênToolStripMenuItem.Size = new System.Drawing.Size(236, 24);
+            this.thêmSinhViênToolStripMenuItem.Text = "Thêm sinh viên";
+            this.thêmSinhViênToolStripMenuItem.Click += new System.EventHandler(this.thêmSinhViênToolStripMenuItem_Click);
+            // 
             // splitContainer4
             // 
             this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Top;
@@ -238,8 +246,8 @@
             // splitContainer4.Panel1
             // 
             this.splitContainer4.Panel1.Controls.Add(this.cmbKhoa);
-            this.splitContainer4.Size = new System.Drawing.Size(207, 25);
-            this.splitContainer4.SplitterDistance = 74;
+            this.splitContainer4.Size = new System.Drawing.Size(253, 25);
+            this.splitContainer4.SplitterDistance = 90;
             this.splitContainer4.TabIndex = 0;
             // 
             // cmbKhoa
@@ -248,7 +256,7 @@
             this.cmbKhoa.FormattingEnabled = true;
             this.cmbKhoa.Location = new System.Drawing.Point(0, 0);
             this.cmbKhoa.Name = "cmbKhoa";
-            this.cmbKhoa.Size = new System.Drawing.Size(74, 24);
+            this.cmbKhoa.Size = new System.Drawing.Size(90, 24);
             this.cmbKhoa.TabIndex = 0;
             this.cmbKhoa.Text = "Khóa";
             this.cmbKhoa.SelectedIndexChanged += new System.EventHandler(this.cmbKhoa_SelectedIndexChanged);
@@ -259,7 +267,7 @@
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(0, 58);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(213, 356);
+            this.groupBox4.Size = new System.Drawing.Size(259, 356);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             // 
@@ -269,7 +277,7 @@
             this.tvLopHocPhan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tvLopHocPhan.Location = new System.Drawing.Point(3, 18);
             this.tvLopHocPhan.Name = "tvLopHocPhan";
-            this.tvLopHocPhan.Size = new System.Drawing.Size(207, 335);
+            this.tvLopHocPhan.Size = new System.Drawing.Size(253, 335);
             this.tvLopHocPhan.TabIndex = 0;
             this.tvLopHocPhan.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvLopChuyenNganh_AfterSelect);
             this.tvLopHocPhan.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvLopHocPhan_NodeMouseClick);
@@ -283,7 +291,7 @@
             this.xóaLớpHọcPhầnToolStripMenuItem,
             this.thêmSinhViênToolStripMenuItem3});
             this.MenuStrip_LopHP.Name = "MenuStrip_LopHP";
-            this.MenuStrip_LopHP.Size = new System.Drawing.Size(211, 128);
+            this.MenuStrip_LopHP.Size = new System.Drawing.Size(211, 100);
             // 
             // thêmLớpHọcPhầnToolStripMenuItem
             // 
@@ -306,13 +314,20 @@
             this.xóaLớpHọcPhầnToolStripMenuItem.Text = "Xóa lớp học phần ";
             this.xóaLớpHọcPhầnToolStripMenuItem.Click += new System.EventHandler(this.xóaLớpHọcPhầnToolStripMenuItem_Click);
             // 
+            // thêmSinhViênToolStripMenuItem3
+            // 
+            this.thêmSinhViênToolStripMenuItem3.Name = "thêmSinhViênToolStripMenuItem3";
+            this.thêmSinhViênToolStripMenuItem3.Size = new System.Drawing.Size(210, 24);
+            this.thêmSinhViênToolStripMenuItem3.Text = "Thêm sinh viên";
+            this.thêmSinhViênToolStripMenuItem3.Click += new System.EventHandler(this.thêmSinhViênToolStripMenuItem3_Click);
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.splitContainer3);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(213, 58);
+            this.groupBox3.Size = new System.Drawing.Size(259, 58);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Lớp học phần";
@@ -330,8 +345,8 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.cmbHocKY);
-            this.splitContainer3.Size = new System.Drawing.Size(207, 37);
-            this.splitContainer3.SplitterDistance = 97;
+            this.splitContainer3.Size = new System.Drawing.Size(253, 37);
+            this.splitContainer3.SplitterDistance = 118;
             this.splitContainer3.TabIndex = 0;
             // 
             // cmbNamHK
@@ -340,7 +355,7 @@
             this.cmbNamHK.FormattingEnabled = true;
             this.cmbNamHK.Location = new System.Drawing.Point(0, 0);
             this.cmbNamHK.Name = "cmbNamHK";
-            this.cmbNamHK.Size = new System.Drawing.Size(97, 24);
+            this.cmbNamHK.Size = new System.Drawing.Size(118, 24);
             this.cmbNamHK.TabIndex = 0;
             this.cmbNamHK.Text = "Năm học ";
             this.cmbNamHK.SelectedIndexChanged += new System.EventHandler(this.cmbNamHK_SelectedIndexChanged);
@@ -351,7 +366,7 @@
             this.cmbHocKY.FormattingEnabled = true;
             this.cmbHocKY.Location = new System.Drawing.Point(0, 0);
             this.cmbHocKY.Name = "cmbHocKY";
-            this.cmbHocKY.Size = new System.Drawing.Size(106, 24);
+            this.cmbHocKY.Size = new System.Drawing.Size(131, 24);
             this.cmbHocKY.TabIndex = 0;
             this.cmbHocKY.Text = "Học kỳ";
             this.cmbHocKY.SelectedIndexChanged += new System.EventHandler(this.cmbHocKY_SelectedIndexChanged);
@@ -363,12 +378,12 @@
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.groupBox2);
             this.toolStripContainer1.ContentPanel.Margin = new System.Windows.Forms.Padding(4);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(844, 515);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1031, 515);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 28);
             this.toolStripContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(844, 542);
+            this.toolStripContainer1.Size = new System.Drawing.Size(1031, 542);
             this.toolStripContainer1.TabIndex = 1;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -386,7 +401,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(844, 515);
+            this.groupBox2.Size = new System.Drawing.Size(1031, 515);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách sinh viên";
@@ -402,7 +417,7 @@
             this.dgvDanhSach.Name = "dgvDanhSach";
             this.dgvDanhSach.RowHeadersWidth = 40;
             this.dgvDanhSach.RowTemplate.Height = 30;
-            this.dgvDanhSach.Size = new System.Drawing.Size(836, 492);
+            this.dgvDanhSach.Size = new System.Drawing.Size(1023, 492);
             this.dgvDanhSach.TabIndex = 1;
             // 
             // MenuStrip_SinhVien
@@ -466,7 +481,7 @@
             this.listView1.Location = new System.Drawing.Point(4, 19);
             this.listView1.Margin = new System.Windows.Forms.Padding(4);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(836, 492);
+            this.listView1.Size = new System.Drawing.Size(1023, 492);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -500,14 +515,14 @@
             // thêmLớpHọcToolStripMenuItem
             // 
             this.thêmLớpHọcToolStripMenuItem.Name = "thêmLớpHọcToolStripMenuItem";
-            this.thêmLớpHọcToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.thêmLớpHọcToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             this.thêmLớpHọcToolStripMenuItem.Text = "Thêm SV lớp CN";
             this.thêmLớpHọcToolStripMenuItem.Click += new System.EventHandler(this.thêmLớpHọcToolStripMenuItem_Click);
             // 
             // thêmSinhViênToolStripMenuItem2
             // 
             this.thêmSinhViênToolStripMenuItem2.Name = "thêmSinhViênToolStripMenuItem2";
-            this.thêmSinhViênToolStripMenuItem2.Size = new System.Drawing.Size(216, 26);
+            this.thêmSinhViênToolStripMenuItem2.Size = new System.Drawing.Size(192, 26);
             this.thêmSinhViênToolStripMenuItem2.Text = "Thêm SV LHP";
             this.thêmSinhViênToolStripMenuItem2.Click += new System.EventHandler(this.thêmSinhViênToolStripMenuItem2_Click);
             // 
@@ -572,11 +587,12 @@
             this.HocPhan,
             this.HocKy,
             this.Khoa,
-            this.nămHọcToolStripMenuItem});
+            this.nămHọcToolStripMenuItem,
+            this.tsmIn});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(844, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1031, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -603,14 +619,14 @@
             // tdmSVLopChuyenNganh
             // 
             this.tdmSVLopChuyenNganh.Name = "tdmSVLopChuyenNganh";
-            this.tdmSVLopChuyenNganh.Size = new System.Drawing.Size(216, 26);
+            this.tdmSVLopChuyenNganh.Size = new System.Drawing.Size(204, 26);
             this.tdmSVLopChuyenNganh.Text = "Lớp chuyên ngành";
             this.tdmSVLopChuyenNganh.Click += new System.EventHandler(this.tdmSVLopChuyenNganh_Click);
             // 
             // tdmSVLopHocPhan
             // 
             this.tdmSVLopHocPhan.Name = "tdmSVLopHocPhan";
-            this.tdmSVLopHocPhan.Size = new System.Drawing.Size(216, 26);
+            this.tdmSVLopHocPhan.Size = new System.Drawing.Size(204, 26);
             this.tdmSVLopHocPhan.Text = "Lớp học phần";
             this.tdmSVLopHocPhan.Click += new System.EventHandler(this.tdmSVLopHocPhan_Click);
             // 
@@ -727,25 +743,18 @@
             this.nămHọcToolStripMenuItem.Text = "Năm Học";
             this.nămHọcToolStripMenuItem.Click += new System.EventHandler(this.nămHọcToolStripMenuItem_Click);
             // 
-            // thêmSinhViênToolStripMenuItem
+            // tsmIn
             // 
-            this.thêmSinhViênToolStripMenuItem.Name = "thêmSinhViênToolStripMenuItem";
-            this.thêmSinhViênToolStripMenuItem.Size = new System.Drawing.Size(236, 24);
-            this.thêmSinhViênToolStripMenuItem.Text = "Thêm sinh viên";
-            this.thêmSinhViênToolStripMenuItem.Click += new System.EventHandler(this.thêmSinhViênToolStripMenuItem_Click);
-            // 
-            // thêmSinhViênToolStripMenuItem3
-            // 
-            this.thêmSinhViênToolStripMenuItem3.Name = "thêmSinhViênToolStripMenuItem3";
-            this.thêmSinhViênToolStripMenuItem3.Size = new System.Drawing.Size(210, 24);
-            this.thêmSinhViênToolStripMenuItem3.Text = "Thêm sinh viên";
-            this.thêmSinhViênToolStripMenuItem3.Click += new System.EventHandler(this.thêmSinhViênToolStripMenuItem3_Click);
+            this.tsmIn.Name = "tsmIn";
+            this.tsmIn.Size = new System.Drawing.Size(142, 24);
+            this.tsmIn.Text = "Xuất danh sách thi";
+            this.tsmIn.Click += new System.EventHandler(this.tsmIn_Click);
             // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1062, 570);
+            this.ClientSize = new System.Drawing.Size(1295, 570);
             this.Controls.Add(this.splitContainer1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmHome";
@@ -858,6 +867,7 @@
         private System.Windows.Forms.ToolStripMenuItem sửaĐiểmToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem thêmSinhViênToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thêmSinhViênToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem tsmIn;
     }
 }
 

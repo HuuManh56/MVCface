@@ -35,6 +35,8 @@
             this.btnStart = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtMSV = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.radNu = new System.Windows.Forms.RadioButton();
             this.radNam = new System.Windows.Forms.RadioButton();
@@ -45,8 +47,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtMSV = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.imgCamera)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -126,6 +126,23 @@
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin sinh viên";
+            // 
+            // txtMSV
+            // 
+            this.txtMSV.Location = new System.Drawing.Point(173, 89);
+            this.txtMSV.Name = "txtMSV";
+            this.txtMSV.ReadOnly = true;
+            this.txtMSV.Size = new System.Drawing.Size(136, 22);
+            this.txtMSV.TabIndex = 13;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(50, 94);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 17);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Mã sinh viên";
             // 
             // label1
             // 
@@ -218,23 +235,6 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Họ tên";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(50, 94);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 17);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Mã sinh viên";
-            // 
-            // txtMSV
-            // 
-            this.txtMSV.Location = new System.Drawing.Point(173, 89);
-            this.txtMSV.Name = "txtMSV";
-            this.txtMSV.ReadOnly = true;
-            this.txtMSV.Size = new System.Drawing.Size(136, 22);
-            this.txtMSV.TabIndex = 13;
-            // 
             // frmDiemDanh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -244,6 +244,7 @@
             this.Name = "frmDiemDanh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Điểm danh";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDiemDanh_FormClosing);
             this.Load += new System.EventHandler(this.frmDiemDanh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgCamera)).EndInit();
             this.groupBox2.ResumeLayout(false);

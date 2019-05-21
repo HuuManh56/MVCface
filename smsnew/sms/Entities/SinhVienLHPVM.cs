@@ -16,5 +16,6 @@ namespace sms.Entities
         public double Diem1 { get; set; }
         public double Diem2 { get; set; }
         public double Diem3 { get; set; }
+        public int SoBuoiNghi { get; set; }
     }
 }

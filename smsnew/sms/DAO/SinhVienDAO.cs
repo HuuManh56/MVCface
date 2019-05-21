@@ -70,26 +70,13 @@ namespace sms.DAO
 
         public List<SinhVien> GetByClassID2(int id)
         {
-           // List<SinhVien> list = new List<SinhVien>();
-           var  list =db.SinhViens.SqlQuery("Select * from SinhVien where LopID=@param",
-                new SqlParameter("param", id)).ToList();
-            
-             return list;
-        }
-        public List<SinhVienVM> GetByClassID(int id)
-        {
-            //List<SinhVien> list = new List<SinhVien>();
-            //list =db.SinhViens.SqlQuery("Select * from SinhVien where LopID=@param",
-            //    new SqlParameter("param", id)).ToList();
-            var lst = from a in db.SinhViens
-                join b in db.SV_LHP on a.ID equals b.SinhVienID 
-                select new SinhVienVM { ID = a.ID, image = a.image, NgaySinh = (DateTime)a.NgaySinh
-                    ,LopID = (int)a.LopID,GioiTinh  = (int)a.GioiTinh
-                    , HoTen = a.HoTen};
+            // List<SinhVien> list = new List<SinhVien>();
+            var list = db.SinhViens.SqlQuery("Select * from SinhVien where LopID=@param",
+                 new SqlParameter("param", id)).ToList();
 
-            return lst.ToList();
-          //  return list;
+            return list;
         }
+
 
         public SinhVien GetByID(int id)
         {
@@ -97,19 +84,55 @@ namespace sms.DAO
         }
 
         public List<SinhVienLHPVM> GetAllByLHP(int idLHP)
-            
+
         {
             var lst = from a in db.SV_LHP
                       join b in db.SinhViens on a.SinhVienID equals b.ID
                       join c in db.Lops on b.LopID equals c.ID
-                      where a.LopHocPhanID==idLHP
-                select new SinhVienLHPVM
-                {
-                    ID = b.ID, HoTen = b.HoTen, GioiTinh=(b.GioiTinh==1?"Nam":"Nữ")
-                    ,NgaySinh = (DateTime)b.NgaySinh, Diem1=(double)a.Diem1
-                    ,Diem2 = (double)a.Diem2, Diem3 = (double)a.Diem3, Lop=c.TenLop
-                };
+                      join d in db.DiemDanhs on b.ID equals d.SinhVienID into gbid
+                      where a.LopHocPhanID == idLHP
+
+                      select new SinhVienLHPVM
+                      {
+                          ID = b.ID,
+                          HoTen = b.HoTen,
+                          GioiTinh = (b.GioiTinh == 1 ? "Nam" : "Nữ")
+                          ,
+                          NgaySinh = (DateTime)b.NgaySinh,
+                          Diem1 = (double)a.Diem1
+                          ,
+                          Diem2 = (double)a.Diem2,
+                          Diem3 = (double)a.Diem3,
+                          Lop = c.TenLop,
+                          SoBuoiNghi = (int)gbid.Sum(x => x.TinhTrang)
+                      };
             return lst.ToList();
+        }
+
+        public List<SinhVienVM> GetByClassID(int id)
+        {
+            /* List<SinhVien> list = new List<SinhVien>();
+             list =db.SinhViens.SqlQuery("Select * from SinhVien where LopID=@param",
+                 new SqlParameter("param", id)).ToList();*/
+            var lst = from a in db.SinhViens
+                      join b in db.SV_LHP on a.ID equals b.SinhVienID
+                      where b.LopHocPhanID == id
+                      select new SinhVienVM
+                      {
+                          ID = a.ID,
+                          image = a.image
+                          ,
+                          NgaySinh = (DateTime)a.NgaySinh
+                          ,
+                          LopID = (int)a.LopID,
+                          GioiTinh = (int)a.GioiTinh
+                          ,
+                          HoTen = a.HoTen
+
+                      };
+
+            return lst.ToList();
+            // return list;
         }
     }
 }

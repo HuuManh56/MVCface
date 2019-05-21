@@ -20,7 +20,7 @@ namespace sms.DAO
 
         private DataProvider() { }
 
-        string connectionSTR = @"Data Source=(local);Initial Catalog=TT_QLKSan;Integrated Security=True";
+        string connectionSTR = @"Data Source=DESKTOP-Q6195BH;Initial Catalog=sms;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {

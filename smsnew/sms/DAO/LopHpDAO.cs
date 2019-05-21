@@ -111,5 +111,67 @@ namespace sms.DAO
             return ret;
         }
 
+
+
+        public int UpdateTT(int idsv, int idLop)
+        {
+            /*DiemDanh diemDanh = db.DiemDanhs.Find(idsv, idLop);
+            diemDanh.TinhTrang = 0;
+            return  db.SaveChanges();*/
+            /* db.DiemDanhs.SqlQuery("Update DiemDanh " +
+                                   "set TinhTrang=0 " +
+                                   "where SinhVienID=@param1 and LopHocPhanID=@param2 ",
+                 new SqlParameter("param1", idsv), new SqlParameter("param2", idsv));*/
+            MyDBContext db = new MyDBContext();
+            DateTime today = DateTime.Now.Date;
+            int ret = db.Database.ExecuteSqlCommand("Update DiemDanh " +
+                                                    "set TinhTrang=0 " +
+                                                    "where SinhVienID=@param1 and LopHocPhanID=@param2 and Ngay=@param3",
+                new SqlParameter("param1", idsv), new SqlParameter("param2", idLop), new SqlParameter("param3", today));
+            return ret;
+        }
+
+
+        public bool isNew(int _idLop)
+        {
+
+            List<DiemDanh> lst = db.DiemDanhs.SqlQuery("Select top 1 * from DiemDanh " +
+                                                       "where LopHocPhanID=@param " +
+                                                       "order by Ngay desc ", new SqlParameter("param", _idLop))
+                .ToList();
+            if (lst.Count == 0)
+                return true;
+            DateTime date = lst[0].Ngay.Date;
+            DateTime today = DateTime.Now.Date;
+            return (date.CompareTo(today) < 0);
+        }
+
+        public int insertDate(List<string> listID, int _idLop)
+        {
+
+            int ret = 0;
+            try
+            {
+                foreach (string id in listID)
+                {
+                    DiemDanh diemDanh = new DiemDanh();
+                    diemDanh.SinhVienID = Int32.Parse(id);
+                    diemDanh.LopHocPhanID = _idLop;
+                    diemDanh.Ngay = DateTime.Now;
+                    diemDanh.TinhTrang = 1;
+                    db.DiemDanhs.Add(diemDanh);
+                }
+
+                db.SaveChanges();
+                ret = 1;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Thông báo");
+                ret = -1;
+            }
+
+            return ret;
+        }
     }
 }

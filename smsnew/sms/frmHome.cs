@@ -13,6 +13,7 @@ using sms.Entities;
 using sms.Entities.ViewModel;
 using sms.GUI;
 using System.Globalization;
+using ClosedXML.Excel;
 
 namespace sms
 {
@@ -458,7 +459,9 @@ namespace sms
             LopHpDAO dao = new LopHpDAO();
             int idLHP = dao.IDLopHP(theNode.Text);
             SinhVienDAO sinhVienDao = new SinhVienDAO();
-            dgvDanhSach.DataSource = sinhVienDao.GetAllByLHP(idLHP);
+            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC ListSVLHP @idLop"
+                , new object[] { idLHP });
+            dgvDanhSach.DataSource = data;
         }
 
         private void DiemDanh_Click(object sender, EventArgs e)
@@ -473,6 +476,7 @@ namespace sms
             int idLHP = dao.IDLopHP(theNode.Text);
             frmDiemDanh frm = new frmDiemDanh(idLHP);
             frm.Show();
+            LoadSinhVienLHP();
         }
 
         private void sửaĐiểmToolStripMenuItem_Click(object sender, EventArgs e)
@@ -570,6 +574,78 @@ namespace sms
         private void thêmSinhViênToolStripMenuItem3_Click(object sender, EventArgs e)
         {
             tdmSVLopHocPhan_Click(sender, e);
+        }
+
+
+        private void color()
+        {
+            int col = dgvDanhSach.Columns.Count;
+            int row = this.dgvDanhSach.RowCount;
+            for (int i = 0; i < row; i++)
+            {
+                if (dgvDanhSach.Rows[i].Cells[col - 1].Value.Equals(0))
+                    dgvDanhSach.Rows[i].DefaultCellStyle.BackColor = Color.White;
+                else
+                if (dgvDanhSach.Rows[i].Cells[col - 1].Value.Equals(1))
+                    dgvDanhSach.Rows[i].DefaultCellStyle.BackColor = Color.Yellow;
+                else
+                {
+
+                    if (dgvDanhSach.Rows[i].Cells[col - 1].Value.Equals(2))
+                        dgvDanhSach.Rows[i].DefaultCellStyle.BackColor = Color.Orange;
+                    else
+                    {
+                        dgvDanhSach.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                    }
+                }
+
+            }
+        }
+
+        private void In(int idLop)
+        {
+            var workbook = new XLWorkbook();
+            // set author for this workbook
+            workbook.Author = "sonnx.net";
+            // create a sheet
+            //    var worksheet = workbook.Worksheets.Add("new worksheet");
+            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC DanhSachThi @idLop", new object[] { idLop });
+            workbook.Worksheets.Add(data, "Danh sách thi");
+            //   var title  = new X
+            // set value for A1 cell in this worksheet
+            //worksheet.Cell("A1").Value = "This is value in A1 cell";
+            // export excel file to disk
+            string filePath = @"C:\Users\ADMIN\Documents\";
+            DateTime dt = DateTime.Now;
+
+            string fileName = filePath + "report" + dt.ToLongTimeString() + ".xlsx";
+            workbook.SaveAs(filePath + "report.xlsx");
+            // clean up
+            workbook.Dispose();
+            MessageBox.Show(@"Lưu  thành công: C:\Users\ADMIN\Documents\report.xlsx");
+        }
+
+        private void tsmIn_Click(object sender, EventArgs e)
+        {
+            TreeNode theNode = tvLopHocPhan.SelectedNode;
+            if (theNode == null)
+            {
+                MessageBox.Show("Chưa chọn lớp học phần");
+                return;
+            }
+            LopHpDAO dao = new LopHpDAO();
+            int idLHP = dao.IDLopHP(theNode.Text);
+            In(idLHP);
+
+        }
+
+        private void tvLopHocPhan_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            if (e.Node != null)
+            {
+                tvLopHocPhan.Tag = tvLopHocPhan.SelectedNode.Text;
+            }
+            LoadSinhVienLHP();
         }
     }
 }

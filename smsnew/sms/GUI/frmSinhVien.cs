@@ -45,7 +45,7 @@ namespace sms.GUI
             this.idLop = idLop;
             LopDAO lopDao = new LopDAO();
             Lop lop = lopDao.GetById(idLop);
-            if(lop!=null)
+            if (lop != null)
                 txtLop.Text = lop.TenLop;
 
         }
@@ -56,13 +56,13 @@ namespace sms.GUI
             InitializeComponent();
             loadListCam();
             id = _sinhVien.ID;
-            idLop =(int) _sinhVien.LopID;
+            idLop = (int)_sinhVien.LopID;
             txtHoTen.Text = _sinhVien.HoTen;
-            Lop lop = lopDao.GetById((int) _sinhVien.LopID);
+            Lop lop = lopDao.GetById((int)_sinhVien.LopID);
             txtLop.Text = lop.TenLop;
             txtNgaySinh.Text = ((DateTime)_sinhVien.NgaySinh).ToString("dd/MM/yyyy"); ;
             MemoryStream stream = new MemoryStream(_sinhVien.image);
-            Image<Gray, byte>  img = new Image<Gray, byte>(new Bitmap(stream));
+            Image<Gray, byte> img = new Image<Gray, byte>(new Bitmap(stream));
             imgTrain.Image = img;
             if (_sinhVien.GioiTinh == 1)
             {
@@ -77,11 +77,12 @@ namespace sms.GUI
         private void clearInput()
         {
             txtHoTen.Text = "";
-          //  txtLop.Text ="";
+            //  txtLop.Text ="";
             txtNgaySinh.Text = "";
             radNu.Checked = true;
             radNam.Checked = true;
             id = -1;
+            captureInProcess = false;
         }
 
         public void loadListCam()
@@ -93,9 +94,9 @@ namespace sms.GUI
             {
                 name = i + ":" + cam.Name;
                 cbCamIndex.Items.Add(name);
-            }           
+            }
         }
-        
+
         public void ProcessFrame(object sender, EventArgs arg)
         {
             if (!picProcess)
@@ -128,9 +129,11 @@ namespace sms.GUI
                 if (faces.Length != 0)
                 {
 
-                    btnChup.Enabled = true;
-                    if (captureInProcess == true)
-                        btnChup.Enabled = false;
+                    //btnChup.Enabled = true;
+                    //if (captureInProcess == true)
+                    //    btnChup.Enabled = false;
+                    // captureInProcess = false;
+
                     //  if(face.rect!=null)
                     if ((captureInProcess == false))
                     {
@@ -138,6 +141,7 @@ namespace sms.GUI
                                                         161, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC); // hien thi 1 khuon mat len imgTrain => nhap thong tin
                         objFace = ImageFrame.Copy(faces[0].rect).Convert<Gray, Byte>().Resize(148,
                                                                 161, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
+                        captureInProcess = true;
                     }
                     ImageFrame.Draw(faces[0].rect, new Bgr(Color.Red), 3); // danh dau khuon mat phat hien
 
@@ -148,7 +152,7 @@ namespace sms.GUI
                     if (captureInProcess == false)
                     {
                         imgTrain.Image = null;
-                        btnChup.Enabled = false;
+                        // btnChup.Enabled = false;
                     }
                 }
             }
@@ -157,7 +161,7 @@ namespace sms.GUI
         }
         private void btnStart_Click(object sender, EventArgs e)
         {
-            btnChup.Enabled = true;
+            //  btnChup.Enabled = true;
             picProcess = false;
             captureInProcess = false;
             if (capture != null)
@@ -204,7 +208,7 @@ namespace sms.GUI
         public void DetectFaces_pic()
         {
             picProcess = true;
-            btnChup.Enabled = false;
+            //   btnChup.Enabled = false;
             if (ImageFrame != null)
             {
                 Image<Gray, Byte> grayFrame = ImageFrame.Convert<Gray, Byte>();
@@ -298,7 +302,7 @@ namespace sms.GUI
         {
             captureInProcess = true;
             txtHoTen.Focus();
-            btnChup.Enabled = false;
+            //   btnChup.Enabled = false;
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -308,7 +312,7 @@ namespace sms.GUI
 
         private void txtHoTen_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnLuuTiepTuc_Click(object sender, EventArgs e)
@@ -355,7 +359,7 @@ namespace sms.GUI
             bmp.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
             byte[] pic = stream.ToArray();
 
-            SinhVienDAO sinhVienDao  = new SinhVienDAO();
+            SinhVienDAO sinhVienDao = new SinhVienDAO();
             SinhVien sinhVien = new SinhVien();
             try
             {
