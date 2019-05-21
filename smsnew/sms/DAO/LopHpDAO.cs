@@ -82,6 +82,7 @@ namespace sms.DAO
                 LopHocPhan lopHocPhan = db.LopHocPhans.Find(lop.ID);
                 lopHocPhan.HocPhanID = lop.HocPhanID;
                 lopHocPhan.IDView = lop.IDView;
+                lopHocPhan.TenLopHocPhan = lop.TenLopHocPhan;
                 db.SaveChanges();
                 ret = 1;
             }

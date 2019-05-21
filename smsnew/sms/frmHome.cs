@@ -154,6 +154,7 @@ namespace sms
         {
             tvLopHocPhan.SelectedNode = e.Node;
 
+            tvLopHocPhan.Tag = e.Node.Text;
             // loat sinh vien lớp học phần 
             SinhVienLHPDAO sv = new SinhVienLHPDAO();
 

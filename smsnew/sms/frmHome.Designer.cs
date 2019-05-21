@@ -60,6 +60,7 @@
             this.lớpHọcPhầnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sửaSinhViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xóaSinhViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sửaĐiểmToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.listView1 = new System.Windows.Forms.ListView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
@@ -94,7 +95,6 @@
             this.HocKy = new System.Windows.Forms.ToolStripMenuItem();
             this.Khoa = new System.Windows.Forms.ToolStripMenuItem();
             this.nămHọcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sửaĐiểmToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -413,7 +413,7 @@
             this.xóaSinhViênToolStripMenuItem,
             this.sửaĐiểmToolStripMenuItem1});
             this.MenuStrip_SinhVien.Name = "contextMenuStrip1";
-            this.MenuStrip_SinhVien.Size = new System.Drawing.Size(181, 100);
+            this.MenuStrip_SinhVien.Size = new System.Drawing.Size(211, 128);
             // 
             // thêmSinhViênToolStripMenuItem1
             // 
@@ -427,14 +427,14 @@
             // thêmSinhViênLớpChuyênNgànhToolStripMenuItem
             // 
             this.thêmSinhViênLớpChuyênNgànhToolStripMenuItem.Name = "thêmSinhViênLớpChuyênNgànhToolStripMenuItem";
-            this.thêmSinhViênLớpChuyênNgànhToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.thêmSinhViênLớpChuyênNgànhToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
             this.thêmSinhViênLớpChuyênNgànhToolStripMenuItem.Text = "Lớp chuyên ngành";
             this.thêmSinhViênLớpChuyênNgànhToolStripMenuItem.Click += new System.EventHandler(this.thêmSinhViênLớpChuyênNgànhToolStripMenuItem_Click);
             // 
             // lớpHọcPhầnToolStripMenuItem
             // 
             this.lớpHọcPhầnToolStripMenuItem.Name = "lớpHọcPhầnToolStripMenuItem";
-            this.lớpHọcPhầnToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.lớpHọcPhầnToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
             this.lớpHọcPhầnToolStripMenuItem.Text = "Lớp học phần ";
             this.lớpHọcPhầnToolStripMenuItem.Click += new System.EventHandler(this.lớpHọcPhầnToolStripMenuItem_Click);
             // 
@@ -451,6 +451,13 @@
             this.xóaSinhViênToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
             this.xóaSinhViênToolStripMenuItem.Text = "Xóa sinh viên ";
             this.xóaSinhViênToolStripMenuItem.Click += new System.EventHandler(this.xóaSinhViênToolStripMenuItem_Click);
+            // 
+            // sửaĐiểmToolStripMenuItem1
+            // 
+            this.sửaĐiểmToolStripMenuItem1.Name = "sửaĐiểmToolStripMenuItem1";
+            this.sửaĐiểmToolStripMenuItem1.Size = new System.Drawing.Size(210, 24);
+            this.sửaĐiểmToolStripMenuItem1.Text = "Sửa điểm ";
+            this.sửaĐiểmToolStripMenuItem1.Click += new System.EventHandler(this.sửaĐiểmToolStripMenuItem1_Click);
             // 
             // listView1
             // 
@@ -737,13 +744,6 @@
             this.nămHọcToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
             this.nămHọcToolStripMenuItem.Text = "Năm Học";
             this.nămHọcToolStripMenuItem.Click += new System.EventHandler(this.nămHọcToolStripMenuItem_Click);
-            // 
-            // sửaĐiểmToolStripMenuItem1
-            // 
-            this.sửaĐiểmToolStripMenuItem1.Name = "sửaĐiểmToolStripMenuItem1";
-            this.sửaĐiểmToolStripMenuItem1.Size = new System.Drawing.Size(210, 24);
-            this.sửaĐiểmToolStripMenuItem1.Text = "Sửa điểm ";
-            this.sửaĐiểmToolStripMenuItem1.Click += new System.EventHandler(this.sửaĐiểmToolStripMenuItem1_Click);
             // 
             // frmHome
             // 
