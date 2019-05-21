@@ -29,10 +29,10 @@ namespace sms.Entities
                 .Property(e => e.Code)
                 .IsFixedLength();
 
-            modelBuilder.Entity<NamHoc>()
-                .HasMany(e => e.HocKies)
-                .WithOptional(e => e.NamHoc)
-                .HasForeignKey(e => e.Id_Namhoc);
+            //modelBuilder.Entity<NamHoc>()
+            //    .HasMany(e => e.HocKies)
+            //    .WithOptional(e => e.NamHoc)
+            //    .HasForeignKey(e => e.Id_Namhoc);
 
             modelBuilder.Entity<SinhVien>()
                 .Property(e => e.image)

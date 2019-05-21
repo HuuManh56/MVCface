@@ -483,27 +483,28 @@ namespace sms
         private void sửaĐiểmToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             var select = dgvDanhSach.SelectedRows;
-            if (select == null)
+            if (select.Count == 0 )
             {
                 MessageBox.Show("Chưa chọn sinh viên");
                 return;
             }
-            SinhVienDAO dao = new SinhVienDAO();
-            SinhVien sinhVien = dao.GetByID(Int32.Parse(select[0].Cells[0].Value.ToString()));
-
-            //
-
-            if (sinhVien != null)
+            else
             {
-                frmDiem frm = new frmDiem();
-                frm.txtDiem1.Text = select[0].Cells[5].Value.ToString();
-                frm.txtDiem2.Text = select[0].Cells[6].Value.ToString();
-                frm.txtDiem3.Text = select[0].Cells[7].Value.ToString();
-                frm.txtDiem1.Tag = sinhVien.ID;
-                frm.ShowDialog();
+                SinhVienDAO dao = new SinhVienDAO();
+                SinhVien sinhVien = dao.GetByID(Int32.Parse(select[0].Cells[0].Value.ToString()));
+                if (sinhVien != null)
+                {
+                    frmDiem frm = new frmDiem();
+                    frm.txtDiem1.Text = select[0].Cells[5].Value.ToString();
+                    frm.txtDiem2.Text = select[0].Cells[6].Value.ToString();
+                    frm.txtDiem3.Text = select[0].Cells[7].Value.ToString();
+                    frm.txtDiem1.Tag = sinhVien.ID;
+                    frm.ShowDialog();
 
+                }
+                ShowSV_LHP(tvLopHocPhan.Tag + "");
             }
-              ShowSV_LHP(tvLopHocPhan.Tag + "");
+            
         }
 
         private void sửaSinhViênToolStripMenuItem_Click(object sender, EventArgs e)
@@ -539,6 +540,36 @@ namespace sms
         private void xóaLớpHọcPhầnToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             xóaLớpHọcPhầnToolStripMenuItem_Click(sender, e);
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            DiemDanh_Click(sender, e);
+        }
+
+        private void thêmLớpHọcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tsThemLopCN_Click(sender, e);
+        }
+
+        private void thêmSinhViênToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            tdmSVLopHocPhan_Click(sender, e);
+        }
+
+        private void toolStripSplitButton1_ButtonClick(object sender, EventArgs e)
+        {
+            tsXoaSV_Click(sender, e);
+        }
+
+        private void thêmSinhViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tdmSVLopChuyenNganh_Click(sender, e);
+        }
+
+        private void thêmSinhViênToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            tdmSVLopHocPhan_Click(sender, e);
         }
     }
 }

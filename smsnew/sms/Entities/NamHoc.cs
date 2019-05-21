@@ -12,7 +12,7 @@ namespace sms.Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public NamHoc()
         {
-            HocKies = new HashSet<HocKy>();
+            //HocKies = new HashSet<HocKy>();
         }
 
         public int ID { get; set; }
@@ -26,7 +26,7 @@ namespace sms.Entities
         [StringLength(20)]
         public string Code { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HocKy> HocKies { get; set; }
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        //public virtual ICollection<HocKy> HocKies { get; set; }
     }
 }
