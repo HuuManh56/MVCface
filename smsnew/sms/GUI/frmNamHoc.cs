@@ -57,14 +57,17 @@ namespace sms.GUI
 
         }
 
-        
+
 
         private void dgvNK_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int row = e.RowIndex;
             txtTimeBD.Tag = dgvNK.Rows[row].Cells[0].Value + "";
-            txtTimeBD.Text = dgvNK.Rows[row].Cells[1].Value+"";
-            txtTimeKT.Text = dgvNK.Rows[row].Cells[2].Value+"";
+            string[] a = dgvNK.Rows[row].Cells[1].Value.ToString().Split(' ');
+            string[] b = dgvNK.Rows[row].Cells[2].Value.ToString().Split(' ');
+            txtTimeBD.Text = a[0];
+            txtTimeKT.Text = b[0];
+            txtCode.Text = a[0].Substring(a[0].Length - 4, 4) +" - "+ b[0].Substring(b[0].Length - 4, 4);
 
         }
 
@@ -100,19 +103,7 @@ namespace sms.GUI
 
         private void txtTimeKT_TextChanged(object sender, EventArgs e)
         {
-            //string a = "";
-            //string b = "";
-            //if ((txtTimeKT.Text.Length - 4 < 0) || (txtTimeBD.Text.Length - 4 < 0))
-            //{
-            //    a = "";
-            //    b = "";
-            //}
-            //else
-            //{
-            //    b = txtTimeKT.Text.Substring(txtTimeKT.Text.Length - 4, 4);
-            //    a = txtTimeBD.Text.Substring(txtTimeBD.Text.Length - 4, 4);
-            //}
-            //txtCode.Text = b + " - " + a;
+            
         }
             
 
@@ -149,6 +140,9 @@ namespace sms.GUI
             }
         }
 
-        
+        private void dgvNK_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

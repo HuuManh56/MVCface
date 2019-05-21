@@ -30,15 +30,15 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.txtTimeBD = new System.Windows.Forms.TextBox();
+            this.txtCode = new System.Windows.Forms.TextBox();
             this.txtTimeKT = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lb1 = new System.Windows.Forms.Label();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.dgvNK = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtCode = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -79,6 +79,14 @@
             this.txtTimeBD.TabIndex = 2;
             this.txtTimeBD.TextChanged += new System.EventHandler(this.txtTimeBD_TextChanged);
             // 
+            // txtCode
+            // 
+            this.txtCode.Location = new System.Drawing.Point(34, 195);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(231, 22);
+            this.txtCode.TabIndex = 2;
+            this.txtCode.TextChanged += new System.EventHandler(this.txtTimeKT_TextChanged);
+            // 
             // txtTimeKT
             // 
             this.txtTimeKT.Location = new System.Drawing.Point(34, 125);
@@ -86,6 +94,15 @@
             this.txtTimeKT.Size = new System.Drawing.Size(231, 22);
             this.txtTimeKT.TabIndex = 2;
             this.txtTimeKT.TextChanged += new System.EventHandler(this.txtTimeKT_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(31, 164);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 17);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Code";
             // 
             // label2
             // 
@@ -143,26 +160,11 @@
             this.dgvNK.Location = new System.Drawing.Point(0, 0);
             this.dgvNK.Name = "dgvNK";
             this.dgvNK.RowTemplate.Height = 24;
+            this.dgvNK.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNK.Size = new System.Drawing.Size(566, 296);
             this.dgvNK.TabIndex = 0;
             this.dgvNK.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNK_CellClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 164);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Code";
-            // 
-            // txtCode
-            // 
-            this.txtCode.Location = new System.Drawing.Point(34, 195);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(231, 22);
-            this.txtCode.TabIndex = 2;
-            this.txtCode.TextChanged += new System.EventHandler(this.txtTimeKT_TextChanged);
+            this.dgvNK.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNK_CellContentClick);
             // 
             // frmNamHoc
             // 

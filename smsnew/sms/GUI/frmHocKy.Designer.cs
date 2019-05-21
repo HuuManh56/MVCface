@@ -63,8 +63,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvHocKy);
-            this.splitContainer1.Size = new System.Drawing.Size(890, 268);
-            this.splitContainer1.SplitterDistance = 361;
+            this.splitContainer1.Size = new System.Drawing.Size(751, 318);
+            this.splitContainer1.SplitterDistance = 334;
             this.splitContainer1.TabIndex = 0;
             // 
             // btnXoaHk
@@ -141,12 +141,14 @@
             // 
             // dgvHocKy
             // 
+            this.dgvHocKy.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHocKy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHocKy.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvHocKy.Location = new System.Drawing.Point(0, 0);
             this.dgvHocKy.Name = "dgvHocKy";
             this.dgvHocKy.RowTemplate.Height = 24;
-            this.dgvHocKy.Size = new System.Drawing.Size(525, 268);
+            this.dgvHocKy.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvHocKy.Size = new System.Drawing.Size(413, 318);
             this.dgvHocKy.TabIndex = 0;
             this.dgvHocKy.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHocKy_CellClick);
             // 
@@ -154,7 +156,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(890, 268);
+            this.ClientSize = new System.Drawing.Size(751, 318);
             this.Controls.Add(this.splitContainer1);
             this.Name = "frmHocKy";
             this.Text = "frmHocKy";

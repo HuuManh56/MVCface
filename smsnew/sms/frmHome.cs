@@ -150,12 +150,8 @@ namespace sms
             }
         }
 
-        private void tvLopHocPhan_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        public void ShowSV_LHP(string s)
         {
-            tvLopHocPhan.SelectedNode = e.Node;
-
-            tvLopHocPhan.Tag = e.Node.Text;
-            // loat sinh vien lớp học phần 
             SinhVienLHPDAO sv = new SinhVienLHPDAO();
 
             //
@@ -163,12 +159,20 @@ namespace sms
             LopHocPhan lopHocPhan = new LopHocPhan();
 
 
-            lopHocPhan.ID = lopHpDAO.IDLopHP(e.Node.Text);
+            lopHocPhan.ID = lopHpDAO.IDLopHP(s);
             //
             SinhVienDAO sinhVien = new SinhVienDAO();
-          
 
-            dgvDanhSach.DataSource= sinhVien.GetAllByLHP(lopHocPhan.ID);
+
+            dgvDanhSach.DataSource = sinhVien.GetAllByLHP(lopHocPhan.ID);
+        }
+        private void tvLopHocPhan_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            tvLopHocPhan.SelectedNode = e.Node;
+
+            tvLopHocPhan.Tag = e.Node.Text;
+            // loat sinh vien lớp học phần 
+            ShowSV_LHP(e.Node.Text);
         }
 
         private void xóaLớpHọcPhầnToolStripMenuItem_Click(object sender, EventArgs e)
@@ -496,12 +500,10 @@ namespace sms
                 frm.txtDiem2.Text = select[0].Cells[6].Value.ToString();
                 frm.txtDiem3.Text = select[0].Cells[7].Value.ToString();
                 frm.txtDiem1.Tag = sinhVien.ID;
-                frm.Show();
+                frm.ShowDialog();
 
-                LoadSVLopCN();
             }
-
-
+              ShowSV_LHP(tvLopHocPhan.Tag + "");
         }
 
         private void sửaSinhViênToolStripMenuItem_Click(object sender, EventArgs e)

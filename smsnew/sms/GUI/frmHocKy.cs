@@ -32,6 +32,12 @@ namespace sms.GUI
         }
         private void cmbNamHk_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if( cmbNamHk.SelectedItem == null)
+            {
+                MessageBox.Show("Bạn phải chọn năm học");
+                txtTenHK.Text = "";
+                return;
+            }
             string a = cmbNamHk.SelectedItem.ToString();
             HocKyDAO hoc = new HocKyDAO();
            dgvHocKy.DataSource= hoc.GetByNamHoc(a);

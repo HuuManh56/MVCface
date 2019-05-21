@@ -12,8 +12,8 @@ namespace sms.Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public LopHocPhan()
         {
-            DiemDanhs = new HashSet<DiemDanh>();
-            SV_LHP = new HashSet<SV_LHP>();
+            //DiemDanhs = new HashSet<DiemDanh>();
+            //SV_LHP = new HashSet<SV_LHP>();
         }
 
         public int ID { get; set; }
@@ -28,14 +28,14 @@ namespace sms.Entities
 
         public int? HocKyID { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DiemDanh> DiemDanhs { get; set; }
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        //public virtual ICollection<DiemDanh> DiemDanhs { get; set; }
 
-        public virtual HocKy HocKy { get; set; }
+        //public virtual HocKy HocKy { get; set; }
 
-        public virtual HocPhan HocPhan { get; set; }
+        //public virtual HocPhan HocPhan { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SV_LHP> SV_LHP { get; set; }
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        //public virtual ICollection<SV_LHP> SV_LHP { get; set; }
     }
 }
