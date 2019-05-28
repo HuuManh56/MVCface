@@ -29,7 +29,7 @@ namespace sms.GUI
         {
             InitializeComponent();
             this.Text = "Cập nhật sinh viên lớp học phần - " + lopHocPhan.TenLopHocPhan;
-            this.idLHP = lopHocPhan.ID;
+            this.idLHP = lopHocPhan.ID; 
         }
 
         private void frmSinhVienLHP_Load(object sender, EventArgs e)
