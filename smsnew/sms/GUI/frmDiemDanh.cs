@@ -234,6 +234,13 @@ namespace sms.GUI
             if (capture != null)
                 capture.Dispose();
         }
+
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            if (capture != null)
+                capture.Dispose();
+            this.Dispose();
+        }
     }
 
 }

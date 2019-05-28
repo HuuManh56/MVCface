@@ -164,7 +164,7 @@
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnXacNhan);
             this.Name = "frmLopHP_Them";
-            this.Text = "frmLopHP_Them";
+            this.Text = "Thêm lớp học phần";
             this.Load += new System.EventHandler(this.frmLopHP_Them_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

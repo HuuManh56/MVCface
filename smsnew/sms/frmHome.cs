@@ -14,6 +14,7 @@ using sms.Entities.ViewModel;
 using sms.GUI;
 using System.Globalization;
 using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Office2013.Excel;
 
 namespace sms
 {
@@ -173,7 +174,13 @@ namespace sms
 
             tvLopHocPhan.Tag = e.Node.Text;
             // loat sinh vien lớp học phần 
-            ShowSV_LHP(e.Node.Text);
+           // ShowSV_LHP(e.Node.Text);
+            TreeNode theNode = tvLopHocPhan.SelectedNode;
+            LopHpDAO dao = new LopHpDAO();
+            int idLHP = dao.IDLopHP(theNode.Text);
+            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC ListSVLHP @idLop"
+                , new object[] { idLHP });
+            dgvDanhSach.DataSource = data;
         }
 
         private void xóaLớpHọcPhầnToolStripMenuItem_Click(object sender, EventArgs e)
@@ -384,7 +391,7 @@ namespace sms
 
         private void tvLopChuyenNganh_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            LoadSVLopCN();
+              LoadSVLopCN();
         }
 
         private void tsXoaSV_Click(object sender, EventArgs e)
@@ -395,14 +402,34 @@ namespace sms
                 MessageBox.Show("Chưa chọn sinh viên");
                 return;
             }
-
+            int col = dgvDanhSach.Columns.Count;
+            string name = "";
+            if (col != 9)
+            {
+                name = select[0].Cells[1].Value.ToString();
+            }
+            else
+            {
+                name = select[0].Cells[0].Value.ToString();
+            }
             DialogResult result = MessageBox.Show(
-                "Bạn có chắc chắn muốn xóa sinh viên " + select[0].Cells[1].Value.ToString(),
+                "Bạn có chắc chắn muốn xóa sinh viên " + name,
                 "Xác nhận", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
+                int ret=0;
                 SinhVienDAO dao = new SinhVienDAO();
-                int ret = dao.Delete(Int32.Parse(select[0].Cells[0].Value.ToString()));
+                if (col != 9)
+                {
+                    ret = dao.Delete(Int32.Parse(select[0].Cells[0].Value.ToString()));
+                }
+                else
+                {
+                    TreeNode theNode = tvLopHocPhan.SelectedNode;
+                    LopHpDAO lopHpDao = new LopHpDAO();
+                    int idLHP = lopHpDao.IDLopHP(theNode.Text);
+                    ret = dao.DeleteSVLHP(idLHP,Int32.Parse(select[0].Cells[1].Value.ToString()));
+                }
                 if (ret < 0)
                 {
                     MessageBox.Show("Không xóa được bản ghi");
@@ -410,7 +437,10 @@ namespace sms
                 }
                 else
                 {
-                    LoadSVLopCN();
+                    if(col!=9)
+                        LoadSVLopCN();
+                    else 
+                        LoadSinhVienLHP();
                 }
             }
 
@@ -419,21 +449,30 @@ namespace sms
 
         private void tsSuaSV_Click(object sender, EventArgs e)
         {
-            var select = dgvDanhSach.SelectedRows;
-            if (select == null)
+            int col = dgvDanhSach.Columns.Count;
+            if (col != 9)
             {
-                MessageBox.Show("Chưa chọn sinh viên");
-                return;
-            }
-            SinhVienDAO dao = new SinhVienDAO();
-            SinhVien sinhVien = dao.GetByID(Int32.Parse(select[0].Cells[0].Value.ToString()));
+                var select = dgvDanhSach.SelectedRows;
+                if (select == null)
+                {
+                    MessageBox.Show("Chưa chọn sinh viên");
+                    return;
+                }
+                SinhVienDAO dao = new SinhVienDAO();
+                SinhVien sinhVien = dao.GetByID(Int32.Parse(select[0].Cells[0].Value.ToString()));
 
-            if (sinhVien != null)
-            {
-                frmSinhVien frm = new frmSinhVien(sinhVien);
-                frm.ShowDialog();
-                LoadSVLopCN();
+                if (sinhVien != null)
+                {
+                    frmSinhVien frm = new frmSinhVien(sinhVien);
+                    frm.ShowDialog();
+                    LoadSVLopCN();
+                }
             }
+            else
+            {
+                sửaĐiểmToolStripMenuItem1_Click(sender, e);
+            }
+            
 
         }
 
@@ -460,7 +499,9 @@ namespace sms
             int idLHP = dao.IDLopHP(theNode.Text);
             SinhVienDAO sinhVienDao = new SinhVienDAO();
             DataTable data = DataProvider.Instance.ExecuteQuery("EXEC ListSVLHP @idLop"
-                , new object[] { idLHP });
+               , new object[] { idLHP });
+            //SinhVienDAO sinhVienDao = new SinhVienDAO();
+            //dgvDanhSach.DataSource = sinhVienDao.GetAllByLHP(idLHP);
             dgvDanhSach.DataSource = data;
         }
 
@@ -494,8 +535,12 @@ namespace sms
             }
             else
             {
+                TreeNode theNode = tvLopHocPhan.SelectedNode;
+                LopHpDAO lopHpDao = new LopHpDAO();
+                int idLHP = lopHpDao.IDLopHP(theNode.Text);
+
                 SinhVienDAO dao = new SinhVienDAO();
-                SinhVien sinhVien = dao.GetByID(Int32.Parse(select[0].Cells[0].Value.ToString()));
+                SinhVien sinhVien = dao.GetByID(Int32.Parse(select[0].Cells[1].Value.ToString()));
                 if (sinhVien != null)
                 {
                     frmDiem frm = new frmDiem();
@@ -503,12 +548,30 @@ namespace sms
                     frm.txtDiem2.Text = select[0].Cells[6].Value.ToString();
                     frm.txtDiem3.Text = select[0].Cells[7].Value.ToString();
                     frm.txtDiem1.Tag = sinhVien.ID;
+                    frm.txtDiem2.Tag = tvLopHocPhan.Tag;
+
+                    DataTable data = DataProvider.Instance.ExecuteQuery("EXEC ChiTiet @idLop , @idsv"
+                        , new object[] { idLHP, sinhVien.ID });
+                    frm.dgvChiTiet.DataSource = data;
+                    frm.dgvChiTiet.Columns[0].DefaultCellStyle.Format = "dd/MM/yyyy";
+                    //int col = frm.dgvChiTiet.Columns.Count;
+                    //int row = this.dgvDanhSach.RowCount;
+                    //for (int i = 0; i < row; i++)
+                    //{
+                    //    var value = frm.dgvChiTiet.Rows[i].Cells[0].Value;
+                    //    frm.dgvChiTiet.Rows[i].Cells[0].Value = ((DateTime)value).ToString("dd/MM/yyyy");
+
+
+                    //}
+                    
                     frm.ShowDialog();
 
                 }
-                ShowSV_LHP(tvLopHocPhan.Tag + "");
+                //    ShowSV_LHP(tvLopHocPhan.Tag + "");
+               
+                LoadSinhVienLHP();
             }
-            
+
         }
 
         private void sửaSinhViênToolStripMenuItem_Click(object sender, EventArgs e)
@@ -646,6 +709,12 @@ namespace sms
                 tvLopHocPhan.Tag = tvLopHocPhan.SelectedNode.Text;
             }
             LoadSinhVienLHP();
+        }
+
+        private void tvLopChuyenNganh2_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            LoadSinhVienLHP();
+
         }
     }
 }

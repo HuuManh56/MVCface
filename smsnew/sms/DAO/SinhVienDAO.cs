@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using sms.Entities;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using DocumentFormat.OpenXml.Drawing.Charts;
 using sms.Entities.ViewModel;
 
 namespace sms.DAO
@@ -56,8 +57,31 @@ namespace sms.DAO
             SinhVien sinhVien = db.SinhViens.Find(id);
             if (sinhVien != null)
             {
+                List<SV_LHP> list = db.SV_LHP.Where(x => x.SinhVienID == id).ToList();
+                var value = db.SV_LHP.RemoveRange(list);
+                List<DiemDanh> list2 = db.DiemDanhs.Where(x => x.SinhVienID == id).ToList();
+                var value2 = db.DiemDanhs.RemoveRange(list2);
                 db.SinhViens.Remove(sinhVien);
                 ret = db.SaveChanges();
+            }
+            return ret;
+        }
+
+        public int DeleteSVLHP(int idLHP, int idSV)
+        {
+            int ret = 0;
+            try
+            {
+                List<SV_LHP> list = db.SV_LHP.Where(x => x.SinhVienID == idSV && x.LopHocPhanID==idLHP).ToList();
+                var value= db.SV_LHP.RemoveRange(list);
+                List<DiemDanh> list2 = db.DiemDanhs.Where(x => x.SinhVienID == idSV && x.LopHocPhanID == idLHP).ToList();
+                var value2 = db.DiemDanhs.RemoveRange(list2);
+                ret = db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
             }
             return ret;
         }
@@ -90,7 +114,7 @@ namespace sms.DAO
                       join b in db.SinhViens on a.SinhVienID equals b.ID
                       join c in db.Lops on b.LopID equals c.ID
                       join d in db.DiemDanhs on b.ID equals d.SinhVienID into gbid
-                      where a.LopHocPhanID == idLHP
+                      where a.LopHocPhanID == idLHP 
 
                       select new SinhVienLHPVM
                       {

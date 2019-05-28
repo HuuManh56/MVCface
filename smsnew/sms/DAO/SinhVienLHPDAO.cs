@@ -27,9 +27,9 @@ namespace sms.DAO
             var lst = db.SV_LHP.SqlQuery("  select * from SV_LHP where LopHocPhanID = " + id).ToList();
             return lst;
         }
-        public int GetID( int id)
+        public int GetID( int idsv, int idlhp)
         {
-            var lst = db.SV_LHP.SqlQuery(" select * from SV_LHP where SinhVienID = " + id).ToList();
+            var lst = db.SV_LHP.SqlQuery(" select * from SV_LHP where SinhVienID = " + idsv +" and LopHocPhanID = "+ idlhp).ToList();
             return lst[0].ID;
         }
     }

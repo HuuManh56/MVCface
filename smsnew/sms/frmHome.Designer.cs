@@ -62,7 +62,6 @@
             this.lớpHọcPhầnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sửaSinhViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xóaSinhViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sửaĐiểmToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.listView1 = new System.Windows.Forms.ListView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
@@ -279,7 +278,7 @@
             this.tvLopHocPhan.Name = "tvLopHocPhan";
             this.tvLopHocPhan.Size = new System.Drawing.Size(253, 335);
             this.tvLopHocPhan.TabIndex = 0;
-            this.tvLopHocPhan.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvLopChuyenNganh_AfterSelect);
+            this.tvLopHocPhan.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvLopChuyenNganh2_AfterSelect);
             this.tvLopHocPhan.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvLopHocPhan_NodeMouseClick);
             // 
             // MenuStrip_LopHP
@@ -426,10 +425,9 @@
             this.MenuStrip_SinhVien.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.thêmSinhViênToolStripMenuItem1,
             this.sửaSinhViênToolStripMenuItem,
-            this.xóaSinhViênToolStripMenuItem,
-            this.sửaĐiểmToolStripMenuItem1});
+            this.xóaSinhViênToolStripMenuItem});
             this.MenuStrip_SinhVien.Name = "contextMenuStrip1";
-            this.MenuStrip_SinhVien.Size = new System.Drawing.Size(181, 100);
+            this.MenuStrip_SinhVien.Size = new System.Drawing.Size(181, 104);
             // 
             // thêmSinhViênToolStripMenuItem1
             // 
@@ -467,13 +465,6 @@
             this.xóaSinhViênToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.xóaSinhViênToolStripMenuItem.Text = "Xóa sinh viên ";
             this.xóaSinhViênToolStripMenuItem.Click += new System.EventHandler(this.xóaSinhViênToolStripMenuItem_Click);
-            // 
-            // sửaĐiểmToolStripMenuItem1
-            // 
-            this.sửaĐiểmToolStripMenuItem1.Name = "sửaĐiểmToolStripMenuItem1";
-            this.sửaĐiểmToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
-            this.sửaĐiểmToolStripMenuItem1.Text = "Sửa điểm ";
-            this.sửaĐiểmToolStripMenuItem1.Click += new System.EventHandler(this.sửaĐiểmToolStripMenuItem1_Click);
             // 
             // listView1
             // 
@@ -864,7 +855,6 @@
         private System.Windows.Forms.SplitContainer splitContainer3;
         public System.Windows.Forms.ComboBox cmbNamHK;
         public System.Windows.Forms.ComboBox cmbHocKY;
-        private System.Windows.Forms.ToolStripMenuItem sửaĐiểmToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem thêmSinhViênToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thêmSinhViênToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem tsmIn;

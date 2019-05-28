@@ -12,6 +12,7 @@ using sms.Entities;
 using Emgu.CV;
 using Emgu.CV.Structure;
 using System.IO;
+using System.Globalization;
 
 namespace sms.GUI
 {
@@ -84,15 +85,18 @@ namespace sms.GUI
 
             found = false;
             txtHoTen.Text = "";
+            txtMSV.Text = "";
             txtLop.Text = "";
             txtNgaySinh.Text = "";
             radNam.Checked = false;
             radNu.Checked = false;
             imgSV.Image = null;
+            txtMSV.Focus();
         }
 
         private void add(bool isClose)
         {
+            int ret;
             if (found)
             {
                 SV_LHP svLhp = new SV_LHP();
@@ -102,8 +106,34 @@ namespace sms.GUI
                 svLhp.Diem2 = 0;
                 svLhp.Diem3 = 0;
 
+                
+
+                DataTable data = DataProvider.Instance.ExecuteQuery("EXEC GetDate @idLop"
+                    , new object[] { idLHP });
+
+                if (data.Rows.Count!=0)
+                {
+              //      int nghi = Int32.Parse(data.Rows[0][0].ToString());
+                    MyDBContext db = new MyDBContext();
+
+                    for (int i=0; i<data.Rows.Count; i++)
+                    {
+                        DiemDanh diemDanh = new DiemDanh();
+                        diemDanh.SinhVienID = Int32.Parse(txtMSV.Text);
+                        diemDanh.LopHocPhanID = this.idLHP;
+                        diemDanh.TinhTrang = 1;
+                        diemDanh.Ngay = DateTime.Parse((data.Rows[i][0].ToString()), CultureInfo.InvariantCulture);
+                        db.DiemDanhs.Add(diemDanh);
+                    }
+                    
+                    
+                    ret = db.SaveChanges();
+                }
+                
+
+                
                 SinhVienLHPDAO dao = new SinhVienLHPDAO();
-                int ret = dao.Insert(svLhp);
+                 ret = dao.Insert(svLhp);
                 if (ret>0)
                 {
                     if (isClose)

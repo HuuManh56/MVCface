@@ -70,6 +70,7 @@
             this.btnStop.TabIndex = 19;
             this.btnStop.Text = "Thoát";
             this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // cbCamIndex
             // 

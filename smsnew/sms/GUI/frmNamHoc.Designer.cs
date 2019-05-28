@@ -84,7 +84,7 @@
             this.txtCode.Location = new System.Drawing.Point(34, 195);
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(231, 22);
-            this.txtCode.TabIndex = 2;
+            this.txtCode.TabIndex = 4;
             this.txtCode.TextChanged += new System.EventHandler(this.txtTimeKT_TextChanged);
             // 
             // txtTimeKT
@@ -92,7 +92,7 @@
             this.txtTimeKT.Location = new System.Drawing.Point(34, 125);
             this.txtTimeKT.Name = "txtTimeKT";
             this.txtTimeKT.Size = new System.Drawing.Size(231, 22);
-            this.txtTimeKT.TabIndex = 2;
+            this.txtTimeKT.TabIndex = 3;
             this.txtTimeKT.TextChanged += new System.EventHandler(this.txtTimeKT_TextChanged);
             // 
             // label1
@@ -127,7 +127,7 @@
             this.btnXoa.Location = new System.Drawing.Point(249, 247);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(81, 30);
-            this.btnXoa.TabIndex = 0;
+            this.btnXoa.TabIndex = 7;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -137,7 +137,7 @@
             this.btnSua.Location = new System.Drawing.Point(135, 247);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(81, 30);
-            this.btnSua.TabIndex = 0;
+            this.btnSua.TabIndex = 6;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -147,7 +147,7 @@
             this.btnThem.Location = new System.Drawing.Point(31, 247);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(81, 30);
-            this.btnThem.TabIndex = 0;
+            this.btnThem.TabIndex = 5;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -173,7 +173,7 @@
             this.ClientSize = new System.Drawing.Size(1014, 296);
             this.Controls.Add(this.splitContainer1);
             this.Name = "frmNamHoc";
-            this.Text = "frmNamHoc";
+            this.Text = "Năm học";
             this.Load += new System.EventHandler(this.frmNamHoc_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();

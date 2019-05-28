@@ -72,7 +72,7 @@
             this.btnXoaHk.Location = new System.Drawing.Point(242, 192);
             this.btnXoaHk.Name = "btnXoaHk";
             this.btnXoaHk.Size = new System.Drawing.Size(75, 32);
-            this.btnXoaHk.TabIndex = 4;
+            this.btnXoaHk.TabIndex = 5;
             this.btnXoaHk.Text = "Xóa";
             this.btnXoaHk.UseVisualStyleBackColor = true;
             this.btnXoaHk.Click += new System.EventHandler(this.btnXoaHk_Click);
@@ -92,7 +92,7 @@
             this.btnThem_HK.Location = new System.Drawing.Point(32, 192);
             this.btnThem_HK.Name = "btnThem_HK";
             this.btnThem_HK.Size = new System.Drawing.Size(75, 32);
-            this.btnThem_HK.TabIndex = 4;
+            this.btnThem_HK.TabIndex = 3;
             this.btnThem_HK.Text = "Thêm";
             this.btnThem_HK.UseVisualStyleBackColor = true;
             this.btnThem_HK.Click += new System.EventHandler(this.btnThem_HK_Click);
@@ -126,7 +126,7 @@
             this.txtTenHK.Location = new System.Drawing.Point(122, 112);
             this.txtTenHK.Name = "txtTenHK";
             this.txtTenHK.Size = new System.Drawing.Size(100, 24);
-            this.txtTenHK.TabIndex = 0;
+            this.txtTenHK.TabIndex = 2;
             this.txtTenHK.SelectedIndexChanged += new System.EventHandler(this.cmbNamHk_SelectedIndexChanged);
             // 
             // cmbNamHk
@@ -135,7 +135,7 @@
             this.cmbNamHk.Location = new System.Drawing.Point(122, 35);
             this.cmbNamHk.Name = "cmbNamHk";
             this.cmbNamHk.Size = new System.Drawing.Size(195, 24);
-            this.cmbNamHk.TabIndex = 0;
+            this.cmbNamHk.TabIndex = 1;
             this.cmbNamHk.Text = "Chọn năm học ";
             this.cmbNamHk.SelectedIndexChanged += new System.EventHandler(this.cmbNamHk_SelectedIndexChanged);
             // 
@@ -159,7 +159,7 @@
             this.ClientSize = new System.Drawing.Size(751, 318);
             this.Controls.Add(this.splitContainer1);
             this.Name = "frmHocKy";
-            this.Text = "frmHocKy";
+            this.Text = "Học kỳ";
             this.Load += new System.EventHandler(this.frmHocKy_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
