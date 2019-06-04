@@ -154,6 +154,7 @@
             this.ClientSize = new System.Drawing.Size(864, 291);
             this.Controls.Add(this.splitContainer1);
             this.Name = "frmHocPhan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Học phần";
             this.Load += new System.EventHandler(this.frmHocPhan_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);

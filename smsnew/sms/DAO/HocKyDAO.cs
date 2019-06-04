@@ -59,9 +59,14 @@ namespace sms.DAO
             int ret = 0;
             try
             {
-                db.HocKies.Add(hocKy);
-                db.SaveChanges();
-                ret = 1;
+                HocKy obj = new HocKy();
+                obj.Id_Namhoc = hocKy.Id_Namhoc;
+                obj.TenHocKy = hocKy.TenHocKy;
+                db.HocKies.Add(obj);
+                
+                ret = db.Database.ExecuteSqlCommand("EXEC InsertHocKy @param1, @param2",
+                    new SqlParameter("param1",hocKy.Id_Namhoc),
+                    new SqlParameter("param2", hocKy.TenHocKy));
             }
             catch (Exception e)
             {
@@ -76,9 +81,9 @@ namespace sms.DAO
             int ret = 0;
             try
             {
-                db.HocKies.Remove(db.HocKies.Find(hocKy.ID));
-                db.SaveChanges();
-                ret = 1;
+               // db.HocKies.Remove(db.HocKies.Find(hocKy.ID));
+               ret = db.Database.ExecuteSqlCommand("EXEC DeleteHocKy @param"
+                   , new SqlParameter("param", hocKy.ID));
             }
             catch (Exception e)
             {

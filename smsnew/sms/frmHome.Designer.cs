@@ -416,6 +416,7 @@
             this.dgvDanhSach.Name = "dgvDanhSach";
             this.dgvDanhSach.RowHeadersWidth = 40;
             this.dgvDanhSach.RowTemplate.Height = 30;
+            this.dgvDanhSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDanhSach.Size = new System.Drawing.Size(1023, 492);
             this.dgvDanhSach.TabIndex = 1;
             // 
@@ -427,7 +428,7 @@
             this.sửaSinhViênToolStripMenuItem,
             this.xóaSinhViênToolStripMenuItem});
             this.MenuStrip_SinhVien.Name = "contextMenuStrip1";
-            this.MenuStrip_SinhVien.Size = new System.Drawing.Size(181, 104);
+            this.MenuStrip_SinhVien.Size = new System.Drawing.Size(181, 76);
             // 
             // thêmSinhViênToolStripMenuItem1
             // 

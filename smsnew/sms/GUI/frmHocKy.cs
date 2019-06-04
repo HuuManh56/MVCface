@@ -69,7 +69,7 @@ namespace sms.GUI
         private void dgvHocKy_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int row = e.RowIndex;
-            txtTenHK.Text = dgvHocKy.Rows[row].Cells[1].Value + "";
+            txtTenHK.Text = dgvHocKy.Rows[row].Cells[1].Value.ToString();
             txtTenHK.Tag = dgvHocKy.Rows[row].Cells[0].Value + "";
         }
 

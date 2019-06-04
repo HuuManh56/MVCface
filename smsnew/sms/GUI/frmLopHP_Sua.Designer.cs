@@ -164,6 +164,7 @@
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnXacNhan);
             this.Name = "frmLopHP_Sua";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sửa lớp học phần";
             this.Load += new System.EventHandler(this.frmLopHP_Sua_Load);
             this.ResumeLayout(false);

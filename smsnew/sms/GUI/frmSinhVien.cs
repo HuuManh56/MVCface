@@ -25,7 +25,6 @@ namespace sms.GUI
         private HaarCascade haar; // detector faces
         private Image<Gray, Byte> objFace;
         Image<Bgr, Byte> ImageFrame;
-        //List<SinhVien> listSV = new List<SinhVien>();
         List<Image<Gray, byte>> listImg = new List<Image<Gray, byte>>();
         Image<Bgr, Byte>[] EXFace;
         int FaceNum = 0;
@@ -202,6 +201,7 @@ namespace sms.GUI
             catch (Exception ex)
             {
                 // to do some thing
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -322,7 +322,7 @@ namespace sms.GUI
 
         private void add(bool isClose)
         {
-            if (imgTrain == null)
+            if (imgTrain.Image == null)
             {
                 MessageBox.Show("Chưa có hình ảnh", "Thông báo");
                 return;

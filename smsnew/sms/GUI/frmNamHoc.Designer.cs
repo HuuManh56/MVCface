@@ -173,6 +173,7 @@
             this.ClientSize = new System.Drawing.Size(1014, 296);
             this.Controls.Add(this.splitContainer1);
             this.Name = "frmNamHoc";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Năm học";
             this.Load += new System.EventHandler(this.frmNamHoc_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);

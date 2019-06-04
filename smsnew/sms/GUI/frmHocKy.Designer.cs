@@ -159,6 +159,7 @@
             this.ClientSize = new System.Drawing.Size(751, 318);
             this.Controls.Add(this.splitContainer1);
             this.Name = "frmHocKy";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Học kỳ";
             this.Load += new System.EventHandler(this.frmHocKy_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);

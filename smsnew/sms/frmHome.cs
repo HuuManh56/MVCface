@@ -253,7 +253,7 @@ namespace sms
             Item select = (Item)cmbKhoa.SelectedItem;
             LopDAO dao = new LopDAO();
             List<Lop> list = dao.GetByNienKhoa(select.Value);
-            tvLopHocPhan.Nodes.Clear();
+       //     tvLopHocPhan.Nodes.Clear();
             foreach (Lop item in list)
             {
                 TreeNode a = new TreeNode();
